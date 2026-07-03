@@ -61,6 +61,18 @@ Direct links to `.svg` files may open as source text in some mobile GitHub views
 
 ---
 
+## Public RFCs
+
+The [public RFCs](rfcs/README.md) define technical concepts without publishing the private engine.
+
+They cover execution contracts, decision memory, evidence packages, replay format and human validation.
+
+These RFCs are conceptual documentation only.
+
+They do not expose internal gates, prompts, sealed journals, signing material, provider details or operational write mechanisms.
+
+---
+
 ## Why this matters
 
 In short conversations, AI can be extremely useful.
@@ -122,6 +134,7 @@ Recommended reading order:
 10. [Status](STATUS.md)
 11. [Governed Multi-Change Demo](examples/governed-multi-change/README.md)
 12. [Diagrams](diagrams/README.md)
+13. [Public RFCs](rfcs/README.md)
 
 ---
 
