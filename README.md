@@ -57,6 +57,8 @@ More public diagrams are available in the [diagrams folder](diagrams/):
 - [Execution Contract](diagrams/execution-contract.svg)
 - [Project Evolution](diagrams/project-evolution.svg)
 
+Direct links to `.svg` files may open as source text in some mobile GitHub views. For visual previews, open this README or the [diagrams README](diagrams/README.md).
+
 ---
 
 ## Why this matters
@@ -119,6 +121,7 @@ Recommended reading order:
 9. [Roadmap](ROADMAP.md)
 10. [Status](STATUS.md)
 11. [Governed Multi-Change Demo](examples/governed-multi-change/README.md)
+12. [Diagrams](diagrams/README.md)
 
 ---
 
