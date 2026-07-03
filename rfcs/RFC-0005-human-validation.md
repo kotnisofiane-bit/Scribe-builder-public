@@ -1,80 +1,120 @@
 # RFC-0005 — Human Validation
 
-## Purpose
+## Abstract
 
-Human validation is the point where responsibility remains visible.
+Human validation is the visible responsibility point in the governance loop.
 
-SCRIBE Builder does not assume that AI roles should become final authorities.
+AI roles may propose, frame, summarize or audit.
 
-AI roles can propose, frame, summarize or audit.
+They do not become the final authority for critical decisions.
 
-The human remains responsible for critical decisions.
+This RFC defines the public concept of human validation without publishing the private gate implementation.
 
-## Problem
+## Design goal
 
-In AI-assisted work, approval can become vague.
+The goal is to avoid vague approval.
 
-A human may be asked to approve a large batch, an unclear proposal or a change detached from evidence.
+A human decision should be attached to a bounded contract, a clear proposal and reviewable evidence.
 
-That weakens responsibility.
+The person approving should know what is being approved and what is excluded.
 
-Human validation should be supported by structure.
+## Public validation request
 
-## Public validation shape
+A public validation request MAY include:
 
-A human validation point may include:
+- `decision_request`: what the human is asked to decide;
+- `contract_summary`: boundary of the work;
+- `proposal_summary`: proposed action;
+- `audit_summary`: review outcome;
+- `evidence_summary`: evidence available;
+- `known_limitations`: what remains uncertain;
+- `decision_options`: approve, reject or request revision;
+- `expected_result`: what happens if approved.
 
-- decision request;
-- contract summary;
-- proposal summary;
-- audit summary;
-- evidence summary;
-- known limitations;
-- approval options;
-- result expectation.
+This is an abstract public shape.
 
-This is a public concept, not the private human-gate implementation.
+It is not the private human-gate schema.
+
+## Required invariants
+
+A validation request MUST identify the decision being requested.
+
+It MUST show the scope boundary.
+
+It MUST show available evidence or explicitly state that evidence is missing.
+
+It MUST preserve the option to reject or request revision.
+
+It MUST NOT ask for approval of hidden changes.
+
+It MUST NOT allow an agent to approve its own work.
+
+## Multi-change rule
+
+If a request contains independent changes, the changes SHOULD be separated.
+
+N independent changes SHOULD produce N decision paths.
+
+A vague approve-all pattern is considered a governance failure.
 
 ## Example
 
 ```text
 Decision request:
-Approve publication of conceptual RFC documentation.
+Approve the publication of public RFC documentation.
 
-Boundary:
-Public documentation only.
+Contract:
+Documentation only.
+No code.
+No private engine.
 
 Evidence:
-Changed-file summary and sensitivity boundary check.
+Changed files listed.
+Boundary reviewed.
+No sensitive material included.
 
 Options:
 Approve.
 Reject.
 Request revision.
 
-Result if approved:
-Documentation branch can be merged.
+Expected result:
+The documentation PR may be merged if approved.
 ```
 
-## Approval precision
+## Human validation is not decoration
 
-Human validation should be precise.
+Human validation is not a ceremonial button.
 
-A request containing several distinct changes should not become a single vague approval.
+It is the point where responsibility remains explicit.
 
-N changes require N decision paths.
+A system can help present information.
 
-No approve-all shortcut should hide responsibility.
+It should not hide the decision behind automation.
 
-## Invariants
+## Failure modes
 
-Human validation should preserve:
+Common failure modes include:
 
-- clarity of the decision;
-- visibility of evidence;
-- ability to reject or revise;
-- separation of independent changes;
-- replayability of the approval path.
+- asking for approval before evidence exists;
+- merging several unrelated decisions into one approval;
+- hiding limitations;
+- treating an audit summary as final authority;
+- using confusing or high-pressure language;
+- asking a human to approve private material they cannot inspect;
+- letting an agent self-approve.
+
+## Technical review criteria
+
+A reviewer should be able to answer:
+
+- What exactly is being approved?
+- What is excluded?
+- What evidence exists?
+- What are the known limitations?
+- What happens after approval?
+- Can the human reject or request revision?
+- Is the approval replayable?
 
 ## Non-goals
 
@@ -89,8 +129,6 @@ This RFC does not publish:
 
 ## Summary
 
-Human validation is not a button.
+Human validation keeps responsibility visible.
 
-It is a structured responsibility point.
-
-SCRIBE attempts to make that responsibility easier to exercise and easier to replay.
+It turns approval into a reviewable decision rather than a vague permission signal.
