@@ -61,6 +61,20 @@ Direct links to `.svg` files may open as source text in some mobile GitHub views
 
 ---
 
+## Public RFCs
+
+The [public RFCs](rfcs/README.md) are the public technical specification layer of SCRIBE Builder.
+
+They define concepts, invariants, abstract record shapes, failure modes and review criteria.
+
+They are written for technical readers.
+
+They do not publish the private engine.
+
+They do not expose internal gates, prompts, sealed journals, signing material, provider details, proof artifacts or operational write mechanisms.
+
+---
+
 ## Why this matters
 
 In short conversations, AI can be extremely useful.
@@ -122,6 +136,7 @@ Recommended reading order:
 10. [Status](STATUS.md)
 11. [Governed Multi-Change Demo](examples/governed-multi-change/README.md)
 12. [Diagrams](diagrams/README.md)
+13. [Public RFCs](rfcs/README.md)
 
 ---
 
