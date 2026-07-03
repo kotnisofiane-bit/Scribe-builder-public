@@ -1,2 +1,15 @@
-# Scribe-builder-public
-Scribe Builder is an AI-governed software creation cockpit. Agents can propose, code and audit, but Scribe keeps memory, enforces contracts, requires evidence, triggers human validation, and preserves replayable decision history.
+# SCRIBE Builder
+
+**A governed coordination layer for AI-driven software development.**
+
+Agents do not self-validate.
+
+SCRIBE routes proposals through memory, contracts, audit, evidence and human decision.
+
+This repository documents the public doctrine for SCRIBE Builder.
+
+It does not contain the private engine, internal audit logs, sealed journals, private prompts or confidential proof artifacts.
+
+SCRIBE Builder is experimental and not commercial-ready.
+
+Created by Sofiane Kotni.
