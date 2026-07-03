@@ -1,7 +1,21 @@
 # Diagrams
 
-This folder will contain simple public diagrams for SCRIBE Builder.
+This folder contains simple public diagrams for SCRIBE Builder.
 
-Diagrams should remain sober, readable and conceptual.
+The diagrams are sober, readable and conceptual.
 
-They should explain the governed collaboration loop without exposing the private engine.
+They explain the governed collaboration loop without exposing the private engine.
+
+## Files
+
+- [Governed Collaboration Loop](governed-loop.svg)
+- [Conceptual Architecture](architecture.svg)
+- [Decision Memory](decision-memory.svg)
+- [Execution Contract](execution-contract.svg)
+- [Project Evolution](project-evolution.svg)
+
+## Boundary
+
+These diagrams are public explanatory material.
+
+They do not publish the private engine, internal audit logs, sealed journals, private prompts or confidential proof artifacts.
