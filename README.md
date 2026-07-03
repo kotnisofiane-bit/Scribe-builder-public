@@ -46,6 +46,19 @@ It governs the interactions between them.
 
 ---
 
+## Visual overview
+
+![The Governed Collaboration Loop](diagrams/governed-loop.svg)
+
+More public diagrams are available in the [diagrams folder](diagrams/):
+
+- [Conceptual Architecture](diagrams/architecture.svg)
+- [Decision Memory](diagrams/decision-memory.svg)
+- [Execution Contract](diagrams/execution-contract.svg)
+- [Project Evolution](diagrams/project-evolution.svg)
+
+---
+
 ## Why this matters
 
 In short conversations, AI can be extremely useful.
