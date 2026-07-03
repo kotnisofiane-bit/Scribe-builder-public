@@ -1,91 +1,145 @@
 # RFC-0001 — Execution Contract
 
-## Purpose
+## Abstract
 
-An execution contract is a public conceptual boundary for a proposed change.
+An execution contract is a bounded unit of intended work.
 
-It defines what the work is allowed to do before any implementation, audit or approval happens.
+It describes what a proposed action is allowed to change, what it must not change and what evidence is required before a human decision.
 
-In SCRIBE Builder, a contract is not proof that a change is correct.
+It is a governance object, not an implementation object.
 
-It makes the change governable.
+## Design goal
 
-## Problem
+The contract exists to prevent silent task expansion.
 
-AI-assisted work can move quickly from intent to action.
+It also separates the intent of the work from the agent that proposes or performs it.
 
-That speed is useful, but it creates risk when scope, evidence and approval are implicit.
+An agent may help draft a contract.
 
-Without a contract, a proposal may expand silently, merge unrelated work or ask for human approval without a clear boundary.
+The contract itself remains reviewable by a human.
 
-## Public contract shape
+## Public contract fields
 
-A public execution contract may contain:
+A public execution contract MAY include:
 
-- objective;
-- scope;
-- non-scope;
-- allowed actions;
-- forbidden actions;
-- required evidence;
-- audit expectation;
-- human decision point;
-- stop conditions.
+- `objective`: the intended outcome;
+- `scope`: what may change;
+- `non_scope`: what must not change;
+- `allowed_actions`: permitted classes of action;
+- `forbidden_actions`: prohibited classes of action;
+- `evidence_required`: evidence expected before approval;
+- `risk_notes`: known uncertainty or sensitivity;
+- `human_decision_required`: whether approval is required;
+- `stop_conditions`: conditions that halt the work.
 
-This is a conceptual shape, not the private engine schema.
+This is an abstract public shape.
+
+It is not a private schema and not an API contract.
+
+## Lifecycle
+
+A contract can be described through public lifecycle states:
+
+```text
+DRAFT -> BOUNDED -> PROPOSED -> REVIEWED -> DECIDED -> CLOSED
+```
+
+The lifecycle is conceptual.
+
+The private engine may use different structures.
+
+## Required invariants
+
+A valid public contract MUST make the objective explicit.
+
+It MUST distinguish scope from non-scope.
+
+It MUST identify the evidence expected before approval.
+
+It MUST define at least one stop condition.
+
+It MUST NOT authorize unrelated changes under one vague approval.
+
+It MUST NOT imply that an agent can approve its own work.
+
+## Stop conditions
+
+A contract SHOULD stop the work when:
+
+- sensitive material appears;
+- the scope expands;
+- evidence is missing;
+- a second independent change is introduced;
+- a required human decision is absent;
+- the public/private boundary becomes unclear.
 
 ## Example
 
 ```text
 Objective:
-Update one public documentation page.
+Add public technical documentation.
 
 Scope:
-Documentation only.
+Public Markdown documentation only.
 
 Non-scope:
-No engine code.
-No private logs.
-No implementation details.
+No private engine code.
+No prompts.
+No internal gates.
+No sealed journals.
+No proof artifacts.
 
-Required evidence:
-Summary of changed files.
-Human-readable rationale.
+Evidence required:
+Changed-file list.
 Boundary confirmation.
+Non-goals confirmed.
 
 Human decision:
-Required before publication.
+Required before merge.
 
-Stop condition:
-Stop if sensitive material appears.
+Stop conditions:
+Any private material appears.
+The change starts describing implementation mechanisms.
+The change introduces code.
 ```
 
-## Invariants
+## Failure modes
 
-An execution contract should preserve several public invariants:
+Common failure modes include:
 
-- no action without a defined objective;
-- no approval without a bounded scope;
-- no batch approval when separate decisions are present;
-- no silent expansion of the task;
-- no bypass of required human decision;
-- no publication of sensitive internals.
+- scope drift;
+- implicit approval;
+- unrelated changes batched together;
+- evidence described too vaguely;
+- public documentation that implies private implementation details;
+- contract language that sounds commercial-ready.
+
+## Technical review criteria
+
+A reviewer should be able to answer:
+
+- What is the unit of work?
+- What is outside the unit of work?
+- What evidence is required?
+- What stops the work?
+- Who decides?
+- What should not be inferred?
 
 ## Non-goals
 
-This RFC does not define:
+This RFC does not publish:
 
 - private validation code;
-- private gate logic;
+- gate logic;
+- policy representation;
 - provider integration;
 - signing implementation;
-- operational write mechanism;
-- internal policy representation.
+- operational write mechanism.
 
 ## Summary
 
-The execution contract is the public boundary around work.
+An execution contract makes AI-assisted work governable.
 
-It turns intent into a governable unit.
+It is the public boundary around a proposed action.
 
-It does not replace audit, evidence or human judgment.
+It does not replace audit, evidence or human decision.
