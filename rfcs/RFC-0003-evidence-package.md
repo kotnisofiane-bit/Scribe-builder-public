@@ -1,100 +1,143 @@
 # RFC-0003 — Evidence Package
 
-## Purpose
+## Abstract
 
-An evidence package is a public conceptual bundle that explains what supports a decision.
+An evidence package is a bounded set of references that supports a decision.
 
-It helps a future reader understand what was checked, what was accepted and what remains limited.
+It explains what was checked, what changed, what did not change and what remains unproven.
 
-Evidence is not persuasion.
+It is not a proof of correctness.
 
-Evidence is what makes review possible.
+It is not a replacement for human review.
 
-## Problem
+## Design goal
 
-AI systems can produce fluent explanations.
+The evidence package makes a decision reviewable.
 
-A fluent explanation is not enough for a governed project.
+It should reduce ambiguity without publishing private proof artifacts.
 
-A human decision should be connected to material that can be reviewed later.
+A technical reader should understand the type of evidence expected by the protocol.
 
-## Public evidence shape
+They should not receive internal trust material or private logs.
 
-A public evidence package may contain:
+## Public evidence record
 
-- evidence id;
-- contract reference;
-- changed-file summary;
-- audit summary;
-- test or check summary;
-- boundary confirmation;
-- human decision reference;
-- known limitations;
-- replay reference.
+A public evidence package MAY include:
 
-This shape is conceptual and content-free.
+- `evidence_id`: public identifier;
+- `contract_ref`: contract being evaluated;
+- `change_summary`: files or areas changed;
+- `scope_check`: whether the change stayed in scope;
+- `audit_summary`: review outcome;
+- `test_summary`: checks performed, if any;
+- `boundary_check`: public/private boundary confirmation;
+- `decision_ref`: linked human decision;
+- `limitations`: what the evidence does not prove.
 
-It does not expose private proof artifacts or internal signing material.
+This is an abstract public shape.
+
+It is not a proof pack schema.
+
+## Evidence classes
+
+Public evidence MAY be classified as:
+
+- scope evidence;
+- change evidence;
+- audit evidence;
+- test evidence;
+- boundary evidence;
+- decision evidence;
+- replay evidence;
+- limitation evidence.
+
+The classification is for documentation and review.
+
+It does not reveal the private evidence engine.
+
+## Required invariants
+
+An evidence package MUST state what it supports.
+
+It MUST state what it does not support.
+
+It MUST identify whether the change stayed within scope.
+
+It MUST distinguish evidence from assertion.
+
+It SHOULD link evidence to a decision.
+
+It MUST NOT publish private proof artifacts.
 
 ## Example
 
 ```text
 Evidence package:
-Documentation update only.
+Public RFC documentation update.
 
-Changed files:
-README.md and rfcs/README.md.
+Change evidence:
+Markdown files added under rfcs/.
+README updated with public RFC link.
 
-Checks:
-No engine code included.
-No private logs included.
-No prompt material included.
+Scope evidence:
+Documentation only.
+No code added.
+No private engine references.
 
-Decision:
-Human-approved publication.
+Boundary evidence:
+No prompts.
+No sealed journals.
+No signing material.
+No operational write path.
 
 Limitations:
-Conceptual documentation only.
+The evidence does not validate a product.
+The evidence does not expose implementation behavior.
 ```
 
-## Evidence classes
+## Evidence is not authority
 
-Public evidence can be grouped into simple classes:
+Evidence can support a decision.
 
-- scope evidence;
-- change evidence;
-- audit evidence;
-- decision evidence;
-- replay evidence;
-- limitation evidence.
+It cannot make the decision on behalf of the human.
 
-This classification is descriptive only.
+A model-generated explanation SHOULD NOT be treated as evidence unless it is tied to reviewable material.
 
-It is not the private evidence engine.
+## Failure modes
 
-## Invariants
+Common failure modes include:
 
-An evidence package should make clear:
+- relying on fluent summaries without reviewable material;
+- omitting limitations;
+- claiming test coverage where none exists;
+- treating private artifacts as public evidence;
+- publishing too much detail in the name of transparency;
+- failing to link evidence to the decision it supports.
 
-- what was checked;
-- what changed;
-- what did not change;
-- what evidence is missing;
-- what the evidence does not prove.
+## Technical review criteria
+
+A reviewer should be able to answer:
+
+- What claim does this evidence support?
+- What material was checked?
+- What remained unchecked?
+- Is the evidence public-safe?
+- Is the evidence linked to a decision?
+- Are limitations explicit?
 
 ## Non-goals
 
 This RFC does not publish:
 
-- private proof packs;
-- hashes from sensitive artifacts;
+- private proof pack contents;
+- trust ledgers;
+- hashes of sensitive artifacts;
 - signing keys;
-- internal trust ledgers;
-- provider output;
-- hidden policy details.
+- provider outputs;
+- hidden policy logic.
 
 ## Summary
 
 Evidence packages make governance reviewable.
 
-They should be durable, bounded and honest about their limits.
+They should be bounded, honest and safe to publish.
