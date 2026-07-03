@@ -1,32 +1,28 @@
 # RFC-0004 — Replay Format
 
-## Purpose
+## Abstract
 
 Replay is the ability to reconstruct the meaningful path of a decision.
 
-It does not require storing every word of every conversation.
+It is not full conversation capture.
 
-It requires preserving the sequence that made the decision governable.
+It is not surveillance.
 
-## Problem
+It is not a private event log.
 
-A project can reach a final state without remembering how it got there.
+Replay preserves enough structure for future review while keeping private material private.
 
-That is risky in long-running AI-assisted work.
+## Design goal
 
-Future reviewers need to know:
+A long-running AI-assisted project should be able to answer a simple question:
 
-- what the original intent was;
-- what contract bounded the task;
-- what proposal was made;
-- what audit occurred;
-- what evidence supported the decision;
-- what the human approved;
-- what result followed.
+How did this decision happen?
 
-## Public replay sequence
+The answer should be reconstructable without relying on model memory or hidden conversation state.
 
-A public replay path may be represented as:
+## Public replay path
+
+A public replay path MAY use this sequence:
 
 ```text
 Intent
@@ -38,50 +34,104 @@ Intent
   -> Result
 ```
 
-This is a conceptual sequence, not the private replay implementation.
+This sequence is conceptual.
+
+It is not the private replay implementation.
+
+## Public replay record
+
+A public replay record MAY include:
+
+- `replay_id`: public identifier;
+- `intent_ref`: original intent summary;
+- `contract_ref`: execution contract;
+- `proposal_ref`: proposal summary;
+- `audit_ref`: audit summary;
+- `evidence_ref`: evidence package;
+- `decision_ref`: human decision;
+- `result_ref`: final state;
+- `limitations`: missing or private material.
+
+This is an abstract shape.
+
+It is not a storage schema.
+
+## Required invariants
+
+A replay record MUST preserve the order of meaningful steps.
+
+It MUST distinguish proposal from approval.
+
+It MUST link evidence to the decision it supports.
+
+It MUST make missing evidence visible.
+
+It MUST NOT require publishing private prompts, sealed journals or internal logs.
+
+It SHOULD be readable without executing any code.
 
 ## Example
 
 ```text
 Intent:
-Publish public technical notes.
+Make the public repository more technically credible.
 
 Contract:
-Documentation only, no private engine, no sensitive internals.
+Documentation only.
+No code.
+No private engine.
 
 Proposal:
-Add public RFCs describing protocol concepts.
+Add public RFCs for governance concepts.
 
 Audit:
-Check for boundary violations and overclaiming.
+Check whether the RFCs are technical, bounded and non-sensitive.
 
 Evidence:
-Changed-file list and public-scope confirmation.
+Changed-file list and boundary check.
 
-Human Decision:
-Approve publication.
+Human decision:
+Approve or request revision.
 
 Result:
-Public documentation updated.
+Public documentation branch remains reviewable.
 ```
-
-## Replay requirements
-
-A replayable decision should provide enough context to answer:
-
-- what was decided;
-- what was not decided;
-- what evidence existed;
-- what limitations remained;
-- what should not be inferred.
 
 ## Replay boundaries
 
-Replay should not become full surveillance.
+Replay should preserve decision structure.
 
-It should not preserve irrelevant conversation material.
+It should not preserve irrelevant conversation content.
 
-It should not expose sensitive prompts, private logs or confidential proof artifacts.
+It should not expose private project memory.
+
+It should not reveal operational mechanisms.
+
+The public replay layer should make the process understandable, not reproducible.
+
+## Failure modes
+
+Common failure modes include:
+
+- replay missing the original intent;
+- proposal and approval collapsed into one step;
+- evidence disconnected from the decision;
+- private material included for convenience;
+- replay described as deterministic proof;
+- result recorded without limitations.
+
+## Technical review criteria
+
+A reviewer should be able to answer:
+
+- What was the original intent?
+- What contract bounded the work?
+- What was proposed?
+- What was checked?
+- What evidence supported the decision?
+- Who decided?
+- What happened afterward?
+- What is intentionally not public?
 
 ## Non-goals
 
@@ -89,12 +139,13 @@ This RFC does not publish:
 
 - private replay code;
 - internal event model;
-- storage format;
-- real proof pack contents;
-- sealed project journals.
+- sealed journals;
+- raw conversation capture;
+- proof pack contents;
+- operational execution traces.
 
 ## Summary
 
-Replay makes governance durable.
+Replay is the memory path of a decision.
 
-It lets the project remember the path of a decision without exposing the private engine.
+It makes governance durable without exposing the private engine.
