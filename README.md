@@ -63,13 +63,15 @@ Direct links to `.svg` files may open as source text in some mobile GitHub views
 
 ## Public RFCs
 
-The [public RFCs](rfcs/README.md) define technical concepts without publishing the private engine.
+The [public RFCs](rfcs/README.md) are the public technical specification layer of SCRIBE Builder.
 
-They cover execution contracts, decision memory, evidence packages, replay format and human validation.
+They define concepts, invariants, abstract record shapes, failure modes and review criteria.
 
-These RFCs are conceptual documentation only.
+They are written for technical readers.
 
-They do not expose internal gates, prompts, sealed journals, signing material, provider details or operational write mechanisms.
+They do not publish the private engine.
+
+They do not expose internal gates, prompts, sealed journals, signing material, provider details, proof artifacts or operational write mechanisms.
 
 ---
 
