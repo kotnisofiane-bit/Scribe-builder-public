@@ -1,99 +1,145 @@
 # RFC-0002 — Decision Memory
 
-## Purpose
+## Abstract
 
-Decision memory is the structured record of what a project depends on.
+Decision memory is the structured memory of project decisions.
 
-It is not a transcript.
+It records the reasoning path that a future reviewer needs in order to understand why a project moved in a certain direction.
 
-It is not a chat archive.
+It is not a chat transcript.
 
-It preserves the decisions, reasons, evidence and outcomes that help a project remain coherent over time.
+It is not a complete event log.
 
-## Problem
+It is not the private journal.
 
-Long-running AI-assisted projects can lose continuity.
+## Design goal
 
-A model may produce useful answers, but the project can still forget:
+Decision memory exists to preserve continuity in long-running AI-assisted work.
 
-- why a constraint exists;
-- why an option was rejected;
-- which evidence supported approval;
-- which human decision authorized a change;
-- whether a decision can be replayed later.
+A project should not depend only on scattered conversations or model context.
 
-Conversation history alone is not enough.
+It should preserve the decisions that future work depends on.
 
-## Public memory shape
+## Public decision record
 
-A public decision memory entry may contain:
+A public decision record MAY include:
 
-- decision id;
-- decision title;
-- intent summary;
-- contract reference;
-- proposal summary;
-- audit summary;
-- evidence summary;
-- human decision;
-- result summary;
-- replay reference.
+- `decision_id`: public identifier;
+- `title`: short decision label;
+- `intent`: original reason for the decision;
+- `contract_ref`: reference to the governing contract;
+- `proposal_summary`: what was proposed;
+- `audit_summary`: what was reviewed;
+- `evidence_ref`: evidence package reference;
+- `human_decision`: approve, reject or revise;
+- `result`: what happened after the decision;
+- `replay_ref`: replay path reference;
+- `limitations`: what the record does not prove.
 
-This is a public conceptual shape, not the private storage model.
+This is an abstract public shape, not the private storage format.
+
+## Memory boundary
+
+Decision memory SHOULD preserve meaning, not raw conversation volume.
+
+It SHOULD avoid unnecessary personal data.
+
+It SHOULD avoid private prompts.
+
+It SHOULD avoid provider outputs unless they are intentionally summarized and safe.
+
+It MUST NOT publish sealed private journals.
+
+## Decision classes
+
+Public decision memory may distinguish several classes:
+
+- architectural decision;
+- scope decision;
+- audit decision;
+- release decision;
+- rollback decision;
+- publication decision;
+- non-decision.
+
+A non-decision is useful when a path was explicitly rejected.
+
+## Required invariants
+
+A decision memory entry MUST make the decision identifiable.
+
+It MUST record the reason, not only the outcome.
+
+It MUST link to evidence or state that evidence is absent.
+
+It MUST make human responsibility visible when approval is required.
+
+It SHOULD state limitations.
+
+It MUST NOT be written as marketing material.
 
 ## Example
 
 ```text
 Decision:
-Approve a documentation-only update.
+Publish public RFC documentation.
 
 Reason:
-The change clarifies the public protocol without exposing the private engine.
+Make the public repository technically legible without publishing the engine.
+
+Contract:
+Documentation only.
+No private engine material.
+No operational write details.
 
 Evidence:
-Changed-file summary and boundary check.
+Changed files reviewed.
+Boundary confirmed.
+No code introduced.
 
-Outcome:
-Published to the public documentation branch.
+Human decision:
+Approved for public repository review.
 
-Replay:
-Intent -> Contract -> Proposal -> Audit -> Evidence -> Human Decision -> Result
+Limitations:
+Conceptual RFCs only.
+No implementation guarantee.
 ```
 
-## Invariants
+## Failure modes
 
-Decision memory should preserve:
+Common failure modes include:
 
-- what was decided;
-- why it was decided;
-- what evidence existed;
-- who or what approved it;
-- what changed afterward;
-- whether the decision can be revisited.
+- storing too much raw conversation;
+- storing only conclusions without reasons;
+- losing the link between evidence and approval;
+- treating generated text as evidence;
+- hiding rejected alternatives;
+- confusing public memory with private journals.
 
-## Memory is not authority
+## Technical review criteria
 
-Decision memory does not decide what is true.
+A reviewer should be able to answer:
 
-It does not replace human judgment.
-
-It gives future work a clearer basis for review.
-
-A decision can be revised, but the revision should also become visible.
+- What decision was made?
+- Why was it made?
+- What evidence existed?
+- What was rejected or excluded?
+- Who or what authorized the result?
+- Can the path be replayed without private material?
 
 ## Non-goals
 
 This RFC does not publish:
 
-- sealed journals;
-- private audit traces;
+- private journal format;
+- internal decision engine;
 - prompts;
-- internal proof pack structure;
-- private storage format;
-- confidential project history.
+- confidential logs;
+- proof pack content;
+- private storage model.
 
 ## Summary
 
-Decision memory gives a project continuity.
+Decision memory is the continuity layer of the project.
 
-It helps future work inherit prior reasoning without exposing private internals.
+It gives future work access to prior reasoning without exposing private internals.
