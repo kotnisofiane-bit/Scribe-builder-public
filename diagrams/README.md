@@ -26,11 +26,17 @@ Private SCRIBE decision core
 Evidence, memory and Human GO surfaced for review
 ```
 
-A future visual pass may add a new public boundary / decision trace diagram.
+This repository now includes a public boundary / decision trace diagram (`public-boundary.svg`) aligned with the current direction. It is shown first below.
 
-Until then, read the diagrams below with the status labels provided here.
+Read the remaining diagrams with the status labels provided here.
 
 ## Preview
+
+### Public Boundary / Decision Trace — current framing
+
+![SCRIBE public boundary and decision trace](public-boundary.svg)
+
+This diagram reflects the current public direction. The upper band is the decision trace — Agent proposal → SCRIBE check → Evidence → Human GO → Replay. The lower band is the public / private boundary between public surfaces, the private service boundary and the private core. It publishes no private routes, schemas, prompts, policies or proof artifacts.
 
 ### Governed Collaboration Loop — legacy conceptual framing
 
@@ -64,6 +70,7 @@ This diagram reflects an older trajectory and should be read as a legacy note.
 
 ## Files
 
+- [Public Boundary / Decision Trace](public-boundary.svg) — current framing
 - [Governed Collaboration Loop](governed-loop.svg) — legacy conceptual framing
 - [Conceptual Architecture](architecture.svg) — legacy conceptual framing
 - [Decision Memory](decision-memory.svg) — current concept remains aligned
