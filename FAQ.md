@@ -4,44 +4,83 @@
 
 No.
 
-SCRIBE Builder is not another autonomous coding agent.
+SCRIBE is not another autonomous coding agent and it is not a replacement for developers.
 
-It is a governed coordination layer for AI-assisted software development.
+It is a decision-memory, audit and human-validation layer around AI-assisted development workflows.
 
-Its role is to coordinate interactions between AI roles, preserve decision memory, collect evidence and keep humans responsible for important decisions.
-
----
-
-## Why not just let multiple AI agents collaborate directly?
-
-Multiple AI agents can collaborate directly.
-
-SCRIBE explores a different hypothesis.
-
-Long-running projects need more than agent-to-agent interaction.
-
-They need:
-
-- shared decision memory;
-- explicit execution contracts;
-- evidence;
-- audit;
-- replay;
-- human decision points.
-
-Without those elements, collaboration can drift even when each individual answer appears reasonable.
+Agents propose. SCRIBE checks. Humans decide.
 
 ---
 
-## Does SCRIBE replace developers?
+## What problem does SCRIBE address?
+
+AI agents can move quickly, but long-running projects need continuity.
+
+SCRIBE is designed for the moments where a project needs to remember:
+
+- previous decisions;
+- locked constraints;
+- sensitive boundaries;
+- required evidence;
+- what still needs Human GO;
+- what should be replayable later.
+
+Without that structure, a project can drift even when each individual AI answer looks reasonable.
+
+---
+
+## Does SCRIBE replace Claude Code, Codex, Cursor or other AI coding tools?
 
 No.
 
-SCRIBE does not attempt to replace developers.
+SCRIBE is meant to sit around AI-assisted workflows, not replace them.
 
-It attempts to reduce the coordination burden around AI-assisted development.
+The current product direction explores thin surfaces around existing tools: a launcher, connector, plugin or MCP-compatible integration may become a delivery form depending on the host environment.
 
-Humans remain responsible for important decisions.
+No stable public connector API or public installation package is available today.
+
+---
+
+## What is SCRIBE Launcher?
+
+SCRIBE Launcher is the first product surface being explored.
+
+Its role is to help frame work, surface project memory, expose constraints, preserve evidence and keep Human GO explicit around AI-assisted changes.
+
+Launcher should be understood as a thin guardrail / connector surface.
+
+It is not the private SCRIBE core and it is not an autonomous brain running locally inside the public repository.
+
+---
+
+## What is Eyes of SCRIBE?
+
+Eyes of SCRIBE is the cockpit / observation direction.
+
+Its purpose is to show what SCRIBE has seen, checked, excluded, evidenced and left awaiting human decision.
+
+It is a review and decision context, not an autonomous execution engine.
+
+This direction is still under active development.
+
+---
+
+## Why not just let agents collaborate directly?
+
+Agents can collaborate directly.
+
+The problem is that agent-to-agent interaction does not automatically create durable project memory, evidence, approval boundaries or replay.
+
+Whether one agent or several agents are involved, the project still needs:
+
+- memory;
+- constraints;
+- audit;
+- evidence;
+- Human GO;
+- replay.
+
+SCRIBE focuses on that project layer.
 
 ---
 
@@ -53,11 +92,11 @@ SCRIBE is model-agnostic.
 
 It does not try to improve the intelligence of a model.
 
-It tries to improve the structure around AI collaboration.
+It tries to improve the structure around AI-assisted work.
 
 Intelligence produces proposals.
 
-Governance produces reliable systems.
+SCRIBE keeps project movement bounded by memory, evidence and human decision.
 
 ---
 
@@ -75,23 +114,29 @@ Decision memory preserves what became meaningful for the project.
 
 ## What does SCRIBE govern?
 
-SCRIBE does not govern AI agents directly.
+SCRIBE does not govern AI agents as personalities.
 
-It governs the interactions between them.
+It governs how proposed project changes move through checkpoints:
 
-It controls how proposals, contracts, audits, evidence and human decisions move through the system.
+```text
+Memory -> Constraint -> Proposal -> Audit -> Evidence -> Human GO -> Replay
+```
+
+The goal is not to make agents less capable.
+
+The goal is to make project movement more reliable.
 
 ---
 
 ## Is SCRIBE open source?
 
-The public repository documents the concept, principles and architecture.
+No.
 
-The private engine is still under active development.
+This is a publicly viewable documentation repository.
 
-Public material may grow over time.
+It is not an open-source release of the SCRIBE core and it does not contain an installable product package.
 
-The private implementation, internal audit history, prompts and sealed project journals are not part of this repository.
+The private implementation, backend, internal audit history, prompts, sealed project journals, proof artifacts, operational write mechanisms and trust material are not part of this repository.
 
 ---
 
@@ -101,9 +146,9 @@ No.
 
 SCRIBE is not commercial-ready.
 
-It is an ongoing engineering exploration.
+There is currently no public installation package, no stable public API, no production deployment and no commercial availability.
 
-The current focus is clarity, correctness, governance and proof.
+The current focus is clarity, correctness, proof, Human GO and protecting the public/private boundary.
 
 ---
 
@@ -121,10 +166,10 @@ It is a public marker for an engineering exploration.
 
 ## What is the long-term vision?
 
-The long-term vision is to explore whether humans and AI systems can collaborate through a governed protocol that preserves memory, evidence and responsibility over time.
+The long-term vision is to explore whether humans and AI systems can build together through durable memory, evidence, constraints, replay and explicit human decision.
 
-SCRIBE Builder applies that idea first to software development.
+SCRIBE applies that idea first to AI-assisted software development.
 
 The broader question is:
 
-How should humans and AI build together?
+How should humans and AI build together when projects last longer than a single chat, a single pull request or a single agent session?

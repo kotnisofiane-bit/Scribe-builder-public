@@ -1,61 +1,88 @@
 # Roadmap
 
-SCRIBE Builder is an ongoing engineering exploration.
+SCRIBE is an ongoing engineering exploration.
 
 This roadmap describes the current direction of the project.
 
 It is not a delivery promise.
 
-It is a map of the problems being explored.
+It is not a public launch plan.
+
+It is a map of capabilities being explored while the private core remains protected.
 
 ---
 
-## Phase 1 — Clarify the protocol
+## Current direction
 
-The first objective is to clarify the governed collaboration protocol itself.
+SCRIBE begins with AI-assisted software development.
+
+The current product direction is a hybrid model:
+
+```text
+Existing AI coding workflow
+        ↓
+SCRIBE Launcher / connector surface
+        ↓
+Private service boundary
+        ↓
+Private SCRIBE decision core
+        ↓
+Evidence, memory and Human GO surfaced for review
+```
+
+Public surfaces should remain thin and explainable.
+
+Private logic remains private.
+
+---
+
+## Capability 1 — Decision memory
+
+SCRIBE treats decision memory as a first-class component of AI-assisted development.
+
+The project should remember:
+
+- what was decided;
+- why it was decided;
+- what constraints existed;
+- what evidence supported the decision;
+- what changed afterward;
+- what can be replayed later.
+
+Conversation history is not enough.
+
+---
+
+## Capability 2 — Locked constraints and contracts
+
+A proposed change needs boundaries.
+
+SCRIBE explores ways to make constraints visible before an agent proposes, modifies or moves work forward.
 
 This includes:
 
-- decision memory;
-- execution contracts;
-- role separation;
-- evidence;
-- replay;
-- human decision points;
-- fail-closed behavior.
-
-The goal is to make the structure of the system understandable before exposing it as a product.
+- allowed scope;
+- forbidden areas;
+- expected evidence;
+- required checks;
+- Human GO points;
+- fail-closed conditions.
 
 ---
 
-## Phase 2 — Build the private engine
+## Capability 3 — Evidence and replay
 
-The private engine implements the protocol.
+A serious project needs reviewable proof.
 
-Its focus is to test whether the governed loop can work in practice:
-
-- AI roles produce bounded proposals;
-- SCRIBE routes those proposals through governance;
-- evidence is preserved;
-- important decisions remain replayable;
-- humans remain responsible for critical actions.
-
-This work remains private while the system is still evolving.
-
----
-
-## Phase 3 — Produce durable proof
-
-A governed system must preserve what happened.
-
-This phase focuses on proof structures such as:
+SCRIBE explores proof structures such as:
 
 - summaries;
+- diffs;
 - hashes;
 - verdicts;
 - replay data;
 - content-free evidence;
-- verifiable exports.
+- sanitized exports.
 
 The objective is not to expose sensitive implementation details.
 
@@ -63,69 +90,78 @@ The objective is to make reasoning and proof durable.
 
 ---
 
-## Phase 4 — Explore real-project boundaries
+## Capability 4 — SCRIBE Launcher
 
-AI systems become more useful when they can work near real projects.
+SCRIBE Launcher is the first product surface being explored.
 
-They also become riskier.
+Its direction is to act as a thin guardrail / connector around existing AI coding workflows.
 
-SCRIBE explores boundaries that allow a project to be analyzed, staged and governed without giving AI roles uncontrolled access to the original project.
+Depending on the host environment, future delivery forms may include a connector, plugin or MCP-compatible integration.
 
-The objective is controlled proximity.
+Current status:
 
-Not uncontrolled autonomy.
+- no public installation package;
+- no stable public connector API;
+- no public MCP server package;
+- no commercial availability;
+- private development only.
 
----
-
-## Phase 5 — Add advisory roles
-
-Additional AI roles may help the process.
-
-For example:
-
-- an architect role;
-- a coder role;
-- an auditor role.
-
-These roles remain bounded.
-
-They do not become independent authorities.
-
-No agent validates itself.
+Launcher must not bypass memory, evidence or Human GO.
 
 ---
 
-## Phase 6 — Build a human-facing cockpit
+## Capability 5 — Eyes of SCRIBE
 
 A governed system needs to be visible.
 
-A future cockpit may help users understand:
+Eyes of SCRIBE is the cockpit / observation direction.
 
-- what is being proposed;
-- what has changed;
+It should help users understand:
+
+- what SCRIBE saw;
+- what was checked;
+- what was excluded;
 - what evidence exists;
 - what decision is required;
 - what can be replayed.
 
 The cockpit should reduce cognitive load.
 
-It should not hide responsibility.
+It should not hide responsibility or pretend to be an autonomous authority.
 
 ---
 
-## Phase 7 — Connect with external tools
+## Capability 6 — Public scan and safe visibility
 
-Future work may explore integration with external development tools.
+SCRIBE may explore public or read-only scan surfaces.
 
-This may include:
+The goal is to inspect project context without exposing private logic or granting uncontrolled write access.
 
-- GitHub;
-- coding agents;
-- local development environments;
-- proof export workflows;
-- controlled execution environments.
+Any future public scan direction must remain clear about:
 
-External integration must remain governed.
+- what was inspected;
+- what was not inspected;
+- what evidence supports a claim;
+- what remains uncertain;
+- when Human GO is still required.
+
+No sensitive project history, secrets, private rules or operational proof artifacts should be exposed.
+
+---
+
+## Capability 7 — Controlled integrations
+
+Future integrations may connect SCRIBE to existing development workflows.
+
+Possible forms may include:
+
+- GitHub-facing review surfaces;
+- AI coding assistant connectors;
+- IDE-adjacent surfaces;
+- plugin or MCP-compatible delivery forms;
+- proof export workflows.
+
+These are possible directions, not public availability claims.
 
 Connectivity should not bypass memory, evidence or human decision.
 
@@ -133,18 +169,20 @@ Connectivity should not bypass memory, evidence or human decision.
 
 ## What is not planned now
 
-The following are intentionally not current priorities:
+The following are intentionally not current public commitments:
 
 - commercial launch;
-- hosted service;
+- public release of the private core;
+- public install package;
+- stable public API;
 - autonomous agent marketplace;
-- public release of the private engine;
 - replacing developers;
-- removing human decision points.
+- removing human decision points;
+- publishing internal prompts, logs, journals, proofs or write mechanisms.
 
 SCRIBE is still an exploration.
 
-The current focus is correctness, clarity and governance.
+The current focus is correctness, clarity, proof, Human GO and protecting the public/private boundary.
 
 ---
 
@@ -152,6 +190,6 @@ The current focus is correctness, clarity and governance.
 
 Technology can move quickly.
 
-Governance should evolve deliberately.
+SCRIBE should evolve deliberately.
 
-SCRIBE Builder will continue to grow only where the protocol becomes clearer, safer and more replayable.
+The project will continue to grow only where the public surface can remain honest, the private core can remain protected, and the decision path can remain bounded, evidenced and replayable.

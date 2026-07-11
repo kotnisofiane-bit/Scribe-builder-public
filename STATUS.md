@@ -1,10 +1,10 @@
 # Status
 
-SCRIBE Builder is an experimental engineering project.
+SCRIBE is an experimental engineering project.
 
 It is not commercial-ready.
 
-This public repository documents the concepts, principles and architecture behind the project.
+This public repository documents the concepts, principles, product direction and public boundary of SCRIBE.
 
 It does not expose the private implementation.
 
@@ -12,19 +12,14 @@ It does not expose the private implementation.
 
 ## Current state
 
-SCRIBE Builder is currently focused on exploring a governed collaboration protocol for AI-assisted software development.
+SCRIBE is currently focused on decision memory, audit, evidence, Human GO and replay for AI-assisted software projects.
 
-The current work focuses on:
+The current product direction includes:
 
-- decision memory;
-- execution contracts;
-- role separation;
-- audit;
-- evidence;
-- replay;
-- human decision points;
-- controlled execution boundaries;
-- durable proof structures.
+- **SCRIBE Launcher** — a first product surface / guardrail direction around existing AI coding workflows;
+- **Eyes of SCRIBE** — a cockpit / observation direction for showing what SCRIBE has seen, checked, evidenced and left for human decision;
+- **private decision core** — the proprietary logic for memory, audit, contracts, proof and replay;
+- **public documentation** — this repository, which explains the doctrine without publishing the private core.
 
 The project is active, but still evolving.
 
@@ -37,15 +32,19 @@ This repository is intentionally limited.
 It contains public, non-sensitive material such as:
 
 - project doctrine;
+- product positioning;
 - conceptual architecture;
 - design principles;
-- roadmap direction;
+- public roadmap direction;
 - explanatory examples;
-- future diagrams.
+- public RFCs;
+- conceptual diagrams.
 
 Its purpose is to make the reasoning behind SCRIBE visible.
 
 It is not a release package.
+
+It is not an open-source release of the private SCRIBE core.
 
 ---
 
@@ -54,11 +53,15 @@ It is not a release package.
 This repository does not contain:
 
 - the private SCRIBE engine;
+- backend implementation details;
 - internal audit logs;
 - sealed project journals;
 - private prompts;
+- private policies;
 - confidential proof artifacts;
 - private development reports;
+- operational write mechanisms;
+- trust or signing material;
 - implementation details that are still changing;
 - sensitive project history.
 
@@ -68,22 +71,31 @@ SCRIBE is being documented publicly without exposing its private working core.
 
 ---
 
-## Not commercial-ready
+## Product availability
 
-SCRIBE Builder should not currently be described as:
+SCRIBE should not currently be described as:
 
 - production-ready;
 - commercially available;
 - enterprise-ready;
 - a hosted platform;
 - a finished developer tool;
+- a public MCP server;
+- a public connector package;
+- an installable open-source product;
 - an autonomous coding product.
+
+There is currently:
+
+- no public installation package;
+- no stable public API;
+- no commercial availability;
+- no public connector manifest;
+- no public release of the private engine.
 
 The project is still in a research and engineering phase.
 
-The current priority is not market launch.
-
-The current priority is clarity, correctness, governance and proof.
+The current priority is clarity, correctness, proof, Human GO and protecting the public/private boundary.
 
 ---
 
@@ -93,9 +105,9 @@ A private implementation exists and continues to evolve.
 
 The public repository does not mirror that implementation.
 
-This separation allows the project to publish its doctrine and architecture while keeping unfinished or sensitive internals private.
+This separation allows the project to publish its doctrine and public architecture while keeping unfinished or sensitive internals private.
 
-The public material should be treated as conceptual documentation.
+The public material should be treated as conceptual and product-direction documentation.
 
 Not as a complete technical specification of the engine.
 
@@ -105,8 +117,9 @@ Not as a complete technical specification of the engine.
 
 Future updates may include:
 
-- architecture diagrams;
-- simplified proof pack structures;
+- updated public diagrams;
+- simplified product-surface notes;
+- sanitized proof-pack examples;
 - fictional mediated-loop examples;
 - public design notes;
 - additional conceptual documentation;
@@ -120,12 +133,10 @@ public reasoning, private engine.
 
 ## Summary
 
-SCRIBE Builder is an ongoing exploration.
-
-It is public enough to explain its purpose.
+SCRIBE is public enough to explain its purpose.
 
 It remains private enough to protect its unfinished core.
 
-The project should be understood as a serious engineering investigation into governed human-AI collaboration.
+The project should be understood as a serious engineering investigation into decision memory, audit and Human GO for AI-assisted software development.
 
 Not as a finished product launch.
