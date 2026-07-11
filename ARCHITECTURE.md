@@ -1,134 +1,118 @@
 # Architecture
 
-SCRIBE Builder is not designed as a single autonomous agent.
+SCRIBE is not designed as a single autonomous agent.
 
-It is designed as a governed coordination layer between human decisions and AI-assisted work.
+It is a decision-memory, audit and human-validation layer around AI-assisted software projects.
 
 The architecture is organized around one idea:
 
-> Intelligence may produce proposals, but governance must structure how proposals become decisions.
+> Intelligence may produce proposals, but project movement must remain bounded by memory, evidence and Human GO.
 
 ---
 
-## High-level loop
+## Current public architecture
 
-The core loop can be represented as:
+The current product direction is hybrid.
+
+SCRIBE is not published as a full local brain and the private core is not distributed. Public surfaces are intended to remain thin, explainable and bounded.
 
 ```text
-Human Intent
-     ↓
-Architect Role
-     ↓
-Execution Contract
-     ↓
-SCRIBE
-     ↓
-Coder Role
-     ↓
-Proposal
-     ↓
-SCRIBE
-     ↓
-Auditor Role
-     ↓
-Audit
-     ↓
-SCRIBE
-     ↓
-Human Decision
-     ↓
-Controlled Execution
-     ↓
-Evidence
-     ↓
-Replay
+Existing AI coding workflow
+        ↓
+SCRIBE Launcher / connector surface
+        ↓
+Private service boundary
+        ↓
+Private SCRIBE decision core
+        ↓
+Evidence, memory and Human GO shown for review
 ```
 
-The exact implementation may evolve.
+This public repository documents the concept, not the implementation.
 
-The principle remains stable:
-
-No AI role validates itself.
+It does not publish the backend, the private core, prompts, internal policies, sealed journals, operational write mechanisms, trust material or provider-specific details.
 
 ---
 
-## Main components
+## Design principle
 
-### Human
+The number of agents is not the architecture.
 
-The human defines intent and remains responsible for critical decisions.
+A project may use one agent or several. The same problem remains:
 
-SCRIBE does not remove human responsibility.
+```text
+Intent
+  -> Agent proposal
+  -> SCRIBE checks memory, constraints and evidence
+  -> Human GO when protected project movement is required
+  -> Evidence and replay remain available
+```
 
-It attempts to make that responsibility easier to exercise by making proposals, constraints and evidence visible.
+SCRIBE does not depend on claiming that AI agents can govern themselves.
 
-### Architect role
+It exists because AI-assisted projects need a structure around proposals before those proposals become decisions.
 
-The architect role frames the work.
+---
 
-It may help transform human intent into an execution contract.
+## Main public layers
 
-Its purpose is not to execute.
+### 1. Existing AI coding workflow
 
-Its purpose is to clarify objective, scope, constraints, risks, required evidence and approval point.
+SCRIBE is designed to sit around AI coding workflows that developers already use.
 
-### Execution contract
+Examples of host environments may include AI coding tools, code assistants, IDE agents or agentic development workflows.
 
-An execution contract defines the boundaries of a task.
+This repository does not claim that a public integration is available today.
 
-It describes what is allowed, what is forbidden, what evidence is required and when human approval is needed.
+### 2. SCRIBE Launcher / connector surface
 
-A contract does not make a proposal correct.
+SCRIBE Launcher is the first product surface being explored.
 
-It makes the proposal governable.
+Its public role is to frame work, expose boundaries, surface checks and keep Human GO explicit around agent-assisted changes.
 
-### Coder role
+Depending on the host environment, future delivery forms may include a connector, plugin or MCP-compatible integration.
 
-The coder role proposes an implementation.
+Launcher should be understood as a thin surface around existing tools, not as the proprietary SCRIBE brain.
 
-It may write, modify or suggest code depending on the controlled environment.
+### 3. Private service boundary
 
-The coder does not approve its own work.
+The service boundary mediates what can be exposed publicly and what must remain private.
 
-Its output must pass through the governed loop.
+In the public framing, this layer is responsible for preserving the separation between:
 
-### Auditor role
+- public documentation and product surfaces;
+- private decision logic;
+- internal audit state;
+- operational proof material;
+- implementation details that are still evolving.
 
-The auditor role reviews a proposal.
+No private routes, schemas, payloads or trust mechanisms are documented here.
 
-It may identify risks, missing evidence, boundary violations or inconsistencies with the contract.
+### 4. Private SCRIBE decision core
 
-The auditor is advisory.
+The private core is where the proprietary decision-memory, audit, proof and validation logic evolves.
 
-It does not become the final authority.
+It is not published in this repository.
 
-### SCRIBE
+The public documentation may describe abstract concepts such as decision memory, contracts, evidence, replay and Human GO, but it must not expose the private mechanisms that enforce them.
 
-SCRIBE coordinates the interaction between roles.
+### 5. Human-facing review surfaces
 
-It is responsible for the governed process:
+SCRIBE needs a surface where the human can see what matters before movement.
 
-- preserving decision memory;
-- routing proposals through contracts;
-- collecting evidence;
-- enforcing approval points;
-- supporting audit;
-- enabling replay;
-- failing closed when boundaries are unclear.
+This direction is currently represented by the idea of Eyes of SCRIBE: a cockpit / observation layer that shows what SCRIBE has seen, checked, excluded, evidenced and left awaiting Human GO.
 
-SCRIBE does not govern AI agents as personalities.
-
-It governs the interactions between them.
+Eyes of SCRIBE is not an autonomous execution engine. It is a review and decision context.
 
 ---
 
 ## Decision memory
 
-Decision memory is the persistent structure behind the loop.
+Decision memory is the persistent structure behind SCRIBE.
 
 It records meaningful project decisions rather than preserving every word of every conversation.
 
-Decision memory helps the system answer questions such as:
+Decision memory helps answer questions such as:
 
 - What was decided?
 - Why was it decided?
@@ -141,9 +125,27 @@ Without decision memory, long-running AI-assisted projects become fragile.
 
 ---
 
+## Constraints and contracts
+
+A contract or constraint set defines the boundaries of a proposed task.
+
+It may describe:
+
+- what is allowed;
+- what is forbidden;
+- what evidence is required;
+- what requires Human GO;
+- what should fail closed.
+
+A contract does not make a proposal correct.
+
+It makes the proposal auditable and governable.
+
+---
+
 ## Evidence
 
-Evidence is the material that makes the process verifiable.
+Evidence is the material that makes the process reviewable.
 
 Depending on the context, evidence may include:
 
@@ -160,21 +162,19 @@ Evidence is not decoration.
 
 It is what allows a future reviewer to understand what happened.
 
+Public examples must remain sanitized and must not expose sensitive project history or private proof artifacts.
+
 ---
 
-## Controlled execution
+## Human GO
 
-Controlled execution means that changes should not be applied blindly.
+Human GO is the explicit human decision point before protected project movement.
 
-Before execution, the system should know:
+It does not mean the human must approve every trivial action.
 
-- what is being executed;
-- under which contract;
-- with what approval;
-- with what expected evidence;
-- with what rollback or stop condition.
+It means that when a change crosses a meaningful boundary — scope, merge, release, locked constraints, sensitive areas or irreversible movement — the system must keep the human decision visible and explicit.
 
-When conditions are not met, the system should fail closed.
+No agent validates itself.
 
 ---
 
@@ -187,10 +187,29 @@ Replay does not require preserving every token of every interaction.
 It requires preserving the meaningful sequence:
 
 ```text
-Intent → Contract → Proposal → Audit → Evidence → Human Decision → Execution Result
+Intent -> Constraint -> Proposal -> Audit -> Evidence -> Human GO -> Result
 ```
 
-Replay makes governance durable.
+Replay makes project memory durable.
+
+---
+
+## Role separation
+
+Earlier SCRIBE documentation used Architect, Coder and Auditor roles to explain why no AI role should validate itself.
+
+That doctrine remains useful.
+
+However, those roles should not be read as the current product architecture. SCRIBE does not need to host a full internal team of agents to be useful.
+
+Whether one agent or several agents are involved, SCRIBE focuses on the project layer:
+
+- memory;
+- boundaries;
+- audit;
+- evidence;
+- Human GO;
+- replay.
 
 ---
 
@@ -201,25 +220,27 @@ This public repository documents the architecture at a conceptual level.
 It does not expose:
 
 - the private engine;
+- backend implementation details;
 - internal audit logs;
 - sealed journals;
 - private prompts;
+- private policies;
 - confidential proof artifacts;
+- operational write mechanisms;
+- trust or signing material;
 - evolving implementation details.
 
-The goal of this document is to explain the structure of SCRIBE without publishing sensitive internals.
+The goal of this document is to explain the public architecture of SCRIBE without publishing sensitive internals.
 
 ---
 
 ## Summary
 
-SCRIBE Builder is a protocol of governed interactions.
+SCRIBE is a decision-memory and audit layer for AI-driven software projects.
 
-It separates roles.
+It keeps proposed project movement bounded by memory, constraints, evidence and Human GO.
 
-It preserves decision memory.
-
-It routes proposals through contracts, audit, evidence and human decision.
+It can work around one agent or several agents.
 
 It does not try to make AI agents autonomous authorities.
 
