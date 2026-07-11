@@ -30,7 +30,7 @@ SCRIBE explores that layer.
 
 ---
 
-## The core idea
+## Decision Trace / Checkpoint Grammar
 
 SCRIBE is built around a simple project grammar:
 
@@ -51,7 +51,7 @@ SCRIBE does not let an AI system validate itself.
 
 ---
 
-## Why this matters
+## The problem SCRIBE addresses
 
 In short conversations, AI can be extremely useful.
 
