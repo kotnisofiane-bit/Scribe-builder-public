@@ -1,45 +1,49 @@
-# SCRIBE Builder
+# SCRIBE
 
 **Decision memory and audit for AI-driven software projects.**
 
-Your AI agent moves fast.
+Your AI agent moves fast.  
 SCRIBE keeps it from forgetting, breaking things, or merging too early.
 
 Agents propose. SCRIBE checks. Humans decide.
 
+**Public documentation · Private core · not commercial-ready**
+
 ---
 
-## What is SCRIBE Builder?
+## What is SCRIBE?
 
-SCRIBE Builder is an engineering exploration for long-running software projects built with AI coding agents.
+SCRIBE is an engineering exploration for long-running software projects built with AI coding agents.
 
-AI agents can write code, refactor files, draft plans and audit pull requests quickly. The harder problem is not speed. The harder problem is continuity.
+It is not another AI coding agent. It does not replace Claude Code, Codex, Cursor or a developer. It is a decision-memory, audit and human-validation layer around AI-assisted development workflows.
 
-A project needs to remember:
+AI agents can write code, refactor files, draft plans and audit pull requests quickly. The harder problem is continuity:
 
 - what was decided;
 - which constraints were locked;
 - what evidence was available;
 - what changed;
-- what still requires human approval;
+- what still requires Human GO;
 - what can be replayed later.
 
 SCRIBE explores that layer.
-
-It is not an AI agent that codes instead of the developer. It is a decision-memory, audit and validation layer around AI-assisted development workflows.
 
 ---
 
 ## The core idea
 
-SCRIBE is not another coding agent.
+SCRIBE is built around a simple project grammar:
 
-It is a guardrail around AI coding work: it keeps project memory visible, checks proposals against prior decisions, preserves evidence and keeps the human decision explicit before movement.
+```text
+Memory -> Locked constraints -> Agent proposal -> Audit -> Evidence -> Human GO -> Replay
+```
+
+The number of agents is not the central question. A project may use one agent or several. In both cases, the project still needs memory, boundaries, evidence and explicit human decision before critical movement.
 
 ```text
 Agent proposes
   -> SCRIBE checks memory, constraints and evidence
-  -> Human GO is required when the project moves
+  -> Human GO is required before protected project movement
   -> The decision path remains replayable
 ```
 
@@ -65,61 +69,47 @@ SCRIBE exists for that gap between fast AI output and reliable project movement.
 
 ---
 
-## Decision Trace / Checkpoint Grammar
+## Current product direction
 
-SCRIBE is built around a simple project grammar:
+The current public product direction is not an autonomous multi-agent platform.
+
+SCRIBE is moving toward a hybrid model:
 
 ```text
-Memory -> Constraint -> Proposal -> Audit -> Evidence -> Human GO -> Replay
+Existing AI coding workflow
+        ↓
+SCRIBE Launcher / connector surface
+        ↓
+Private service boundary
+        ↓
+Private SCRIBE decision core
+        ↓
+Evidence, memory and Human GO surfaced for review
 ```
 
-The public product direction uses this grammar consistently:
+### SCRIBE Launcher
 
-- **memory** for decisions that should not disappear;
-- **constraints** for rules that must remain visible;
-- **audit** for checking before movement;
-- **evidence** for reviewable proof;
-- **Human GO** for explicit human approval;
-- **replay** for understanding how a decision path evolved.
+SCRIBE Launcher is the first product surface being explored.
 
-This repository documents the public side of that grammar.
+It is a thin guardrail / connector surface around existing AI coding workflows. Depending on the host environment, future delivery forms may include a connector, plugin or MCP-compatible integration.
 
-The private engine, internal audit logs, sealed journals, prompts, signing material, provider details, proof artifacts and operational write mechanisms are not published here.
+It is not a public installable product today. There is no stable public connector API, no public package and no production-ready integration.
 
----
+### Eyes of SCRIBE
 
-## Visual overview
+Eyes of SCRIBE is the cockpit / observation direction.
 
-![The Governed Collaboration Loop](diagrams/governed-loop.svg)
+Its purpose is to show what SCRIBE has seen, checked, excluded, evidenced and left for Human GO. It is a decision and audit surface, not an autonomous execution engine.
 
-More public diagrams are available in the [diagrams folder](diagrams/):
+This direction is still under active development.
 
-- [Conceptual Architecture](diagrams/architecture.svg)
-- [Decision Memory](diagrams/decision-memory.svg)
-- [Execution Contract](diagrams/execution-contract.svg)
-- [Project Evolution](diagrams/project-evolution.svg)
-
-Direct links to `.svg` files may open as source text in some mobile GitHub views. For visual previews, open this README or the [diagrams README](diagrams/README.md).
+See [Product Surfaces](PRODUCT_SURFACES.md) for the current public framing.
 
 ---
 
-## Public RFCs
+## Public / private boundary
 
-The [public RFCs](rfcs/README.md) are the public technical specification layer of SCRIBE Builder.
-
-They define concepts, invariants, abstract record shapes, failure modes and review criteria.
-
-They are written for technical readers.
-
-They do not publish the private engine.
-
-They do not expose internal gates, prompts, sealed journals, signing material, provider details, proof artifacts or operational write mechanisms.
-
----
-
-## What this public repository is
-
-This repository is a public boundary for SCRIBE Builder.
+This repository is a public boundary for SCRIBE.
 
 It contains:
 
@@ -131,13 +121,24 @@ It contains:
 - public RFCs;
 - non-sensitive examples.
 
-It is meant to explain the project without exposing the proprietary core.
+It does not publish:
+
+- the private SCRIBE core;
+- backend implementation details;
+- internal audit logs;
+- sealed project journals;
+- private prompts or policies;
+- confidential proof artifacts;
+- operational write mechanisms;
+- trust, signing or secret material.
+
+This repository is publicly viewable documentation. It is not an open-source release of the SCRIBE core and it does not contain an installable product package.
 
 ---
 
 ## What SCRIBE is not
 
-SCRIBE Builder is not:
+SCRIBE is not:
 
 - a replacement for developers;
 - an autonomous coding platform;
@@ -150,39 +151,80 @@ The private implementation remains under active development.
 
 ---
 
+## Visual overview
+
+The diagrams in this repository are public explanatory material. Some older diagrams still reflect the earlier “governed collaboration loop” framing and should be read as conceptual / legacy notes, not as the current product architecture.
+
+More public diagrams are available in the [diagrams folder](diagrams/):
+
+- [Conceptual Architecture](diagrams/architecture.svg) — legacy conceptual framing;
+- [Governed Collaboration Loop](diagrams/governed-loop.svg) — legacy role-separation framing;
+- [Decision Memory](diagrams/decision-memory.svg) — still aligned conceptually;
+- [Execution Contract](diagrams/execution-contract.svg) — still aligned conceptually;
+- [Project Evolution](diagrams/project-evolution.svg) — legacy trajectory note.
+
+Direct links to `.svg` files may open as source text in some mobile GitHub views. For visual previews, open this README or the [diagrams README](diagrams/README.md).
+
+---
+
+## Public RFCs
+
+The [public RFCs](rfcs/README.md) are the public technical specification layer of SCRIBE.
+
+They define concepts, invariants, abstract record shapes, failure modes and review criteria.
+
+They are written for technical readers.
+
+They do not publish the private engine.
+
+They do not expose internal gates, prompts, sealed journals, signing material, provider details, proof artifacts or operational write mechanisms.
+
+---
+
 ## Public documentation
 
 Recommended reading order:
 
+### Start here
+
 1. [Why SCRIBE?](WHY_SCRIBE.md)
-2. [Manifesto](MANIFESTO.md)
-3. [Principles](PRINCIPLES.md)
-4. [Architecture](ARCHITECTURE.md)
-5. [Decision Memory](DECISION_MEMORY.md)
-6. [Why not just agents?](WHY_NOT_JUST_AGENTS.md)
-7. [Design Philosophy](DESIGN_PHILOSOPHY.md)
-8. [FAQ](FAQ.md)
-9. [Roadmap](ROADMAP.md)
-10. [Status](STATUS.md)
-11. [Governed Multi-Change Demo](examples/governed-multi-change/README.md)
-12. [Diagrams](diagrams/README.md)
-13. [Public RFCs](rfcs/README.md)
+2. [Product Surfaces](PRODUCT_SURFACES.md)
+3. [FAQ](FAQ.md)
+4. [Status](STATUS.md)
+5. [Roadmap](ROADMAP.md)
+
+### Core concepts
+
+6. [Principles](PRINCIPLES.md)
+7. [Architecture](ARCHITECTURE.md)
+8. [Decision Memory](DECISION_MEMORY.md)
+9. [Design Philosophy](DESIGN_PHILOSOPHY.md)
+10. [Why not just agents?](WHY_NOT_JUST_AGENTS.md)
+
+### Public references
+
+11. [Manifesto](MANIFESTO.md)
+12. [Governed Multi-Change Demo](examples/governed-multi-change/README.md)
+13. [Diagrams](diagrams/README.md)
+14. [Public RFCs](rfcs/README.md)
 
 ---
 
 ## Current status
 
-SCRIBE Builder is experimental.
+SCRIBE is experimental.
 
 It is not commercial-ready.
 
-The public repository is intentionally limited to non-sensitive material. It does not contain the private engine, internal audit logs, sealed project journals, private prompts, confidential proof artifacts or implementation details that are still evolving.
+There is currently no public installation package, no stable public API, no production deployment and no commercial availability.
+
+The public repository is intentionally limited to non-sensitive material. It explains the public doctrine and product direction without exposing the proprietary core.
 
 ---
 
 ## Long-term direction
 
-SCRIBE Builder begins with AI-assisted software development.
+SCRIBE begins with AI-assisted software development.
 
 The broader question is larger:
 
@@ -192,7 +234,7 @@ The hypothesis explored here is that reliable AI collaboration requires more tha
 
 Intelligence produces proposals.
 
-SCRIBE keeps the project from moving without memory, proof and human approval.
+SCRIBE keeps project movement bounded by memory, proof and Human GO.
 
 ---
 
