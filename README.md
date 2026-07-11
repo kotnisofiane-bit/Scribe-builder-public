@@ -11,6 +11,12 @@ Agents propose. SCRIBE checks. Humans decide.
 
 ---
 
+<p align="center">
+  <img src="diagrams/public-boundary.svg" alt="SCRIBE public boundary and decision trace: Agent proposal, SCRIBE check, Evidence, Human GO, Replay; and the public / private boundary between public surfaces, the private service boundary and the private core." />
+</p>
+
+---
+
 ## What is SCRIBE?
 
 SCRIBE is an engineering exploration for long-running software projects built with AI coding agents.
