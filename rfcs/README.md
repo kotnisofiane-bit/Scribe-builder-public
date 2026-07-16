@@ -1,28 +1,21 @@
 # Public RFCs
 
-This folder contains the public technical specification layer for SCRIBE Builder.
+This folder contains public technical design references created during the SCRIBE / Scribe Builder phase of the project.
 
-The RFCs are written for technical readers who want to understand the governance model without seeing the private implementation.
+The underlying concepts remain relevant to DUBSAR, but the individual RFCs have not yet completed a terminology and product-accuracy review.
 
-They define public concepts, invariants, interfaces and failure boundaries.
+## Current status
 
-They do not publish the engine.
+Treat the RFCs as **legacy conceptual references**, not as current DUBSAR API or installation documentation.
 
-## Status
+They may still use:
 
-These documents are public design references.
+- SCRIBE or Scribe Builder branding;
+- earlier role and product-surface language;
+- abstract contracts that do not exactly match the current private beta;
+- terminology that predates the Claude Code plugin-first product.
 
-They are not product documentation, API documentation or implementation documentation.
-
-SCRIBE Builder remains experimental and not commercial-ready.
-
-## Normative language
-
-The words `MUST`, `SHOULD` and `MAY` are used as public specification language.
-
-They describe expected protocol properties.
-
-They do not reveal or imply the private enforcement mechanism.
+The canonical public product description is in the repository root documentation.
 
 ## Reading order
 
@@ -33,36 +26,31 @@ They do not reveal or imply the private enforcement mechanism.
 4. [RFC-0004 — Replay Format](RFC-0004-replay-format.md)
 5. [RFC-0005 — Human Validation](RFC-0005-human-validation.md)
 
-## Public design surface
+## Concepts that remain aligned
 
-The public repository may describe:
+- explicit execution boundaries;
+- decision memory distinct from conversation history;
+- declared evidence distinct from verified evidence;
+- deterministic replay;
+- explicit human validation for protected movement;
+- separation between public surfaces and the private Core.
 
-- concepts;
-- protocol roles;
-- public invariants;
-- abstract record shapes;
-- examples with fictional content;
-- failure modes;
-- non-goals;
-- review checklists.
+## Public boundary
 
-The public repository MUST NOT publish:
+The public repository may describe concepts, invariants, abstract record shapes, failure modes and fictional examples.
 
-- private engine code;
-- internal gate logic;
-- private policies;
-- prompts;
-- sealed journals;
-- proof artifacts;
-- trust material;
-- provider details;
-- operational write mechanisms;
-- confidential project history.
+It must not publish:
 
-## Intended credibility
+- private Core code;
+- internal gate logic or private policies;
+- prompts or private chain-of-thought;
+- sealed journals or confidential proof artifacts;
+- secrets, tokens or trust material;
+- private backend implementation;
+- tester or customer data.
 
-A technical reader should be able to evaluate the project’s reasoning model.
+## Migration decision
 
-They should not be able to reconstruct the private system.
+The RFC files will be audited individually after the top-level product and Marketplace realignment. They should be updated, replaced or archived based on whether they still explain the real DUBSAR product.
 
-This is the core boundary of the public RFC layer.
+DUBSAR remains not commercial-ready, and the Marketplace is not published.
