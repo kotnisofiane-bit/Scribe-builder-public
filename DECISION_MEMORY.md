@@ -1,32 +1,20 @@
 # Decision Memory
 
-Software projects do not evolve only through code.
+Software projects do not evolve only through code. They evolve through decisions.
 
-They evolve through decisions.
+An architectural choice, a rejected option, a locked constraint, a rollback or an accepted risk can shape a project for months. If that reasoning is not preserved, each new AI session starts from a partial version of the project.
 
-A change in architecture, a rejected option, a constraint, an approval, a rollback or a risk accepted by a human can shape a project for months.
-
-If those decisions are not preserved, the project gradually loses its own reasoning.
-
-SCRIBE Builder treats decision memory as a first-class component of AI-assisted software development.
+DUBSAR treats decision memory as infrastructure.
 
 ---
 
-## Conversation history is not enough
-
-AI-assisted work often happens through conversation.
-
-That is useful.
-
-But conversation history is not the same as project memory.
+## Conversation history is not project memory
 
 Conversation history records what was said.
 
-Decision memory records what became meaningful.
+Decision memory records what became meaningful for the project.
 
-A conversation may contain questions, drafts, uncertainty, alternatives, partial explanations and abandoned ideas.
-
-A project memory should preserve decisions, reasons, constraints, evidence, approvals, outcomes and replayable paths.
+A conversation may contain drafts, uncertainty, alternatives and abandoned ideas. A governed memory should preserve the decisions, reasons, constraints, evidence and human authority that future work depends on.
 
 The goal is not to remember everything.
 
@@ -34,146 +22,119 @@ The goal is to remember what the project depends on.
 
 ---
 
-## What decision memory preserves
+## The Mission is the continuity anchor
 
-Decision memory attempts to preserve the path of important decisions.
+A DUBSAR project is organized around a persistent Mission.
 
-A decision should be connected to:
+The Mission provides the durable context within which decisions, lots, contracts, executions, evidence and Human Gates can be related and resumed across Claude Code sessions.
 
-- the original intent;
-- the execution contract;
-- the proposal;
-- the audit;
-- the evidence;
-- the human decision;
-- the execution result;
-- the replay path.
-
-This makes it possible to understand not only what changed, but why the change was accepted.
+A session can end. The governed Mission should remain identifiable and replayable.
 
 ---
 
-## Why this matters for AI-assisted projects
+## What a decision should preserve
 
-AI can produce many useful outputs quickly.
+A meaningful decision should be relatable to:
 
-That speed creates value.
+- the Mission and project;
+- the question or intent;
+- the alternatives considered where relevant;
+- the chosen decision and reason;
+- the constraints it activates or removes;
+- the lot or contract it affects;
+- supporting evidence and its verification tier;
+- the human decision when protected movement occurred;
+- later replacement, revision or rollback.
 
-It also creates risk.
+---
 
-When proposals accumulate faster than the project can remember them, coherence becomes fragile.
+## Active, replaced and revised decisions
 
-A project may drift because prior constraints are forgotten, rejected ideas return later, assumptions are silently changed, approvals are separated from evidence, humans approve without full context, or future agents cannot understand past decisions.
+Decision memory is not a museum of permanent rules.
 
-Decision memory reduces this drift.
+A decision can be challenged, replaced or reversed. DUBSAR should preserve the transition rather than silently overwrite the past.
 
-It gives the project continuity.
+Future sessions need to know both:
+
+- what is currently authoritative for the project;
+- how and why the project arrived there.
 
 ---
 
 ## Memory is not authority
 
-Decision memory does not replace human judgment.
+Memory does not decide what is correct.
 
-It does not decide what is correct.
-
-It does not freeze a project forever.
-
-It gives humans and AI roles a clearer basis for future decisions.
-
-A decision can be revised.
-
-A constraint can be removed.
-
-An earlier choice can be challenged.
-
-But the system should remember that this is happening.
-
-Evolution should be visible.
+It provides the governed context in which agents can propose and humans can decide. An old decision may no longer apply, but its retirement should be explicit.
 
 ---
 
-## From memory to governance
+## Memory connected to work
 
-Decision memory becomes useful when it is connected to the workflow.
+Decision memory becomes useful when it informs:
 
-In SCRIBE, memory supports:
+- Mission resumption;
+- lot selection and scope;
+- execution contracts;
+- relevant constraints;
+- expected evidence;
+- audit questions;
+- Human Gate dossiers;
+- replay after restart or handoff.
 
-- contract creation;
-- scope control;
-- audit;
-- evidence collection;
-- human approval;
-- replay;
-- future proposal review.
+It is not a passive archive detached from the workflow.
 
-Memory is not a passive archive.
+---
 
-It is part of the governed loop.
+## Evidence and memory are different
 
-It helps the system ask:
+A decision record may reference evidence, but the record itself does not prove that the evidence is valid.
+
+DUBSAR distinguishes:
+
+- what was declared;
+- what was verified;
+- what is missing;
+- what is invalid;
+- what the human ultimately decided.
+
+This prevents a persuasive narrative from becoming a substitute for proof.
+
+---
+
+## Replayable path
+
+A governed path may be summarized as:
 
 ```text
-Does this proposal respect what was previously decided?
-Does this change require human approval?
-Is the evidence sufficient?
-Can the decision be replayed later?
+Mission
+  → Decision and constraints
+  → Lot and contract
+  → Proposal or execution report
+  → Audit and evidence
+  → Human Gate
+  → Result
 ```
+
+Replay does not mean storing private chain-of-thought or every token of every interaction. It means preserving the project-level facts required to explain and resume the work.
 
 ---
 
-## Replayable decisions
-
-A replayable decision is one whose path can be reconstructed.
-
-The system should be able to show:
-
-```text
-Intent
-  → Contract
-  → Proposal
-  → Audit
-  → Evidence
-  → Human Decision
-  → Execution Result
-```
-
-Replay does not mean storing every conversation.
-
-It means preserving the meaningful sequence that made a decision governable.
-
----
-
-## Long-term continuity
-
-Long-running projects need continuity.
-
-Not only technical continuity.
-
-Decision continuity.
-
-A project should be able to answer:
+## Questions decision memory should answer
 
 - Why does this constraint exist?
+- Which decision is active now?
+- What replaced the previous direction?
 - Why was this option rejected?
-- Why was this change accepted?
-- What evidence supported this approval?
-- What should future work avoid repeating?
-
-Without decision memory, each new AI interaction risks starting from a partial understanding of the project.
-
-With decision memory, each interaction can inherit the project’s prior reasoning.
+- Which evidence supported the change?
+- Was that evidence declared or verified?
+- Which human decision authorized protected movement?
+- What should the next session inherit?
 
 ---
 
 ## Summary
 
-SCRIBE Builder does not treat memory as a convenience feature.
+Conversations disappear. Decisions remain.
 
-It treats memory as infrastructure.
-
-Conversations disappear.
-
-Decisions remain.
-
-A project that remembers its decisions can evolve without losing its coherence.
+A project that remembers its governed decisions can evolve without repeatedly losing its own reasoning.
