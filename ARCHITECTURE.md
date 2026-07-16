@@ -1,247 +1,188 @@
 # Architecture
 
-SCRIBE is not designed as a single autonomous agent.
+DUBSAR is not a coding agent and not a replacement for Claude Code.
 
-It is a decision-memory, audit and human-validation layer around AI-assisted software projects.
+It is a governance layer around long-running AI-assisted software projects.
 
-The architecture is organized around one idea:
-
-> Intelligence may produce proposals, but project movement must remain bounded by memory, evidence and Human GO.
+> Intelligence may produce proposals. Project movement remains bounded by memory, evidence and human decision.
 
 ---
 
-## Current public architecture
-
-The current product direction is hybrid.
-
-SCRIBE is not published as a full local brain and the private core is not distributed. Public surfaces are intended to remain thin, explainable and bounded.
+## Public architecture
 
 ```text
-Existing AI coding workflow
-        ↓
-SCRIBE Launcher / connector surface
-        ↓
+Claude Code
+    ↓
+DUBSAR plugin
+    ↓
+DUBSAR Desktop / local bridge
+    ↓
 Private service boundary
-        ↓
-Private SCRIBE decision core
-        ↓
-Evidence, memory and Human GO shown for review
+    ↓
+Private DUBSAR Core
+    ↓
+Governed state returned to the plugin and cockpit
+    ↓
+Human decision when required
 ```
 
-This public repository documents the concept, not the implementation.
+This is the product architecture for the first private beta.
 
-It does not publish the backend, the private core, prompts, internal policies, sealed journals, operational write mechanisms, trust material or provider-specific details.
+It replaces the older public framing built around a speculative “Scribe Launcher”. Launcher code may still exist internally, but Launcher is no longer a separate public product.
 
 ---
 
-## Design principle
+## Responsibility boundaries
 
-The number of agents is not the architecture.
+### Claude Code
 
-A project may use one agent or several. The same problem remains:
+Claude Code remains responsible for its native intelligence and execution environment, including planning, editing, tools, tests, sub-agents and worktrees.
+
+DUBSAR should not rebuild those capabilities.
+
+### DUBSAR plugin
+
+The plugin is the Claude Code entry point.
+
+It exposes bounded commands and tools, projects canonical state to the user and connects to the local runtime. It remains thin:
+
+- no proprietary Core logic;
+- no direct authority over canonical decisions;
+- no secret handling through chat or command arguments;
+- no independent Human GO generation.
+
+### DUBSAR Desktop / local bridge
+
+The local runtime supports process startup, workspace continuity, secure local state, bounded transport and access to the cockpit.
+
+It may retain internal `scribe` executable, MCP, route or token names while compatibility migration is pending.
+
+It is not the canonical source of Mission, decision, contract, evidence or Human Gate truth.
+
+### Private service boundary
+
+The service boundary mediates access to the private Core.
+
+It validates and limits requests, protects private implementation details and projects only the state required by the supported public surfaces.
+
+### Private DUBSAR Core
+
+The Core is the canonical authority for governed project state:
+
+- Projects and Missions;
+- decision memory;
+- lots and execution contracts;
+- evidence relationships and verification tiers;
+- audit state;
+- Human Gates;
+- deterministic resume and replay.
+
+The Core is private and is not distributed through the Marketplace repository.
+
+### Cockpit
+
+The cockpit displays the governed state and the evidence available to the human.
+
+It does not become an approval authority. Its purpose is to make responsibility easier to exercise.
+
+---
+
+## Governed project path
 
 ```text
-Intent
-  -> Agent proposal
-  -> SCRIBE checks memory, constraints and evidence
-  -> Human GO when protected project movement is required
-  -> Evidence and replay remain available
+Mission
+  → applicable decisions and constraints
+  → bounded lot and contract
+  → agent proposal or execution report
+  → evidence and audit
+  → Human Gate when required
+  → result and replay
 ```
 
-SCRIBE does not depend on claiming that AI agents can govern themselves.
+A report produced by an agent is an assertion. It does not become verified evidence simply because the report says that work passed.
 
-It exists because AI-assisted projects need a structure around proposals before those proposals become decisions.
-
----
-
-## Main public layers
-
-### 1. Existing AI coding workflow
-
-SCRIBE is designed to sit around AI coding workflows that developers already use.
-
-Examples of host environments may include AI coding tools, code assistants, IDE agents or agentic development workflows.
-
-This repository does not claim that a public integration is available today.
-
-### 2. SCRIBE Launcher / connector surface
-
-SCRIBE Launcher is the first product surface being explored.
-
-Its public role is to frame work, expose boundaries, surface checks and keep Human GO explicit around agent-assisted changes.
-
-Depending on the host environment, future delivery forms may include a connector, plugin or MCP-compatible integration.
-
-Launcher should be understood as a thin surface around existing tools, not as the proprietary SCRIBE brain.
-
-### 3. Private service boundary
-
-The service boundary mediates what can be exposed publicly and what must remain private.
-
-In the public framing, this layer is responsible for preserving the separation between:
-
-- public documentation and product surfaces;
-- private decision logic;
-- internal audit state;
-- operational proof material;
-- implementation details that are still evolving.
-
-No private routes, schemas, payloads or trust mechanisms are documented here.
-
-### 4. Private SCRIBE decision core
-
-The private core is where the proprietary decision-memory, audit, proof and validation logic evolves.
-
-It is not published in this repository.
-
-The public documentation may describe abstract concepts such as decision memory, contracts, evidence, replay and Human GO, but it must not expose the private mechanisms that enforce them.
-
-### 5. Human-facing review surfaces
-
-SCRIBE needs a surface where the human can see what matters before movement.
-
-This direction is currently represented by the idea of Eyes of SCRIBE: a cockpit / observation layer that shows what SCRIBE has seen, checked, excluded, evidenced and left awaiting Human GO.
-
-Eyes of SCRIBE is not an autonomous execution engine. It is a review and decision context.
+A Human Gate is a separate authenticated human decision. It cannot be inferred from agent wording or a green status.
 
 ---
 
 ## Decision memory
 
-Decision memory is the persistent structure behind SCRIBE.
+Decision memory preserves what the project depends on:
 
-It records meaningful project decisions rather than preserving every word of every conversation.
+- what was decided;
+- why it was decided;
+- which constraints are active;
+- what replaced an earlier decision;
+- which evidence supported the change;
+- which human decision authorized protected movement;
+- how the path can be replayed.
 
-Decision memory helps answer questions such as:
-
-- What was decided?
-- Why was it decided?
-- What evidence supported it?
-- What constraints existed?
-- What changed afterward?
-- Can the decision path be replayed?
-
-Without decision memory, long-running AI-assisted projects become fragile.
+It is not a raw transcript archive.
 
 ---
 
-## Constraints and contracts
+## Evidence model
 
-A contract or constraint set defines the boundaries of a proposed task.
+DUBSAR distinguishes at least:
 
-It may describe:
+- **DECLARED** — asserted by an agent, tool or user;
+- **VERIFIED** — checked by an identified deterministic verifier;
+- **MISSING** — expected evidence was not supplied;
+- **INVALID** — malformed, inconsistent or tampered evidence.
 
-- what is allowed;
-- what is forbidden;
-- what evidence is required;
-- what requires Human GO;
-- what should fail closed.
-
-A contract does not make a proposal correct.
-
-It makes the proposal auditable and governable.
+Public documentation describes the distinction without publishing the private enforcement mechanisms.
 
 ---
 
-## Evidence
+## Human control
 
-Evidence is the material that makes the process reviewable.
+DUBSAR does not require human approval for every harmless read.
 
-Depending on the context, evidence may include:
+A Human Gate is used when movement crosses a protected boundary such as merge, release, deployment, sensitive scope, locked constraints or other irreversible action.
 
-- summaries;
-- diffs;
-- hashes;
-- test results;
-- audit verdicts;
-- approval records;
-- proof pack metadata;
-- replay information.
-
-Evidence is not decoration.
-
-It is what allows a future reviewer to understand what happened.
-
-Public examples must remain sanitized and must not expose sensitive project history or private proof artifacts.
+The system may prepare a review packet and show the relevant evidence. The decision remains human.
 
 ---
 
-## Human GO
+## Distribution architecture
 
-Human GO is the explicit human decision point before protected project movement.
+This public repository is intended to host:
 
-It does not mean the human must approve every trivial action.
+- product documentation;
+- Marketplace metadata;
+- the thin public Claude Code plugin package;
+- security, privacy, licence and changelog material.
 
-It means that when a change crosses a meaningful boundary — scope, merge, release, locked constraints, sensitive areas or irreversible movement — the system must keep the human decision visible and explicit.
+It must not host:
 
-No agent validates itself.
-
----
-
-## Replay
-
-Replay is the ability to reconstruct the decision path later.
-
-Replay does not require preserving every token of every interaction.
-
-It requires preserving the meaningful sequence:
-
-```text
-Intent -> Constraint -> Proposal -> Audit -> Evidence -> Human GO -> Result
-```
-
-Replay makes project memory durable.
-
----
-
-## Role separation
-
-Earlier SCRIBE documentation used Architect, Coder and Auditor roles to explain why no AI role should validate itself.
-
-That doctrine remains useful.
-
-However, those roles should not be read as the current product architecture. SCRIBE does not need to host a full internal team of agents to be useful.
-
-Whether one agent or several agents are involved, SCRIBE focuses on the project layer:
-
-- memory;
-- boundaries;
-- audit;
-- evidence;
-- Human GO;
-- replay.
-
----
-
-## Design boundary
-
-This public repository documents the architecture at a conceptual level.
-
-It does not expose:
-
-- the private engine;
-- backend implementation details;
-- internal audit logs;
-- sealed journals;
-- private prompts;
-- private policies;
+- the private Core;
+- private backend source;
+- internal audit histories or sealed journals;
+- private prompts or policies;
 - confidential proof artifacts;
-- operational write mechanisms;
-- trust or signing material;
-- evolving implementation details.
+- secrets, tokens or trust material;
+- private tester data.
 
-The goal of this document is to explain the public architecture of SCRIBE without publishing sensitive internals.
+The Marketplace package is not published yet.
+
+---
+
+## Compatibility boundary
+
+The transition from SCRIBE to DUBSAR begins at public surfaces.
+
+Internal names may remain temporarily in:
+
+- repository URLs;
+- routes and schema identifiers;
+- component and token names;
+- MCP server and command identifiers;
+- local storage paths.
+
+They should be migrated only through deliberate compatibility plans, not global search-and-replace changes.
 
 ---
 
 ## Summary
 
-SCRIBE is a decision-memory and audit layer for AI-driven software projects.
-
-It keeps proposed project movement bounded by memory, constraints, evidence and Human GO.
-
-It can work around one agent or several agents.
-
-It does not try to make AI agents autonomous authorities.
-
-It tries to make AI-assisted development more reliable over time.
+Claude Code acts. DUBSAR remembers the Mission, checks the governed state, links evidence and keeps Human Gates explicit. The private Core remains the source of truth. Humans remain the final authority.
