@@ -1,142 +1,119 @@
 # Status
 
-SCRIBE is an experimental engineering project.
+DUBSAR is an active private-beta engineering project.
 
-It is not commercial-ready.
-
-This public repository documents the concepts, principles, product direction and public boundary of SCRIBE.
-
-It does not expose the private implementation.
+It is **not commercial-ready**.
 
 ---
 
-## Current state
+## Current product state
 
-SCRIBE is currently focused on decision memory, audit, evidence, Human GO and replay for AI-assisted software projects.
+The current product is no longer defined as a speculative Launcher or a general multi-agent platform.
 
-The current product direction includes:
+The private beta is being built around one concrete experience:
 
-- **SCRIBE Launcher** — a first product surface / guardrail direction around existing AI coding workflows;
-- **Eyes of SCRIBE** — a cockpit / observation direction for showing what SCRIBE has seen, checked, evidenced and left for human decision;
-- **private decision core** — the proprietary logic for memory, audit, contracts, proof and replay;
-- **public documentation** — this repository, which explains the doctrine without publishing the private core.
+```text
+Claude Code
+  → DUBSAR plugin
+  → DUBSAR Desktop / local runtime
+  → private service boundary
+  → private Core
+  → Mission, decisions, contracts, evidence and Human Gates
+```
 
-The project is active, but still evolving.
-
----
-
-## Public repository scope
-
-This repository is intentionally limited.
-
-It contains public, non-sensitive material such as:
-
-- project doctrine;
-- product positioning;
-- conceptual architecture;
-- design principles;
-- public roadmap direction;
-- explanatory examples;
-- public RFCs;
-- conceptual diagrams.
-
-Its purpose is to make the reasoning behind SCRIBE visible.
-
-It is not a release package.
-
-It is not an open-source release of the private SCRIBE core.
+The public product name is DUBSAR. Internal repositories, routes, commands, tokens and MCP identifiers may temporarily retain `scribe` names for compatibility.
 
 ---
 
-## What is not included
+## What exists
 
-This repository does not contain:
+Private development currently includes:
 
-- the private SCRIBE engine;
-- backend implementation details;
-- internal audit logs;
-- sealed project journals;
-- private prompts;
-- private policies;
-- confidential proof artifacts;
-- private development reports;
-- operational write mechanisms;
-- trust or signing material;
-- implementation details that are still changing;
-- sensitive project history.
+- a Claude Code plugin;
+- a Desktop/local runtime and bridge;
+- a private backend and Core;
+- persistent Mission and workspace continuity;
+- lots and execution contracts;
+- declared evidence and audit-oriented state;
+- explicit Human Gate boundaries;
+- a local cockpit direction;
+- controlled beta access work;
+- a Marketplace package staged privately for review.
 
-The absence of those materials is intentional.
-
-SCRIBE is being documented publicly without exposing its private working core.
+These statements describe active engineering work. They are not a claim that every capability is publicly available or production-ready.
 
 ---
 
-## Product availability
+## Public distribution status
 
-SCRIBE should not currently be described as:
+- Public product repository: this existing repository, currently under a legacy GitHub name.
+- Public DUBSAR documentation: being realigned in this review.
+- Claude Code Marketplace package: **not published**.
+- Public installation command: **not active**.
+- Public release: none.
+- Production deployment: none.
+- Commercial availability: none.
+- Repository rename: not performed.
+
+The private Marketplace staging package will be integrated into this same public repository only after the DUBSAR branding, package integrity, licence, security contact and beta instructions are validated.
+
+---
+
+## Beta posture
+
+The intended first beta supports Claude Code only.
+
+The beta may contain ordinary bugs and incomplete polish. It must still remain honest about:
+
+- what is merely declared by an agent;
+- what has been independently verified;
+- which evidence is missing;
+- whether a Human Gate is pending;
+- whether a component is unavailable;
+- which functions are future rather than current.
+
+No agent-generated statement becomes a Human GO.
+
+---
+
+## Not currently claimed
+
+DUBSAR is not currently presented as:
 
 - production-ready;
 - commercially available;
 - enterprise-ready;
-- a hosted platform;
-- a finished developer tool;
-- a public MCP server;
-- a public connector package;
-- an installable open-source product;
-- an autonomous coding product.
-
-There is currently:
-
-- no public installation package;
-- no stable public API;
-- no commercial availability;
-- no public connector manifest;
-- no public release of the private engine.
-
-The project is still in a research and engineering phase.
-
-The current priority is clarity, correctness, proof, Human GO and protecting the public/private boundary.
+- a certified compliance or security system;
+- a general multi-agent orchestration platform;
+- an operational Codex or Cursor integration;
+- a public release of the private Core;
+- an autonomous coding or approval authority.
 
 ---
 
-## Private engine
+## Public / private boundary
 
-A private implementation exists and continues to evolve.
+This repository is intended to contain the public documentation and thin distributable plugin package.
 
-The public repository does not mirror that implementation.
+It does not publish:
 
-This separation allows the project to publish its doctrine and public architecture while keeping unfinished or sensitive internals private.
-
-The public material should be treated as conceptual and product-direction documentation.
-
-Not as a complete technical specification of the engine.
-
----
-
-## Future public material
-
-Future updates may include:
-
-- updated public diagrams;
-- simplified product-surface notes;
-- sanitized proof-pack examples;
-- fictional mediated-loop examples;
-- public design notes;
-- additional conceptual documentation;
-- selected non-sensitive implementation patterns.
-
-Any future publication should preserve the same boundary:
-
-public reasoning, private engine.
+- the proprietary Core;
+- private backend implementation details;
+- internal prompts, policies or sealed journals;
+- confidential proof artifacts;
+- secrets, tokens or trust material;
+- private tester or project data.
 
 ---
 
-## Summary
+## Status labels
 
-SCRIBE is public enough to explain its purpose.
+Current canonical labels:
 
-It remains private enough to protect its unfinished core.
+```text
+private beta in preparation
+marketplace not published
+not commercial-ready
+```
 
-The project should be understood as a serious engineering investigation into decision memory, audit and Human GO for AI-assisted software development.
-
-Not as a finished product launch.
+Any stronger readiness claim requires a separate verified decision.
