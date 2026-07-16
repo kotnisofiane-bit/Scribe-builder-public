@@ -1,173 +1,112 @@
 # Principles
 
-SCRIBE Builder is guided by a small set of principles.
-
-They are not implementation details.
-
-They are constraints for how the project should evolve.
+DUBSAR is guided by product and governance constraints, not by claims of AI autonomy.
 
 ---
 
-## 1. Human judgment remains essential
+## 1. Humans remain the final authority
 
-SCRIBE does not assume that AI systems should replace human responsibility.
+AI roles may plan, code, summarize or audit. Protected decisions remain human.
 
-AI roles may propose, analyze, summarize or audit.
-
-But critical decisions remain human.
-
-A system that removes responsibility does not create governance.
-
-It only hides it.
+A system that hides responsibility does not create governance.
 
 ---
 
 ## 2. Agents do not self-validate
 
-An AI role should not be the final validator of its own work.
+A coding agent's report is not independent proof of its own work.
 
-A coder may propose a change.
-
-An auditor may review it.
-
-SCRIBE may check the process.
-
-But no agent becomes an independent authority.
-
-Validation requires separation of roles, evidence and human decision.
+Role separation, deterministic evidence and human decision remain distinct. No agent creates a Human GO.
 
 ---
 
-## 3. Decision memory is a first-class component
+## 3. Preserve decisions, not only conversations
 
-A project should remember decisions, not only conversations.
-
-Decision memory preserves:
+Long-running projects need durable memory of:
 
 - what was decided;
 - why it was decided;
+- which constraints apply;
 - what evidence supported the decision;
-- what constraints existed;
-- what can be replayed later.
-
-Without decision memory, long-running projects drift.
+- what replaced it later;
+- how the path can be replayed.
 
 ---
 
 ## 4. Governance belongs inside the workflow
 
-Governance should not be an afterthought.
+Governance should be available before protected execution, during review, when evidence is assessed and before human approval.
 
-It should not exist only as a final review.
-
-SCRIBE explores governance as part of the workflow itself:
-
-- before execution;
-- during proposal review;
-- before human approval;
-- after proof is produced.
-
-Governance should be close to the action without becoming invisible.
+It should not be an unexplained final label applied after the work.
 
 ---
 
-## 5. Contracts define execution
+## 5. Contracts make work governable
 
-Before a change is executed, its boundaries should be explicit.
+A governed lot should make its objective, scope, allowed and forbidden actions, expected evidence and Human Gate conditions explicit.
 
-An execution contract defines:
-
-- the objective;
-- the scope;
-- the allowed actions;
-- the forbidden actions;
-- the evidence required;
-- the human decision point.
-
-A contract does not guarantee correctness.
-
-It makes the work governable.
+A contract does not guarantee correctness. It makes divergence visible.
 
 ---
 
-## 6. Evidence matters more than explanations
+## 6. Declarations are not verification
 
-AI systems can explain convincingly.
+DUBSAR distinguishes what an agent or tool claims from what an identified deterministic verifier has checked.
 
-That is not enough.
-
-A governed system needs evidence:
-
-- what changed;
-- what was checked;
-- what passed;
-- what failed;
-- what was approved;
-- what can be verified later.
-
-Explanations are useful.
-
-Evidence is durable.
+Missing or invalid evidence must remain visible. Confidence and fluent explanation do not become proof.
 
 ---
 
-## 7. Replay should always be possible
+## 7. Replay preserves continuity
 
-A project should be able to reconstruct the path of an important decision.
+The meaningful path should remain reconstructable:
 
-Replay does not mean preserving every word of every conversation.
+```text
+Mission → Decision → Contract → Proposal → Audit → Evidence → Human Gate → Result
+```
 
-It means preserving the meaningful sequence:
-
-intent, contract, proposal, audit, evidence, decision and result.
-
-If a decision cannot be replayed, it is difficult to govern.
+Replay does not require storing every token of every conversation.
 
 ---
 
-## 8. Systems should fail closed
+## 8. Fail closed at protected boundaries
 
-When uncertainty appears, the system should not silently continue.
+When required scope, evidence, identity or approval is missing, protected movement should stop rather than continue silently.
 
-If scope is unclear, stop.
-
-If evidence is missing, stop.
-
-If approval is required, stop.
-
-If boundaries are violated, stop.
-
-Failing closed protects the project from invisible drift.
+Fail-closed behavior must be targeted. DUBSAR should not interrupt harmless reads merely to look strict.
 
 ---
 
-## 9. Simplicity enables trust
+## 9. Reuse the host instead of rebuilding it
 
-A governance system that is too complex becomes difficult to trust.
+Claude Code already provides intelligence, tools, editing, tests, sub-agents and worktrees.
 
-SCRIBE should prefer clear structures over impressive mechanisms.
-
-The system should be understandable.
-
-A human should be able to know:
-
-- what is being proposed;
-- why it matters;
-- what evidence exists;
-- what decision is required.
+DUBSAR adds governed project state. It should not duplicate the host's native capabilities or move proprietary Core logic into the plugin.
 
 ---
 
-## 10. Governance is continuous
+## 10. Public surfaces stay thin and honest
 
-Governance is not a single checkpoint.
+The public repository may distribute the thin plugin and explain the product.
 
-It is a continuous property of the workflow.
+The private Core, internal policies, confidential proofs, secrets and tester data remain private.
 
-Each iteration should preserve more clarity than it consumes.
+Every public capability claim must distinguish what exists, what is in private beta and what is only future direction.
 
-Each decision should make the project easier to understand later.
+---
 
-SCRIBE does not attempt to replace human responsibility.
+## 11. Compatibility before nominal purity
 
-It attempts to make it easier to exercise.
+The public brand is DUBSAR.
+
+Internal `scribe` repository, route, command, MCP, token or storage identifiers may remain temporarily where immediate renaming would break the beta. Migration should be deliberate and testable.
+
+---
+
+## 12. Each iteration must produce user-visible progress
+
+Tests and safety boundaries are necessary, but a macro-lot should also complete a user sentence such as:
+
+> In Claude Code, the user can now start, resume, understand or review a governed DUBSAR project.
+
+DUBSAR exists to make AI-assisted projects more coherent, not to accumulate internal proofs with no visible product result.
