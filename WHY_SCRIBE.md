@@ -1,146 +1,110 @@
-# Why SCRIBE?
+# Why DUBSAR?
 
-SCRIBE did not start with a business plan.
+DUBSAR began with a practical problem:
 
-It started with a practical problem.
+> How can an AI-assisted software project remain coherent when it lasts longer than one chat, one pull request or one agent session?
 
-How can AI remain useful on projects that last weeks, months or years?
+In short interactions, an AI coding tool can be remarkably effective. Long-running projects are different.
 
-During short conversations, AI can be remarkably effective.
+Decisions accumulate. Constraints change. Evidence is scattered. Context is compacted or restarted. A new session can produce a locally reasonable answer that quietly contradicts what the project previously decided.
 
-Long-running projects are different.
+The challenge is no longer only generating code.
 
-Decisions accumulate.
-
-Context evolves.
-
-Assumptions change.
-
-Without structure, projects gradually drift.
-
-The challenge is no longer only generating answers.
-
-The challenge becomes preserving coherence.
+The challenge is preserving project coherence.
 
 ---
 
-## An engineering observation
+## The engineering observation
 
-SCRIBE emerged from sustained work with multiple AI models on real software projects.
-
-The observation was simple:
-
-The more capable the models became, the more coordination mattered.
-
-Power alone was not enough.
+As models became more capable, the missing layer became clearer.
 
 Projects also needed:
 
-- continuity;
+- a persistent Mission;
 - decision memory;
-- explicit contracts;
-- evidence;
-- audit;
-- replay;
-- human judgment.
+- explicit contracts and boundaries;
+- evidence that can be distinguished from claims;
+- audit and role separation;
+- replay across sessions;
+- explicit human judgment for protected movement.
 
-SCRIBE exists to explore that observation.
+DUBSAR exists to provide that project layer around existing AI coding tools.
 
 ---
 
 ## A different question
 
-Many AI systems ask:
+Many systems ask:
 
 > How can AI become more autonomous?
 
-SCRIBE asks another question:
+DUBSAR asks:
 
-> How can humans and AI collaborate more reliably over time?
-
-The distinction matters.
+> How can humans and AI build more reliably over time?
 
 Autonomy and reliability are not the same objective.
 
-SCRIBE does not begin with the assumption that AI should replace more human responsibility.
-
-It begins with the assumption that human responsibility needs better structure around it.
+DUBSAR does not assume that adding more agents or more freedom automatically creates better project governance. It assumes that human responsibility needs durable memory, evidence and clearer decision boundaries.
 
 ---
 
-## From conversation to coordination
+## From conversation to project memory
 
-Most AI tools begin with a conversation.
+Conversation remains useful. It helps explore, explain and propose.
 
-That is useful.
+But a conversation is not a governed project memory.
 
-But a conversation is not a project memory.
+A long-running project needs to preserve:
 
-A conversation can suggest, explain and accelerate.
+- what became a decision;
+- why it was accepted;
+- which constraints still apply;
+- what evidence exists;
+- what was merely declared;
+- which Human Gate was required;
+- how the decision path can be reconstructed later.
 
-A governed project must also preserve:
-
-- what was decided;
-- why it was decided;
-- what evidence supported it;
-- what constraints existed;
-- what was approved;
-- what can be replayed later.
-
-SCRIBE explores the transition from AI conversations to governed collaboration.
+DUBSAR does not attempt to remember everything. It attempts to remember what the project depends on.
 
 ---
 
-## Building quietly
+## Why Claude Code first?
 
-SCRIBE is not being developed to create noise.
+Claude Code already provides a capable environment for planning, editing, tools, tests, sub-agents and worktrees.
 
-It is being developed to answer an engineering question.
+DUBSAR should not rebuild those capabilities.
 
-Progress is measured by clarity, correctness and proof.
-
-Not by attention.
-
-Every public document should clarify the project.
-
-Not promote certainty.
-
-SCRIBE is not an attempt to convince.
-
-It is an attempt to explore.
+The first product is therefore a thin Claude Code plugin connected through a local runtime to a private Core. Claude Code continues to act. DUBSAR preserves the Mission and governed project state around those actions.
 
 ---
 
-## Why publish this now?
+## Why a private Core?
 
-The private engine is still evolving.
+The public plugin must remain small enough to inspect and distribute, while the proprietary decision and governance mechanisms remain protected and consistent.
 
-The public repository does not expose that engine.
-
-It documents the reasoning behind the project.
-
-That matters because ideas also need memory.
-
-A project should not only preserve its code.
-
-It should preserve the question that made the code necessary.
+The private Core owns canonical Mission, contract, decision, evidence, audit and Human Gate state. The public repository can document the concepts and distribute the thin plugin without exposing the private engine.
 
 ---
 
-## An ongoing exploration
+## Why publish this repository?
 
-This repository documents an exploration.
+Because a product needs a clear public source of truth.
 
-The architecture will evolve.
+This repository is intended to become the single public home for:
 
-The implementation will evolve.
+- DUBSAR's purpose and doctrine;
+- user and beta documentation;
+- the Claude Code Marketplace package when ready;
+- security, privacy and release information.
 
-The vocabulary may evolve.
+The Marketplace package is not published yet, and the project is not commercial-ready.
 
-The core principles should remain.
+---
 
-SCRIBE Builder begins with software development.
+## The broader question
 
-The broader question is larger:
+DUBSAR begins with software development and Claude Code.
 
-> How should humans and AI build together?
+The broader question remains:
+
+> How should humans and AI build together when the work must remain understandable, accountable and resumable over time?
