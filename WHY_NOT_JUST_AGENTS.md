@@ -1,144 +1,106 @@
 # Why Not Just Agents?
 
-AI agents can be useful.
+AI agents are useful. Multiple agents can also be useful.
 
-Multiple AI agents can also be useful.
+DUBSAR does not reject agentic development. It asks a different question:
 
-SCRIBE does not reject agentic development.
-
-It asks a different question:
-
-> What does the project remember when the agent session ends?
+> What does the project remember, verify and require when the agent session ends?
 
 ---
 
-## The problem is not the number of agents
+## More agents do not automatically create governance
 
-Adding more agents does not automatically create better project governance.
-
-A project can use one agent or several and still suffer from:
+A project can use one agent or many and still suffer from:
 
 - forgotten decisions;
 - unclear authority;
-- missing evidence;
+- missing or self-reported evidence;
 - repeated assumptions;
 - scope drift;
 - weak replay;
-- human approval without enough context.
+- human approval without the relevant dossier.
 
-The issue is not only who speaks.
-
-The issue is how proposals become decisions.
+The issue is not only who speaks. The issue is how proposed work becomes governed project movement.
 
 ---
 
-## Agent-to-agent interaction is not enough
+## Agent collaboration is not durable project state
 
-Agents can exchange messages.
+Agents can exchange messages, critique work and produce plans, patches or reviews.
 
-They can critique each other.
+A long-running project still needs to know:
 
-They can produce plans, patches and reviews.
+- which Mission is active;
+- which decisions and constraints apply;
+- what the current lot permits;
+- what evidence is expected;
+- what was merely declared;
+- what was independently verified;
+- what requires a Human Gate;
+- how the path can be resumed later.
 
-But a long-running project also needs a durable structure around those interactions.
-
-It needs to know:
-
-- what memory applies;
-- what constraints are locked;
-- what evidence is required;
-- what counts as Human GO;
-- what must stop the process;
-- what should be replayable later.
-
-Without that structure, agents may collaborate fluently while the project gradually loses coherence.
+Agent conversation alone does not guarantee those properties.
 
 ---
 
-## SCRIBE focuses on the project layer
+## DUBSAR focuses on the project layer
 
-SCRIBE does not begin by trying to control intelligence.
+DUBSAR does not manage agents as personalities.
 
-It begins by making proposed project movement bounded and reviewable.
+It governs the project state around their work:
 
-Before a proposal can safely move a project forward, the system should know:
+```text
+Mission
+  → decisions and constraints
+  → bounded contract
+  → agent proposal or execution
+  → audit and evidence
+  → Human Gate
+  → result and replay
+```
 
-- what is being proposed;
-- which prior decisions apply;
-- which constraints must remain visible;
-- what evidence is required;
-- whether Human GO is needed;
-- what can be replayed later.
-
-Governance becomes meaningful because project movement is structured.
-
----
-
-## One project memory around existing workflows
-
-A user should not have to manually preserve context across disconnected agent sessions.
-
-SCRIBE explores a model where existing AI coding workflows can be surrounded by a shared decision-memory and audit layer.
-
-The agent may propose.
-
-SCRIBE checks memory, constraints and evidence.
-
-The human decides.
-
-The decision path remains replayable.
+The host agent remains capable. The project becomes more coherent.
 
 ---
 
-## Role separation remains useful
+## Why Claude Code remains in control of execution
 
-Earlier SCRIBE documents use Architect, Coder and Auditor roles to explain separation of responsibilities.
+Claude Code already supplies planning, tools, editing, tests, sub-agents and worktrees.
 
-That doctrine remains valid:
+DUBSAR should not create a competing coding agent or orchestration engine merely to claim ownership of execution. It uses Claude Code as the first host while keeping Mission, decision, evidence and Human Gate truth in the DUBSAR Core.
+
+---
+
+## Role separation still matters
+
+Architect, coder, auditor and verifier are useful responsibility patterns:
 
 - framing is not execution;
-- proposing is not approval;
-- auditing is not final authority;
-- no agent validates itself.
+- proposing is not verification;
+- verification is not final approval;
+- no agent validates itself;
+- no agent creates a Human GO.
 
-But those roles should not be mistaken for the current public product architecture.
-
-SCRIBE does not need to host a full internal team of agents in order to be useful.
-
-Whether one agent or several agents are involved, useful AI work needs boundaries.
+These roles do not require DUBSAR to host a full proprietary team of agents. They define how authority and evidence should remain separated when different roles are used.
 
 ---
 
-## Governed project movement
+## One governed memory across sessions
 
-SCRIBE does not govern AI agents as personalities.
+A user should not have to rebuild the project's core reasoning manually every time Claude Code restarts or compacts context.
 
-It governs how proposed project changes move through memory, constraints, audit, evidence and Human GO.
+DUBSAR provides the continuing Mission and decision memory around those sessions.
 
-That distinction matters.
-
-The goal is not to make agents less capable.
-
-The goal is to make project movement more reliable.
-
-A project should not depend only on the fluency of agent conversation.
-
-It should depend on a process that preserves memory, evidence and responsibility.
+Claude Code may propose and act. DUBSAR preserves the governed project context. The human decides protected movement.
 
 ---
 
 ## Summary
 
-AI agents can produce useful work.
+Long-running AI projects need more than agent activity.
 
-Multiple agents can produce even more useful work.
+They need durable Mission state, decisions, constraints, evidence, audit, Human Gates and replay.
 
-But long-running projects need more than agent activity.
+DUBSAR adds that project layer.
 
-They need memory, constraints, audit, evidence, Human GO and replay.
-
-SCRIBE explores that project layer.
-
-Not more intelligence.
-
-More reliable project movement.
+Not more intelligence. More reliable project movement.
