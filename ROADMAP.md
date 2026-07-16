@@ -1,195 +1,151 @@
 # Roadmap
 
-SCRIBE is an ongoing engineering exploration.
+This roadmap describes the current direction of DUBSAR. It is not a delivery guarantee.
 
-This roadmap describes the current direction of the project.
-
-It is not a delivery promise.
-
-It is not a public launch plan.
-
-It is a map of capabilities being explored while the private core remains protected.
+The immediate goal is a testable private beta for Claude Code, not a general platform and not a collection of speculative product surfaces.
 
 ---
 
-## Current direction
-
-SCRIBE begins with AI-assisted software development.
-
-The current product direction is a hybrid model:
+## Current product path
 
 ```text
-Existing AI coding workflow
-        ↓
-SCRIBE Launcher / connector surface
-        ↓
-Private service boundary
-        ↓
-Private SCRIBE decision core
-        ↓
-Evidence, memory and Human GO surfaced for review
+Claude Code
+  → DUBSAR plugin
+  → DUBSAR Desktop / local runtime
+  → private service boundary
+  → private Core
+  → governed project state and human decisions
 ```
 
-Public surfaces should remain thin and explainable.
-
-Private logic remains private.
+The public repository will contain the documentation and thin Marketplace package. The proprietary Core remains private.
 
 ---
 
-## Capability 1 — Decision memory
+## 1. Public product realignment
 
-SCRIBE treats decision memory as a first-class component of AI-assisted development.
-
-The project should remember:
-
-- what was decided;
-- why it was decided;
-- what constraints existed;
-- what evidence supported the decision;
-- what changed afterward;
-- what can be replayed later.
-
-Conversation history is not enough.
+- replace the legacy SCRIBE / Builder / Launcher story with DUBSAR;
+- align the website, plugin documentation and public repository;
+- preserve internal `scribe` identifiers where immediate renaming would break compatibility;
+- maintain one public repository for both doctrine and Marketplace distribution;
+- keep the Marketplace unpublished until the package and licence are approved.
 
 ---
 
-## Capability 2 — Locked constraints and contracts
+## 2. Private beta packaging
 
-A proposed change needs boundaries.
+A tester should be able to install the supported Desktop/runtime and Claude Code plugin without understanding the internal repository architecture.
 
-SCRIBE explores ways to make constraints visible before an agent proposes, modifies or moves work forward.
+Required outcomes:
 
-This includes:
-
-- allowed scope;
-- forbidden areas;
-- expected evidence;
-- required checks;
-- Human GO points;
-- fail-closed conditions.
+- deterministic package assembly;
+- clean installation and removal;
+- bounded diagnostics;
+- runtime version compatibility;
+- no secrets in plugin files or logs;
+- honest failure when Desktop or the private service is unavailable.
 
 ---
 
-## Capability 3 — Evidence and replay
+## 3. Unified start and Mission continuity
 
-A serious project needs reviewable proof.
+From Claude Code, the user should enter DUBSAR through one clear start flow.
 
-SCRIBE explores proof structures such as:
+The product should:
 
-- summaries;
-- diffs;
-- hashes;
-- verdicts;
-- replay data;
-- content-free evidence;
-- sanitized exports.
-
-The objective is not to expose sensitive implementation details.
-
-The objective is to make reasoning and proof durable.
+- recognize the workspace;
+- resume an existing Mission or propose creating one;
+- recover after restart and context compaction;
+- show the active lot and next action;
+- open or link to the local cockpit;
+- expose access and component status without leaking secrets.
 
 ---
 
-## Capability 4 — SCRIBE Launcher
+## 4. Decision memory and governed lots
 
-SCRIBE Launcher is the first product surface being explored.
+DUBSAR should preserve:
 
-Its direction is to act as a thin guardrail / connector around existing AI coding workflows.
+- decisions and their reasons;
+- active and replaced constraints;
+- Mission and lot identity;
+- execution contracts;
+- relevant evidence;
+- audit and Human Gate state;
+- replayable transitions.
 
-Depending on the host environment, future delivery forms may include a connector, plugin or MCP-compatible integration.
-
-Current status:
-
-- no public installation package;
-- no stable public connector API;
-- no public MCP server package;
-- no commercial availability;
-- private development only.
-
-Launcher must not bypass memory, evidence or Human GO.
+Conversation history remains useful but is not the canonical project memory.
 
 ---
 
-## Capability 5 — Eyes of SCRIBE
+## 5. Evidence, audit and Human Gates
 
-A governed system needs to be visible.
+The beta must distinguish:
 
-Eyes of SCRIBE is the cockpit / observation direction.
+- agent declarations;
+- deterministic verification;
+- missing or invalid evidence;
+- audit findings;
+- human decisions.
 
-It should help users understand:
+No agent report becomes proof by wording alone. No AI role creates a Human GO.
 
-- what SCRIBE saw;
-- what was checked;
-- what was excluded;
-- what evidence exists;
-- what decision is required;
-- what can be replayed.
-
-The cockpit should reduce cognitive load.
-
-It should not hide responsibility or pretend to be an autonomous authority.
+The cockpit and plugin should make these distinctions visible without overwhelming the user.
 
 ---
 
-## Capability 6 — Public scan and safe visibility
+## 6. Controlled tester beta
 
-SCRIBE may explore public or read-only scan surfaces.
+The first external beta should begin with a small number of testers and real projects of bounded risk.
 
-The goal is to inspect project context without exposing private logic or granting uncontrolled write access.
+Success is not measured by the absence of all bugs. It is measured by whether testers can:
 
-Any future public scan direction must remain clear about:
-
-- what was inspected;
-- what was not inspected;
-- what evidence supports a claim;
-- what remains uncertain;
-- when Human GO is still required.
-
-No sensitive project history, secrets, private rules or operational proof artifacts should be exposed.
+- install the product;
+- start it from Claude Code;
+- resume a Mission;
+- understand the current governed state;
+- see failures and next actions clearly;
+- provide actionable feedback.
 
 ---
 
-## Capability 7 — Controlled integrations
+## 7. Broader adapters
 
-Future integrations may connect SCRIBE to existing development workflows.
+Only after the Claude Code beta is coherent should DUBSAR evaluate adapters for Codex, Cursor or other environments.
 
-Possible forms may include:
-
-- GitHub-facing review surfaces;
-- AI coding assistant connectors;
-- IDE-adjacent surfaces;
-- plugin or MCP-compatible delivery forms;
-- proof export workflows.
-
-These are possible directions, not public availability claims.
-
-Connectivity should not bypass memory, evidence or human decision.
+Those adapters should reuse the same Core concepts rather than duplicating product logic in each host.
 
 ---
 
-## What is not planned now
+## 8. Multi-session and enterprise direction
 
-The following are intentionally not current public commitments:
+Possible later work includes:
 
-- commercial launch;
-- public release of the private core;
-- public install package;
-- stable public API;
-- autonomous agent marketplace;
-- replacing developers;
-- removing human decision points;
-- publishing internal prompts, logs, journals, proofs or write mechanisms.
+- coordinated parallel sessions or worktrees;
+- stronger team roles and organization controls;
+- enterprise deployment models;
+- expanded review and audit workflows;
+- additional controlled integrations.
 
-SCRIBE is still an exploration.
-
-The current focus is correctness, clarity, proof, Human GO and protecting the public/private boundary.
+These are future directions, not current beta promises.
 
 ---
 
-## Summary
+## Explicitly out of scope for the current public claim
 
-Technology can move quickly.
+- autonomous approval, merge or deployment;
+- a public release of the proprietary Core;
+- certified legal, security or compliance guarantees;
+- production-ready enterprise service;
+- general autonomous multi-agent orchestration;
+- operational Codex or Cursor support;
+- commercial availability.
 
-SCRIBE should evolve deliberately.
+---
 
-The project will continue to grow only where the public surface can remain honest, the private core can remain protected, and the decision path can remain bounded, evidenced and replayable.
+## Current status
+
+```text
+private beta in preparation
+marketplace not published
+not commercial-ready
+```
