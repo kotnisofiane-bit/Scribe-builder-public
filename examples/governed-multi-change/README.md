@@ -1,251 +1,146 @@
-# Governed Multi-Change Demo
+# Governed Multi-Change Example
 
-This example is fictional.
+This fictional example illustrates how DUBSAR can govern a coherent lot containing several related file changes without collapsing distinct protected decisions into an ambiguous approval.
 
-It does not contain the private SCRIBE engine.
-
-Its purpose is to illustrate a core SCRIBE principle:
-
-A request containing multiple changes should not become one uncontrolled approval.
-
-N changes require N governed loops.
-
-There is no “approve all” shortcut.
+It does not contain or describe the private Core implementation.
 
 ---
 
 ## Scenario
 
-A human asks an AI-assisted system to improve a small software project.
+A user asks Claude Code to fix a bug, add the regression test and update the related documentation.
 
-The request contains three separate changes:
+These changes form one coherent product outcome. DUBSAR does not need to create three artificial macro-lots merely because three files or change types are involved.
 
-1. Fix a bug.
-2. Add a test.
-3. Update documentation.
+The governed unit can be:
 
-A normal AI workflow may treat this as one task.
-
-SCRIBE treats it as one intent containing three distinct changes.
-
-Each change must be governed separately.
+```text
+Mission
+  → Lot: Correct behavior and document it
+      → code scope
+      → test scope
+      → documentation scope
+      → expected evidence
+      → Human Gate conditions
+```
 
 ---
 
-## Normal agent workflow
+## Why a contract is still needed
 
-A normal agent workflow may look like this:
+A coherent lot can still drift.
 
-```text
-Human request
-  → Agent modifies several things
-  → Agent summarizes the result
-  → Human approves the whole batch
-```
+The execution contract should make clear:
 
-This can be fast.
-
-But it creates risk.
-
-The human may approve several changes at once without seeing which decision belongs to which change.
-
-Evidence may become grouped.
-
-Audit may become vague.
-
-Replay becomes harder.
+- the exact behavior to correct;
+- the production files allowed to change;
+- the test expected;
+- the documentation allowed to change;
+- forbidden refactors;
+- required evidence;
+- whether merge or another protected action requires a Human Gate.
 
 ---
 
-## SCRIBE mediated workflow
+## Claude Code's role
 
-SCRIBE separates the global intent from the individual changes.
+Claude Code may plan and implement the lot using its native tools.
 
-```text
-Human Intent
-  → Change 1
-  → Change 2
-  → Change 3
-```
+It may report:
 
-Each change receives its own governed loop:
+- changed paths;
+- tests it claims to have run;
+- outputs it produced;
+- reserves or failures.
 
-```text
-Change
-  → Execution Contract
-  → Proposal
-  → Audit
-  → Evidence
-  → Human Decision
-  → Controlled Execution
-  → Replay
-```
-
-The system may present the work as one project.
-
-But governance remains separated.
+That report remains a declaration until the relevant evidence is independently checked.
 
 ---
 
-## Change 1 — Bug fix
+## DUBSAR's role
 
-```text
-Objective:
-Fix the incorrect return value in the selected function.
+DUBSAR relates the work to the active Mission and contract.
 
-Scope:
-One function.
-No refactor.
-No documentation change.
+It should help answer:
 
-Required evidence:
-- proposed patch;
-- audit result;
-- human approval;
-- test result;
-- replay summary.
-```
+- Did the change remain inside the allowed scope?
+- Was the expected regression test supplied?
+- Which results are declared and which are verified?
+- Did an unrelated refactor appear?
+- Is required evidence missing or invalid?
+- Is a Human Gate required before merge?
 
-The coder role may propose a patch.
-
-The auditor role may review it.
-
-SCRIBE checks whether the proposal stays inside the contract.
-
-The human approves or rejects this change alone.
+DUBSAR does not rewrite the code itself and does not create a Human GO.
 
 ---
 
-## Change 2 — Test addition
+## Example evidence view
 
 ```text
-Objective:
-Add a regression test for the fixed behavior.
+Lot: Correct return value and document behavior
 
-Scope:
-Test file only.
-No production code change.
+Production change:
+  status: declared
+  scope: within contract
 
-Required evidence:
-- proposed test;
-- audit result;
-- human approval;
-- test run result;
-- replay summary.
+Regression test:
+  status: verified
+  verifier: bounded test runner
+
+Documentation update:
+  status: declared
+
+Unrelated refactor:
+  status: absent
+
+Human Gate:
+  required before merge
 ```
 
-This change is related to the bug fix.
-
-But it remains a separate decision.
-
-The human may approve the bug fix and reject the test change, or the opposite.
-
-SCRIBE does not collapse them into one approval.
+A real result may differ. The important point is that the evidence status is explicit.
 
 ---
 
-## Change 3 — Documentation update
+## When decisions should remain separate
 
-```text
-Objective:
-Update documentation to mention the corrected behavior.
+Related file changes may belong to one lot, but separate human decisions are still appropriate when the actions have independent risk or authority.
 
-Scope:
-Documentation only.
-No code change.
-No test change.
+Examples:
 
-Required evidence:
-- proposed documentation change;
-- audit result;
-- human approval;
-- replay summary.
-```
+- approve the code change but reject a new external dependency;
+- accept a local migration but refuse production deployment;
+- approve the implementation but request revision before merge;
+- accept one risk exception while rejecting another.
 
-Documentation is not treated as invisible.
-
-It has its own scope, contract, evidence and decision.
+DUBSAR should preserve those distinctions without forcing every small edit into its own bureaucratic loop.
 
 ---
 
-## Why separation matters
+## Review packet
 
-When several changes are approved together, responsibility becomes blurry.
-
-A human may later ask:
-
-- Which change introduced this behavior?
-- Was this specific change approved?
-- What evidence supported it?
-- Was the audit about the whole batch or this exact change?
-- Can this decision be replayed?
-
-SCRIBE makes each decision traceable.
-
-The goal is not to slow the project down.
-
-The goal is to avoid hiding multiple decisions inside one approval.
-
----
-
-## No approve-all
-
-SCRIBE does not treat a batch as a single decision when the batch contains separate changes.
+Before protected movement, the human-facing dossier can summarize:
 
 ```text
-Bad:
-Approve all changes.
-
-Better:
-Approve change 1.
-Reject change 2.
-Request revision on change 3.
+Mission and lot
+Applicable decisions and constraints
+Contracted scope
+Changed paths
+Declared results
+Verified evidence
+Missing or invalid evidence
+Audit findings
+Residual risks
+Decision requested
 ```
 
-This allows human judgment to remain precise.
-
-It also allows proof and replay to remain meaningful.
-
----
-
-## Proof summary
-
-At the end, SCRIBE can produce a proof summary.
-
-```text
-Global intent:
-Improve a small software project.
-
-Change 1:
-Bug fix — approved — executed — evidence recorded.
-
-Change 2:
-Regression test — rejected — not executed — reason recorded.
-
-Change 3:
-Documentation update — revision requested — not executed — reason recorded.
-```
-
-The result is not only a final state.
-
-It is a decision path.
+The human can then approve, reject or request revision for the specific protected movement presented.
 
 ---
 
 ## Summary
 
-The key difference is not that SCRIBE uses more agents.
+The goal is neither “approve everything” nor “create one process per file”.
 
-The key difference is that SCRIBE separates decisions.
+The goal is a coherent governed lot with explicit scope, evidence and human authority where it matters.
 
-A normal workflow may optimize for speed.
-
-SCRIBE optimizes for governed coordination.
-
-N changes require N loops.
-
-No agent validates itself.
-
-No batch hides human responsibility.
-
-No “approve all” bypasses decision memory.
+Claude Code builds. DUBSAR preserves the governed project state. Humans decide protected movement.
