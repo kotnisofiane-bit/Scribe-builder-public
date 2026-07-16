@@ -171,11 +171,12 @@ Older diagrams, RFCs and examples are being reviewed during the brand and produc
 
 ## Current status
 
-- DUBSAR private beta packaging is in preparation.
-- The Marketplace package is **not published**.
+- The thin plugin source is publicly visible and downloadable in this repository.
+- The DUBSAR Claude Code Marketplace is not yet activated or announced.
+- There is no supported public installation yet.
 - No public release or production deployment is available.
 - The repository rename has not been performed.
-- The Core remains private.
+- The private Backend and Core remain private.
 - DUBSAR is **not commercial-ready**.
 
 The project accepts ordinary beta bugs. It does not accept false claims of proof, verification or human approval.

@@ -48,8 +48,9 @@ These statements describe active engineering work. They are not a claim that eve
 
 - Public product repository: this existing repository, currently under a legacy GitHub name.
 - Public DUBSAR documentation: being realigned in this review.
-- Claude Code Marketplace package: **not published**.
-- Public installation command: **not active**.
+- Thin plugin source: publicly visible and downloadable in this repository.
+- DUBSAR Claude Code Marketplace: not yet activated or announced.
+- Supported public installation: none yet.
 - Public release: none.
 - Production deployment: none.
 - Commercial availability: none.
@@ -112,7 +113,8 @@ Current canonical labels:
 
 ```text
 private beta in preparation
-marketplace not published
+thin plugin source publicly visible; no supported public installation yet
+marketplace not yet activated or announced
 not commercial-ready
 ```
 

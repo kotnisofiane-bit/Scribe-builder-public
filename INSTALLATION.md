@@ -1,8 +1,8 @@
 # Installation
 
-DUBSAR is not publicly installable from this repository yet.
+The thin plugin source is publicly visible and downloadable in this repository, but there is no supported public installation yet.
 
-The private beta package requires a coordinated DUBSAR Desktop/local runtime and Claude Code plugin. The Marketplace package is still under review and has not been published.
+The DUBSAR Claude Code Marketplace is not yet activated or announced. The private beta requires a coordinated DUBSAR Desktop/local runtime plus the Claude Code plugin; all steps below are **available after Marketplace publication**.
 
 ---
 
@@ -53,8 +53,9 @@ Do not install from an unpublished legacy Marketplace path or copy a private sta
 ## Publication status
 
 ```text
-public installation: unavailable
-marketplace: not published
+thin plugin source: publicly visible and downloadable
+supported public installation: none yet
+marketplace: not yet activated or announced
 private beta instructions: controlled distribution only
 not commercial-ready
 ```

@@ -36,32 +36,41 @@ The exact package tree must come from the reviewed private staging source and be
 
 ## Current state
 
-A Marketplace package was previously assembled and validated in the private plugin repository under the legacy SCRIBE name.
+The DUBSAR Claude Code plugin runtime is now **vendored** into this repository at
+`plugins/scribe/`, clean-room reassembled from a single pinned private commit
+(`scribe-claude-code-plugin@c2878313`), with `.claude-plugin/marketplace.json` and
+per-file integrity in `INTEGRITY.md`. The thin plugin source is therefore
+**publicly visible and downloadable** here.
 
-That work is preserved, but it is **not published** and should not be copied unchanged because:
+However, the **DUBSAR Claude Code Marketplace is not yet activated or announced**,
+and there is **no supported public installation yet**:
 
-- the public product name is now DUBSAR;
-- public descriptions must reflect the plugin-first beta;
-- the package name and metadata require review;
-- the licence is still a draft requiring human approval;
-- the security contact must be finalized;
-- package integrity must be regenerated from the final DUBSAR plugin commit.
+- the public product name is DUBSAR; internal `scribe` / `scribe-bridge` remain only
+  as documented historical technical identifiers;
+- public descriptions reflect the plugin-first beta;
+- the distribution licence is now **in force** (LICENSE, ratified 2026-07-16) — this
+  covers only the thin plugin, never the private Backend/Core;
+- a public security contact is designated (security@dubsar.ai);
+- integrity hashes are regenerated for the vendored tree (INTEGRITY.md).
 
 ---
 
 ## Publication blockers
 
-The Marketplace must remain unpublished until all of the following are complete:
+Completed in this review:
+
+- ✅ the plugin runtime is vendored from a pinned reviewed private commit (`plugins/scribe/`);
+- ✅ integrity hashes are regenerated for the vendored tree (`INTEGRITY.md`);
+- ✅ the distribution licence is explicitly approved and in force (`LICENSE`, ratified 2026-07-16 by Sofiane Kotni);
+- ✅ a public security contact is designated (`security@dubsar.ai`) — to be confirmed live and monitored before activation.
+
+Still required before the Marketplace is activated or announced:
 
 1. DUBSAR public name and copy are consistent across the site, Desktop, plugin and repository.
 2. The final public plugin name and description are validated.
-3. The plugin runtime is vendored from a pinned reviewed private commit.
-4. Integrity hashes are regenerated for the final vendored tree.
-5. The distribution licence is read and explicitly approved by the human owner.
-6. A real security contact is published.
-7. Privacy and beta limitations are consistent with the actual data flow.
-8. Strict plugin validation passes.
-9. Clean installation and removal are tested on the supported environment.
+3. Privacy and beta limitations are consistent with the actual data flow.
+4. Clean installation and removal are tested on the supported environment.
+5. Explicit human GO to activate/announce the Marketplace (and the separate repository rename).
 10. Beta access and Desktop prerequisites are documented honestly.
 11. Human GO to publish is explicit.
 
@@ -113,7 +122,7 @@ It must not distribute:
 ```text
 DUBSAR Marketplace: NOT PUBLISHED
 public repository rename: NOT PERFORMED
-licence: PENDING HUMAN APPROVAL
-security contact: PENDING
+licence: IN FORCE (ratified 2026-07-16 by Sofiane Kotni)
+security contact: designated (security@dubsar.ai) — live monitoring to be confirmed
 not commercial-ready
 ```

@@ -16,7 +16,7 @@ auditor reproduce and verify it byte-for-byte.
 | Plugin version | `0.11.1` (plugin.json == package.json == marketplace.json) |
 | Vendored files (exact count) | 49 |
 | Generated (UTC) | 2026-07-16 |
-| Vendored-tree aggregate SHA-256 | `9a037a17d6a4ce7f07fcb79522fa81cd66d692ddce05e1f61d5d655de8548f06` |
+| Vendored-tree aggregate SHA-256 | `df9cee3af505c606824edd27485d471a418e75593468426ff10c00501bb0f38f` |
 
 **Naming:** DUBSAR is the product name. Some internal technical identifiers still
 use `scribe` (package `scribe-bridge`, dir `plugins/scribe`, `/scribe-*`
@@ -37,12 +37,13 @@ Only these paths were taken from the pinned commit:
 - `LICENSE` — see the note below
 
 The 48 runtime files (everything except `LICENSE`) are **byte-identical** to the
-pinned plugin's allowlisted files. `plugins/scribe/LICENSE` (and the repo-root
-`LICENSE`) is intentionally the explicit **DUBSAR / SCRIBE private-beta
-evaluation licence (DRAFT, not yet in force)** — NOT the private repository's
-"all rights reserved / not for distribution" notice, because a public
-distribution repository needs an explicit distribution grant. That licence is the
-one licensing decision a human must ratify before publication.
+pinned plugin's allowlisted files (unchanged since the initial vendoring — their
+hashes below are the same). `plugins/scribe/LICENSE` (and the repo-root
+`LICENSE`) is the explicit **DUBSAR private-beta / evaluation licence, IN FORCE as
+of 2026-07-16, ratified by Sofiane Kotni** — NOT the private repository's "all
+rights reserved / not for distribution" notice, because a public distribution
+repository needs an explicit distribution grant. This licence covers only the thin
+plugin; it grants no rights in the private Backend/Core.
 
 ## Exclusions (formally NOT vendored)
 
@@ -59,14 +60,12 @@ git clone https://github.com/kotnisofiane-bit/scribe-claude-code-plugin
 cd scribe-claude-code-plugin
 git archive c2878313198aceccac078bf9446c5ab45751e424 public-marketplace/plugins/scribe \
   | tar -x -C /tmp/dubsar-verify
-# (equivalently, the 48 runtime files are: git archive <pin> bin src commands hooks \
-#  .claude-plugin/plugin.json .mcp.json package.json)
+# The 48 runtime files equal: git archive <pin> bin src commands hooks \
+#   .claude-plugin/plugin.json .mcp.json package.json
+# LICENSE is intentionally the in-force public beta licence (see note above), not
+# the private plugin's "all rights reserved" notice.
 
-# 2) compare against this repository's plugins/scribe/ tree
-diff -r /tmp/dubsar-verify/public-marketplace/plugins/scribe \
-        <path-to-this-repo>/plugins/scribe   # expect: no differences
-
-# 3) recompute per-file SHA-256 and compare to the table below
+# 2) recompute per-file SHA-256 and compare to the table below
 cd <path-to-this-repo> && find plugins/scribe -type f | sort \
   | while read f; do sha256sum "$f"; done
 ```
@@ -76,7 +75,7 @@ cd <path-to-this-repo> && find plugins/scribe -type f | sort \
 ```
 d47eb5084971927150402e1e29d551ecd748581b62ba31af75666ce86b587917  plugins/scribe/.claude-plugin/plugin.json
 d9449be03caa362853c71c4cc652c1191090d50fcf703c834ba1678d3eaa9e8c  plugins/scribe/.mcp.json
-be38cc4062775d3179720cfc915c03d0e8be22760bf41bc94ae54f5080755daa  plugins/scribe/LICENSE
+d37396163ffa3fb14405d45732a428ec758a056f95b669aba4f407ef6ab977dc  plugins/scribe/LICENSE
 0db9fe83e266721fd7d35a8e7274474e8a11179c066ef5f4e1393f2f9c1ebe1b  plugins/scribe/bin/scribe_bridge_wrapper.mjs
 d5a0566e40f1af683e7f736bf3d075e4c13787df600035e0b064a3c03ae672e4  plugins/scribe/bin/scribe_init.mjs
 2ef8d5b3f5fd3ee8603f0990f044948cf865ea7ab609e15fc230f201747160d6  plugins/scribe/bin/scribe_mcp.mjs
@@ -125,4 +124,4 @@ df57b133a0ac1ff01dc0f233223881e11aa33c493fb076bb249036cb2cb97579  plugins/scribe
 2d30755db9728c2ec0be8af7241b43b6f05b5cd7014cdcb86eddf659f47d2226  plugins/scribe/src/session_context.mjs
 ```
 
-not commercial-ready. not beta-ready. Marketplace NOT published.
+not commercial-ready. Marketplace not yet activated or announced.

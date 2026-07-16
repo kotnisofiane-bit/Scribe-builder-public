@@ -4,7 +4,7 @@ DUBSAR is preparing a controlled private beta and is not commercial-ready.
 
 ## Supported versions
 
-No public release is currently supported. The Marketplace package is not published.
+No public release is currently supported. The thin plugin source is publicly visible and downloadable in this repository, but the DUBSAR Claude Code Marketplace is not yet activated or announced and there is no supported public installation yet.
 
 Private beta testers receive version-specific support instructions through the controlled beta channel.
 
@@ -12,9 +12,7 @@ Private beta testers receive version-specific support instructions through the c
 
 Do not publish suspected vulnerabilities, secrets, access keys, private service URLs, tester data or exploit details in a public GitHub issue.
 
-Until a dedicated public security address is finalized, private beta testers must use the private support channel supplied with their beta invitation.
-
-A real public security contact is a blocker for Marketplace publication.
+Report suspected vulnerabilities privately by email to **security@dubsar.ai**. Private beta testers may also use the private support channel supplied with their beta invitation. Do not open a public GitHub issue for a suspected vulnerability.
 
 ## Scope
 
@@ -46,7 +44,7 @@ During private beta, DUBSAR may change quickly. Valid security reports will be t
 ## Current status
 
 ```text
-public security contact: pending
-marketplace: not published
+public security contact: security@dubsar.ai
+marketplace: not yet activated or announced
 not commercial-ready
 ```
