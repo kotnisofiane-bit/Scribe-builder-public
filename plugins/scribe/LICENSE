@@ -1,0 +1,72 @@
+RECOMMENDED DRAFT — requires human approval before publication.
+=================================================================
+This is a proposed licence prepared for review. It is NOT yet in force and
+MUST be read and approved (and its contact/entity details confirmed) by the
+rights holder before this repository is published. It is the single licensing
+decision that a human must ratify before publication.
+
+SCRIBE — PRIVATE BETA / EVALUATION LICENCE (v0.11.x)
+Copyright (c) 2026 Sofiane Kotni. All rights reserved.
+
+1. DEFINITIONS
+   "Software" means the thin SCRIBE Claude Code plugin distributed in this
+   repository under plugins/scribe/ (the "Plugin") and the accompanying
+   documentation. "You" means the individual or entity granted controlled
+   access to the SCRIBE private beta. "Backend/Core" means the separate,
+   proprietary SCRIBE Backend, Core, and Scribe-Builder components, which are
+   NOT included in, NOT licensed by, and NOT published with this repository.
+
+2. GRANT (LIMITED, PRIVATE BETA)
+   Subject to your continued participation in the controlled SCRIBE private
+   beta and to this licence, the rights holder grants You a personal,
+   non-exclusive, non-transferable, non-sublicensable, revocable licence to
+   install and use the Software solely to evaluate SCRIBE during the private
+   beta. No other rights are granted.
+
+3. RESTRICTIONS
+   You may NOT: (a) redistribute, publish, sublicense, sell, rent, or
+   otherwise make the Software available to any third party; (b) modify, adapt,
+   translate, or create derivative works of the Software; (c) reverse engineer,
+   decompile, or disassemble the Software, except to the extent this
+   restriction is prohibited by applicable law; (d) use the Software for any
+   commercial or production purpose; (e) remove or alter any proprietary
+   notices; or (f) use the Software other than as expressly permitted here.
+
+4. NO RIGHTS TO BACKEND / CORE / SCRIBE-BUILDER
+   This licence grants NO rights of any kind in the Backend/Core or
+   Scribe-Builder, which remain proprietary, unlicensed, and unpublished. The
+   Plugin transmits only bounded metadata to a separately provisioned local
+   Backend and never receives or handles a licence key. Access to the
+   Backend/Core is governed separately and is not conferred by this licence.
+
+5. OWNERSHIP
+   The Software is licensed, not sold. All right, title, and interest in and to
+   the Software, the Backend/Core, and Scribe-Builder remain with the rights
+   holder.
+
+6. BETA STATUS; NO WARRANTY
+   The Software is private, pre-release, evaluation-only software provided
+   "AS IS" and "AS AVAILABLE", without warranty of any kind, express or
+   implied, including any warranty of merchantability, fitness for a particular
+   purpose, title, or non-infringement. It is not commercial-ready and not
+   guaranteed for production use. It may contain defects and may change or be
+   withdrawn at any time.
+
+7. LIMITATION OF LIABILITY
+   To the maximum extent permitted by law, in no event shall the rights holder
+   be liable for any indirect, incidental, special, consequential, or punitive
+   damages, or any loss of data, profits, or business, arising out of or
+   related to the Software, even if advised of the possibility of such damages.
+
+8. TERMINATION
+   This licence is effective until terminated. It terminates automatically,
+   without notice, if You breach any term, or upon the end of your beta access
+   or the beta programme. On termination You must cease all use and remove all
+   copies of the Software.
+
+9. GENERAL
+   This licence does not grant any trademark rights. If any provision is held
+   unenforceable, the remainder stays in effect. Governing law and venue are to
+   be confirmed by the rights holder before publication.
+
+Contact for licensing questions: [TO BE CONFIRMED BY THE RIGHTS HOLDER]

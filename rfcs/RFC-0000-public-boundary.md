@@ -1,8 +1,13 @@
 # RFC-0000 — Public Boundary
 
+> **Legacy technical reference (SCRIBE / Scribe Builder phase).** The product is
+> now **DUBSAR**; "SCRIBE Builder" here is the earlier internal name and is kept
+> only as a historical design reference. The public/private boundary it describes
+> still holds. See the current docs (README, ARCHITECTURE, MARKETPLACE) for DUBSAR.
+
 ## Abstract
 
-This RFC defines the publication boundary for SCRIBE Builder.
+This RFC defines the publication boundary for the project (historically "SCRIBE Builder").
 
 It explains what the public repository may contain and what must remain private.
 

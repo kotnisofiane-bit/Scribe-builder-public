@@ -1,0 +1,18 @@
+{
+  "name": "scribe-bridge",
+  "version": "0.11.1",
+  "description": "DUBSAR — the private Claude Code plugin (technical package scribe-bridge): a thin, read-only wrapper for the local Bridge CLI, part of DUBSAR (Claude Code plugin + local Desktop runtime + private Backend/Core). Canonical command /scribe-init runs a dry local init; exposes the four informational Bridge commands (version, status, capabilities, self-check), the local decision-trace commands (record, replay, digest) that write only to the Bridge's local journal, and the workspace M0 read-only structural attach commands (workspace-attach/status/manifest/detach) that read directory structure only — never file content, never Git. Since 0.8.0 it adds the read-only /scribe-doctor continuity check and minimal, fail-open SessionStart/PreCompact/SessionEnd hooks. Since 0.9.0 it also ships a structure-only marketplace distribution shell (marketplace.json, deterministic SHA-256 packaging, local install/update/uninstall/rollback) — no publication. Since 0.10.0 it adds the metadata-only product access activation seam (/scribe-activate, /scribe-access-status) that prepares a future Backend-owned local activation page — the plugin and Bridge never receive a license key, never call Polar, and enforce nothing. Since 0.11.0 it adds the unified start /scribe-start (SCRIBE-START-1): one metadata-only command that joins or starts the local backend, reflects the access state, recognizes the workspace, resumes the Mission, and opens the loopback Eyes shell. Since 0.11.1 the standard hooks/hooks.json is loaded by auto-discovery only (the redundant manifest \"hooks\" key is removed so the plugin loads cleanly under current Claude Code). Private beta preview — access controlled, production use unsupported. Not commercial-ready.",
+  "author": {
+    "name": "Sofiane Kotni"
+  },
+  "homepage": "https://github.com/kotnisofiane-bit/scribe-claude-code-plugin",
+  "repository": "https://github.com/kotnisofiane-bit/scribe-claude-code-plugin",
+  "license": "UNLICENSED",
+  "keywords": [
+    "scribe",
+    "bridge",
+    "private",
+    "read-only",
+    "wrapper"
+  ]
+}

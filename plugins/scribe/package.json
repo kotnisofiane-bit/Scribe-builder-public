@@ -1,0 +1,38 @@
+{
+  "name": "scribe-claude-code-plugin",
+  "version": "0.11.1",
+  "private": true,
+  "type": "module",
+  "description": "Private, thin, read-only Claude Code wrapper for the SCRIBE Bridge CLI. Private beta preview — access controlled, production use unsupported. Not commercial-ready.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "scribe-bridge-wrapper": "bin/scribe_bridge_wrapper.mjs",
+    "scribe-init": "bin/scribe_init.mjs"
+  },
+  "scripts": {
+    "test": "node --test",
+    "guardrails": "node scripts/plugin_guardrails.mjs",
+    "package:check": "node scripts/package_check.mjs",
+    "smoke:fake": "node scripts/private_install_smoke.mjs --fake",
+    "smoke:real": "node scripts/private_install_smoke.mjs --real",
+    "doctor": "node scripts/operator_doctor.mjs",
+    "acceptance:offline": "node scripts/offline_acceptance_packet.mjs",
+    "rehearsal:offline": "node scripts/offline_acceptance_packet.mjs --rehearsal",
+    "personal:check": "node scripts/personal_install_check.mjs",
+    "install:personal:dry-run": "node scripts/install_personal_plugin.mjs --dry-run",
+    "install:personal:apply": "node scripts/install_personal_plugin.mjs --apply",
+    "uninstall:personal:dry-run": "node scripts/uninstall_personal_plugin.mjs --dry-run",
+    "uninstall:personal:apply": "node scripts/uninstall_personal_plugin.mjs --apply",
+    "update:personal:dry-run": "node scripts/marketplace_update_plugin.mjs --dry-run",
+    "update:personal:apply": "node scripts/marketplace_update_plugin.mjs --apply",
+    "zip:plugin:dry-run": "node scripts/package_local_plugin_zip.mjs --dry-run",
+    "zip:plugin:write": "node scripts/package_local_plugin_zip.mjs --write",
+    "zip:plugin:check": "node scripts/package_local_plugin_zip.mjs --check",
+    "verify:local": "node --test && node scripts/plugin_guardrails.mjs && node scripts/package_check.mjs && node scripts/private_install_smoke.mjs --fake && node scripts/operator_doctor.mjs && node scripts/offline_acceptance_packet.mjs && node scripts/personal_install_check.mjs && node scripts/package_local_plugin_zip.mjs --check"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

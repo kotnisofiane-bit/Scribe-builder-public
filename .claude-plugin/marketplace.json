@@ -1,0 +1,27 @@
+{
+  "name": "dubsar",
+  "owner": {
+    "name": "Sofiane Kotni",
+    "url": "https://github.com/kotnisofiane-bit"
+  },
+  "metadata": {
+    "description": "DUBSAR marketplace — decision memory, evidence, and human governance for long-running Claude Code projects. Claude Code is the first integration; the local DUBSAR Desktop runtime is required. Private beta preview: access controlled, NOT published, production use unsupported. Some internal technical identifiers still use \"scribe\" for beta compatibility.",
+    "version": "0.11.1"
+  },
+  "plugins": [
+    {
+      "name": "scribe-bridge",
+      "source": "./plugins/scribe",
+      "version": "0.11.1",
+      "description": "DUBSAR — decision memory, evidence, and human governance for long-running Claude Code projects. Thin, read-only Claude Code plugin (technical package scribe-bridge) that requires the local DUBSAR Desktop runtime: metadata-only start/activation/access-status/doctor surfaces plus read-only Mission, lot, contract, execution, evidence, and workspace-structure commands, served by the bundled scribe-bridge MCP server. Private beta preview: access controlled, production use unsupported. The private Backend/Core is not included and is reached only via bounded metadata; the plugin never handles a licence key.",
+      "author": {
+        "name": "Sofiane Kotni"
+      },
+      "homepage": "https://github.com/kotnisofiane-bit/Scribe-builder-public",
+      "repository": "https://github.com/kotnisofiane-bit/Scribe-builder-public",
+      "license": "LicenseRef-SCRIBE-Private-Beta",
+      "keywords": ["dubsar", "scribe", "governance", "decision-memory", "evidence", "claude-code", "read-only", "mcp"],
+      "category": "developer-tools"
+    }
+  ]
+}
