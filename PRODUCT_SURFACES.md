@@ -2,97 +2,157 @@
 
 DUBSAR is one product with several technical surfaces.
 
-The user should not have to understand a collection of brands, launchers or internal repositories. The public product is **DUBSAR**.
+The user should not have to understand a collection of brands, launchers or private repositories. The public product is **DUBSAR**.
 
 ---
 
 ## Product definition
 
-DUBSAR is decision memory and human governance for long-running Claude Code projects.
+DUBSAR is a governance layer for long-running, multi-session AI coding projects.
 
-It adds a persistent project layer around Claude Code without rebuilding Claude Code's native capabilities.
+It adds a persistent project layer around coding agents without rebuilding their native capabilities.
 
 ```text
-Claude Code builds
-DUBSAR preserves Mission, decisions, constraints and evidence
-Humans decide
+Coding agents build
+DUBSAR preserves Mission, decisions, boundaries and evidence
+Humans decide protected movement
 ```
 
-The first supported environment is Claude Code. Other adapters may come later, but they are not part of the current beta claim.
+Claude Code is the first supported host. Codex, Cursor and other adapters are future product direction, not currently available integrations.
 
 ---
 
-## 1. Claude Code plugin
+## 1. Host adapter
 
-The plugin is the user's primary entry point.
+A host adapter connects a coding-agent environment to DUBSAR.
+
+For Claude Code, the adapter is the DUBSAR plugin.
 
 Its role is to:
 
-- expose DUBSAR commands and tools inside Claude Code;
-- recognize or resume the governed workspace context;
-- display bounded project state;
-- connect Claude Code to the local DUBSAR runtime;
+- propagate the native host session identity;
+- expose bounded DUBSAR commands and tools;
+- recognize or resume governed workspace context;
+- display bounded canonical project state;
+- connect the host to the local DUBSAR runtime;
 - surface the next action and Human Gate status.
 
-The plugin remains thin. It does not contain the proprietary decision engine and it does not make business decisions locally.
+The adapter remains thin. It does not contain the proprietary decision engine and does not make canonical business decisions locally.
 
-Some command, MCP and token identifiers may temporarily retain the internal `scribe` prefix for compatibility. Public messages and documentation use DUBSAR.
-
----
-
-## 2. DUBSAR Desktop and local runtime
-
-DUBSAR Desktop supplies the local runtime required by the plugin.
-
-Its responsibilities include bounded local process startup, workspace continuity, secure local state and access to the cockpit.
-
-It is not marketed as a separate product and it is not the proprietary Core.
-
-The legacy term “Launcher” no longer describes the public product. Existing internal launcher components may remain temporarily where changing them would break compatibility.
+Some command, MCP and environment identifiers may temporarily retain an internal `scribe` prefix for compatibility. Public labels and documentation use DUBSAR.
 
 ---
 
-## 3. DUBSAR cockpit
+## 2. Local Bridge
 
-The cockpit makes the governed state readable.
+The Bridge provides bounded local transport between the host adapter and the local product runtime.
 
-It is intended to show, at minimum:
+It may support:
 
-- the recognized project and active Mission;
-- the active lot or next action;
-- relevant decisions and constraints;
-- declared and verified evidence without conflating them;
-- pending Human Gates;
-- bounded diagnostics and availability state.
+- local continuity references;
+- closed request and response transport;
+- start and status orchestration;
+- session-to-runtime connectivity.
 
-The cockpit displays and explains. It does not become the authority that approves its own state.
+The Bridge is not the source of truth for Mission, decisions, contracts, evidence or Human Gates.
 
 ---
 
-## 4. Private service boundary
+## 3. DUBSAR Desktop and local runtime
 
-The service boundary separates distributable surfaces from the proprietary Core.
+DUBSAR Desktop supplies the local runtime required by the current Claude Code integration.
 
-It mediates sanitized and bounded requests while keeping private:
+Its responsibilities include:
 
-- decision logic;
-- private schemas and policies;
-- internal audit histories;
-- sealed journals and confidential proof artifacts;
-- operational trust material;
-- secrets and tester data.
+- bounded local process startup;
+- process identity and lifecycle control;
+- worktree provisioning through governed references;
+- restart observations and reconciliation requests;
+- secure local configuration and access state;
+- navigation to the cockpit and Human Gate surfaces.
 
-The plugin and Desktop must never become a disguised copy of the private Core.
+Desktop is not marketed as a separate product and is not the proprietary Core.
+
+The legacy term “Launcher” no longer describes a public product. Internal launcher components may remain where changing them would break compatibility.
+
+---
+
+## 4. Private Backend
+
+The Backend is the protected service boundary and the only supported product writer to canonical Core state.
+
+It validates and limits requests, verifies runtime bindings, rejects stale mutations and protects private implementation details.
+
+The Backend is not distributed through this repository.
 
 ---
 
 ## 5. Private DUBSAR Core
 
-The Core is the source of truth for governed project state, including Mission, lots, contracts, decisions, evidence relationships, audit state, Human Gates and replay.
+The Core is the source of truth for governed project state, including:
 
-The Core is private and is not distributed from this repository.
+- Mission;
+- decisions and constraints;
+- lots and execution contracts;
+- canonical DUBSAR sessions;
+- runtime allocations and process state;
+- evidence relationships and verification tiers;
+- audit state;
+- Human Gates and authorizations;
+- replay and reconciliation decisions.
 
-Public documentation can describe the concepts and user-visible guarantees without publishing the proprietary mechanisms that enforce them.
+The Core remains private.
+
+---
+
+## 6. Runner
+
+The Runner produces bounded mechanical evidence such as:
+
+- snapshots;
+- diffs;
+- test results;
+- hashes;
+- execution artefact references.
+
+It does not own Mission state and cannot create a Human GO.
+
+---
+
+## 7. DUBSAR cockpit
+
+The cockpit makes governed state readable to the human.
+
+It is intended to show:
+
+- the recognized project and active Mission;
+- active sessions and their state;
+- lots, contracts and worktrees;
+- relevant decisions and constraints;
+- declared and verified evidence without conflating them;
+- conflicts and stale state;
+- pending Human Gates;
+- bounded diagnostics and availability state.
+
+The cockpit displays and controls through governed boundaries. It does not become the authority that approves its own state.
+
+The former public label “Eyes of SCRIBE” is historical and should not remain a separate product brand.
+
+---
+
+## 8. Multi-session surface
+
+DUBSAR relates several active sessions to one Mission while preserving isolation.
+
+```text
+Mission
+  ├── Session A → Worktree A → Process A → Evidence A
+  └── Session B → Worktree B → Process B → Evidence B
+                 ↓
+          Conflict / Human Gate when required
+```
+
+Internal technical proofs have validated this model on Windows. The public product journey remains under validation.
 
 ---
 
@@ -101,30 +161,36 @@ Public documentation can describe the concepts and user-visible guarantees witho
 This repository is intended to become both:
 
 - the public product and doctrine repository;
-- the Claude Code Marketplace repository for the thin plugin package.
+- the Claude Code Marketplace repository for the thin first host adapter.
 
-The Marketplace package is not published yet. No installation command should be treated as active until the package, licence, security contact and beta access flow are validated.
+The Marketplace is not activated or announced. No installation command should be treated as active until the package, supported platform, licence, security contacts and beta access flow are validated.
 
-See [Marketplace and distribution](MARKETPLACE.md).
+---
+
+## Platform boundary
+
+- **Windows:** first controlled private-beta target, still in preparation.
+- **Linux:** planned for later validation; not announced.
+- **macOS:** not announced; feasibility and packaging remain to be evaluated.
 
 ---
 
 ## Current beta boundary
 
-The private beta is being prepared around:
+The current private-beta preparation covers:
 
-- Claude Code;
+- Claude Code as the first host;
 - the DUBSAR plugin;
-- DUBSAR Desktop/local runtime;
-- a private service boundary and Core;
+- local Bridge and DUBSAR Desktop;
+- a private Backend and Core;
 - Mission continuity;
-- read-only governed state and bounded mutations;
+- canonical one- and multi-session governance;
 - explicit Human Gates.
 
 Not currently claimed as available:
 
-- general multi-agent orchestration;
 - operational Codex or Cursor adapters;
+- public Linux or macOS packages;
 - enterprise on-premise deployment;
 - certified compliance or security guarantees;
 - autonomous approval or release authority;
@@ -136,4 +202,4 @@ Not currently claimed as available:
 
 DUBSAR is one product.
 
-The plugin is the entry point. Desktop supplies the local runtime. The cockpit displays governed state. The private service boundary protects the private Core. Humans remain the final authority.
+The host adapter connects the coding agent. The Bridge transports locally. Desktop supplies the runtime. The Backend protects canonical writes. The Core owns governed state. The Runner produces mechanical evidence. The cockpit makes the state understandable. Humans remain the final authority.
