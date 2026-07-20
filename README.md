@@ -1,71 +1,104 @@
 # DUBSAR
 
-**Decision memory and human governance for long-running Claude Code projects.**
+**Govern long-running AI development. Keep human authority.**
 
-Claude Code builds.  
-DUBSAR preserves decisions, constraints and evidence.  
-Humans decide.
+DUBSAR is a governance layer for software projects that continue across many AI coding sessions.
 
-**Plugin-first private beta · Private core · not commercial-ready**
+Coding agents build.  
+DUBSAR preserves the Mission, decisions, boundaries and evidence.  
+Humans retain final authority.
+
+**Controlled private beta in preparation · Windows first · Private Core**
 
 ---
 
 ## What is DUBSAR?
 
-DUBSAR is a governance layer for software projects that continue across many AI coding sessions.
+AI coding agents can plan, edit, test and move quickly. Long-running projects face a different problem: continuity and authority.
 
-It does not replace Claude Code and it is not another coding agent. Claude Code keeps the intelligence, editing, tools and execution environment. DUBSAR adds a durable project layer around that work:
+Across sessions, a project can lose:
+
+- prior decisions and their reasons;
+- active constraints;
+- the scope of current work;
+- the distinction between a declaration and verified evidence;
+- pending Human Gates;
+- the path required to resume safely.
+
+DUBSAR adds a durable governed project layer around existing coding agents:
 
 - a persistent Mission;
 - decision memory;
 - bounded lots and execution contracts;
-- evidence linked to proposed changes;
+- canonical session identity;
+- evidence linked to work and decisions;
 - replay across sessions;
 - explicit Human Gates for protected movement.
 
-The problem is not that AI coding tools cannot produce code. The problem is that long-running projects can lose the decisions, boundaries and proof that make the code coherent.
+DUBSAR is not another coding agent and does not replace the developer.
 
 ---
 
-## The private beta product
+## First integration: Claude Code
 
-The first DUBSAR product is a **Claude Code plugin supported by DUBSAR Desktop and a private Core**.
+DUBSAR is designed around host-specific adapters rather than a Core tied to one coding agent.
+
+```text
+Coding agent
+    ↓
+DUBSAR host adapter
+    ↓
+Local DUBSAR runtime
+    ↓
+Private Backend
+    ↓
+Private DUBSAR Core
+    ↓
+Mission, decisions, evidence and Human Gates
+    ↓
+Human-facing cockpit and decision
+```
+
+The first supported integration is Claude Code:
 
 ```text
 Claude Code
     ↓
 DUBSAR plugin
     ↓
-DUBSAR Desktop / local bridge
+Local Bridge and DUBSAR Desktop
     ↓
-Private service boundary
+Private Backend
     ↓
 Private DUBSAR Core
-    ↓
-Mission, decisions, contracts, evidence and Human Gates
 ```
 
-The user experiences one product: **DUBSAR**.
+Claude Code keeps its native intelligence, editing, tools, tests, sub-agents and worktrees. DUBSAR governs the project state around that work.
 
-DUBSAR Desktop is the local runtime required by the plugin. It is not a separate commercial product. The proprietary decision logic remains in the private Core and is not distributed in this repository.
+Additional host adapters, including Codex, Cursor and other coding-agent environments, are part of the product direction. They are not currently available integrations.
 
 ---
 
-## What the beta is designed to do
+## Multi-session governance
 
-The private beta is being prepared to support:
+DUBSAR is intended for projects that outlive one chat, one process or one agent session.
 
-- installation of the DUBSAR Claude Code plugin;
-- a unified start flow from Claude Code;
-- workspace recognition;
-- creation or resumption of a persistent Mission;
-- continuity after restart or context compaction;
-- read-only visibility over lots, contracts, executions and evidence;
-- a local cockpit for project state;
-- explicit Human Gate status;
-- bounded diagnostics when a component is unavailable.
+Its governed model relates:
 
-Availability and exact installation instructions will be published only after the package, licence and beta access flow are validated.
+```text
+Mission
+  → decisions and constraints
+  → lots and contracts
+  → canonical sessions
+  → isolated worktrees and processes
+  → evidence and audit
+  → Human Gates
+  → result and replay
+```
+
+Internal technical validation has completed governed one-session and two-session execution on a real Windows environment, including distinct identities, isolated worktrees, explicit conflict handling, Human Gates and restart reconciliation.
+
+This is an internal technical proof, not a claim that the public beta is available. External installation and usability validation are still in progress.
 
 ---
 
@@ -73,32 +106,44 @@ Availability and exact installation instructions will be published only after th
 
 DUBSAR does not:
 
-- replace Claude Code or the developer;
-- generate code as an independent agent;
+- replace the coding agent or the developer;
 - make an AI system the final authority;
 - treat an agent report as proof by itself;
 - silently approve merges, releases or deployments;
+- rebuild native agent capabilities without a governance reason;
 - publish the private Core;
 - guarantee bug-free code, compliance or security.
 
-Agents propose. DUBSAR checks the governed project state. Humans decide.
+A Human Gate is a separate authenticated human decision. It cannot be inferred from agent wording or a green status.
+
+---
+
+## Platform status
+
+### Windows
+
+Windows is the first target for the controlled private beta. Packaging, installation and the governed product journey are still being finalized and validated.
+
+### Linux
+
+Linux validation is planned after the Windows path is stable. No Linux beta is currently announced.
+
+### macOS
+
+macOS support is not currently announced. Feasibility, packaging, signing and runtime behavior must be evaluated before any claim is made.
 
 ---
 
 ## One public repository
 
-This repository is being transformed into the single public home of DUBSAR.
-
-It is intended to contain both:
+This repository is being transformed into the single public home of DUBSAR. It is intended to contain:
 
 1. public product documentation and doctrine;
-2. the public Claude Code Marketplace package when the beta package is ready.
+2. the thin distributable host adapter for Claude Code;
+3. Claude Code Marketplace metadata when publication is authorized;
+4. public security, privacy, installation and release information.
 
-There will not be a separate public doctrine repository and a second public Marketplace repository.
-
-The current GitHub repository name and URL still contain the legacy `Scribe-builder-public` identifier. That identifier is temporarily preserved to avoid an irreversible repository rename during this review. It is not the public product name.
-
-See [Marketplace and distribution](MARKETPLACE.md) for the publication boundary.
+The current repository name still contains the legacy `Scribe-builder-public` identifier. The product described here is DUBSAR. Repository renaming is a separate human action and has not been performed.
 
 ---
 
@@ -106,7 +151,7 @@ See [Marketplace and distribution](MARKETPLACE.md) for the publication boundary.
 
 This repository may publish:
 
-- public positioning and principles;
+- public positioning and architecture;
 - installation and user documentation;
 - the thin Claude Code plugin runtime;
 - Marketplace metadata;
@@ -115,33 +160,23 @@ This repository may publish:
 
 It does not publish:
 
-- the private Core or proprietary decision logic;
-- backend implementation details;
-- private prompts or policies;
+- the proprietary DUBSAR Core;
+- private Backend implementation details;
+- internal prompts or policies;
 - internal audit histories or sealed journals;
 - confidential proof artifacts;
 - secrets, tokens or trust material;
 - private user or tester data.
 
-Internal compatibility identifiers may continue to use `scribe` temporarily in repository names, routes, commands, tokens or MCP component names. Their presence does not change the public DUBSAR brand and avoids breaking the current beta runtime.
-
 ---
 
-## Project grammar
+## Compatibility identifiers
 
-DUBSAR is built around a durable decision path:
+The public product name is DUBSAR.
 
-```text
-Mission
-  → Decision memory
-  → Locked constraints
-  → Agent proposal
-  → Audit and evidence
-  → Human Gate
-  → Result and replay
-```
+Some internal technical identifiers may temporarily retain `scribe` names, including repository names, routes, command names, MCP identifiers, environment variables and local storage paths. They are compatibility identifiers, not a second product or public brand.
 
-Conversation history is useful, but it is not a governed project memory. DUBSAR preserves what the project depends on rather than every word of every conversation.
+They will be migrated only through deliberate compatibility work, never by an untested global rename.
 
 ---
 
@@ -149,13 +184,14 @@ Conversation history is useful, but it is not a governed project memory. DUBSAR 
 
 Start here:
 
-1. [Why DUBSAR?](WHY_SCRIBE.md)
+1. [Why DUBSAR?](WHY_DUBSAR.md)
 2. [Product and surfaces](PRODUCT_SURFACES.md)
 3. [Architecture](ARCHITECTURE.md)
 4. [Current status](STATUS.md)
 5. [Marketplace and distribution](MARKETPLACE.md)
-6. [FAQ](FAQ.md)
-7. [Roadmap](ROADMAP.md)
+6. [Installation](INSTALLATION.md)
+7. [FAQ](FAQ.md)
+8. [Roadmap](ROADMAP.md)
 
 Core doctrine:
 
@@ -165,19 +201,22 @@ Core doctrine:
 - [Why not just agents?](WHY_NOT_JUST_AGENTS.md)
 - [Manifesto](MANIFESTO.md)
 
-Older diagrams, RFCs and examples are being reviewed during the brand and product transition. Material that still uses SCRIBE or Builder terminology should be treated as legacy until explicitly migrated.
+Older diagrams, RFCs and examples created under SCRIBE / Scribe Builder remain historical until individually migrated or archived.
 
 ---
 
 ## Current status
 
-- The thin plugin source is publicly visible and downloadable in this repository.
-- The DUBSAR Claude Code Marketplace is not yet activated or announced.
-- There is no supported public installation yet.
-- No public release or production deployment is available.
-- The repository rename has not been performed.
-- The private Backend and Core remain private.
-- DUBSAR is **not commercial-ready**.
+```text
+Windows controlled private beta: in preparation
+public Marketplace: not activated or announced
+supported public installation: none yet
+Claude Code: first integration
+Codex / Cursor / other adapters: future direction, not currently available
+not commercial-ready
+not beta-ready
+not marketplace-ready
+```
 
 The project accepts ordinary beta bugs. It does not accept false claims of proof, verification or human approval.
 
