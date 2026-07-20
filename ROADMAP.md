@@ -2,128 +2,170 @@
 
 This roadmap describes the current direction of DUBSAR. It is not a delivery guarantee.
 
-The immediate goal is a testable private beta for Claude Code, not a general platform and not a collection of speculative product surfaces.
+The immediate goal is a reproducible controlled private beta, beginning with Windows and Claude Code.
+
+DUBSAR is not defined by one host. Claude Code is the first integration of a broader host-adapter architecture.
 
 ---
 
-## Current product path
+## Product path
 
 ```text
-Claude Code
-  → DUBSAR plugin
-  → DUBSAR Desktop / local runtime
-  → private service boundary
+Coding agent
+  → DUBSAR host adapter
+  → local DUBSAR runtime
+  → private Backend
   → private Core
-  → governed project state and human decisions
+  → Mission, decisions, evidence and Human Gates
 ```
 
-The public repository will contain the documentation and thin Marketplace package. The proprietary Core remains private.
+The public repository will contain documentation and thin distributable adapters. The proprietary Core remains private.
 
 ---
 
-## 1. Public product realignment
+## 1. Public DUBSAR realignment
 
-- replace the legacy SCRIBE / Builder / Launcher story with DUBSAR;
-- align the website, plugin documentation and public repository;
-- preserve internal `scribe` identifiers where immediate renaming would break compatibility;
-- maintain one public repository for both doctrine and Marketplace distribution;
-- keep the Marketplace unpublished until the package and licence are approved.
+Current work:
+
+- remove SCRIBE / Scribe Builder / Launcher as public product brands;
+- align the repository, website, plugin copy and Desktop around DUBSAR;
+- preserve internal `scribe` identifiers only where immediate renaming would break compatibility;
+- maintain one public repository for doctrine and Marketplace distribution;
+- keep Marketplace publication behind a separate Human GO.
 
 ---
 
-## 2. Private beta packaging
+## 2. Internally proven technical substrate
 
-A tester should be able to install the supported Desktop/runtime and Claude Code plugin without understanding the internal repository architecture.
+The following capabilities have completed internal technical validation on Windows:
+
+- one real governed Claude Code session;
+- two real sessions linked to the same canonical Mission;
+- distinct session identities, processes and worktrees;
+- shared governed state with separated evidence;
+- explicit conflict handling without silent overwrite;
+- authenticated Human Gates and single-use authorization behavior;
+- individual process control;
+- restart and reconciliation without phantom running state.
+
+This substrate is not the same as an externally usable beta. It is the technical basis for the next product-validation stage.
+
+---
+
+## 3. Reproducible Windows private beta
+
+The next outcome is a tester journey that does not depend on historical local checkouts or an expert operator.
 
 Required outcomes:
 
-- deterministic package assembly;
-- clean installation and removal;
-- bounded diagnostics;
-- runtime version compatibility;
-- no secrets in plugin files or logs;
-- honest failure when Desktop or the private service is unavailable.
+- deterministic Windows package assembly;
+- clean installation, update and removal;
+- automatic location of the correct local components;
+- one supported start path;
+- workspace recognition;
+- Mission creation or resumption;
+- clear state, evidence and Human Gate presentation;
+- bounded diagnostics and recoverable errors;
+- preserved user data across update or reinstall;
+- no hidden manual repair step.
+
+The Windows private beta remains in preparation until this path is repeatable.
 
 ---
 
-## 3. Unified start and Mission continuity
+## 4. Controlled tester validation
 
-From Claude Code, the user should enter DUBSAR through one clear start flow.
+After the Windows journey is reproducible, a small controlled tester group should validate whether users can:
 
-The product should:
-
-- recognize the workspace;
-- resume an existing Mission or propose creating one;
-- recover after restart and context compaction;
-- show the active lot and next action;
-- open or link to the local cockpit;
-- expose access and component status without leaking secrets.
-
----
-
-## 4. Decision memory and governed lots
-
-DUBSAR should preserve:
-
-- decisions and their reasons;
-- active and replaced constraints;
-- Mission and lot identity;
-- execution contracts;
-- relevant evidence;
-- audit and Human Gate state;
-- replayable transitions.
-
-Conversation history remains useful but is not the canonical project memory.
-
----
-
-## 5. Evidence, audit and Human Gates
-
-The beta must distinguish:
-
-- agent declarations;
-- deterministic verification;
-- missing or invalid evidence;
-- audit findings;
-- human decisions.
-
-No agent report becomes proof by wording alone. No AI role creates a Human GO.
-
-The cockpit and plugin should make these distinctions visible without overwhelming the user.
-
----
-
-## 6. Controlled tester beta
-
-The first external beta should begin with a small number of testers and real projects of bounded risk.
-
-Success is not measured by the absence of all bugs. It is measured by whether testers can:
-
-- install the product;
-- start it from Claude Code;
-- resume a Mission;
+- install DUBSAR;
+- start it from the supported Claude Code flow;
+- recognize or attach a workspace;
+- create or resume a Mission;
 - understand the current governed state;
-- see failures and next actions clearly;
-- provide actionable feedback.
+- complete a bounded governed task;
+- understand failures and next actions;
+- provide actionable feedback without exposing secrets.
+
+Success is not the absence of all bugs. It is a repeatable, understandable and governable product journey.
 
 ---
 
-## 7. Broader adapters
+## 5. Linux validation
 
-Only after the Claude Code beta is coherent should DUBSAR evaluate adapters for Codex, Cursor or other environments.
+Linux is the next likely platform after Windows stabilizes.
 
-Those adapters should reuse the same Core concepts rather than duplicating product logic in each host.
+Validation must cover:
+
+- packaging and installation;
+- process identity and lifecycle;
+- local paths and permissions;
+- Claude Code compatibility;
+- Desktop/runtime behavior;
+- clean update and removal;
+- the same governed Mission journey.
+
+No Linux beta is announced until a real package and user journey are proven.
 
 ---
 
-## 8. Multi-session and enterprise direction
+## 6. macOS evaluation
+
+macOS is not currently announced.
+
+Before any support claim, the project must evaluate:
+
+- packaging;
+- signing and notarization requirements;
+- permissions and secure storage;
+- process and worktree behavior;
+- Claude Code integration;
+- update and removal;
+- tester experience.
+
+macOS should not block a validated Windows beta merely for nominal platform parity if the implementation cost is materially different.
+
+---
+
+## 7. Host-adapter contract
+
+The Core governance model should remain independent of any single coding agent.
+
+A reusable host-adapter contract should define how an integration supplies or receives:
+
+- native session identity;
+- workspace identity;
+- process and worktree bindings;
+- Mission and contract context;
+- evidence references;
+- Human Gate state;
+- restart and reconciliation events.
+
+The adapter must remain thin and must not duplicate Core authority.
+
+---
+
+## 8. Additional coding-agent integrations
+
+After the Claude Code beta is coherent, DUBSAR may evaluate adapters for:
+
+- Codex;
+- Cursor;
+- other compatible coding-agent environments.
+
+These integrations should reuse the same Mission, decisions, contracts, evidence and Human Gates. They should not create separate product brains.
+
+No operational support is currently claimed.
+
+---
+
+## 9. Broader product direction
 
 Possible later work includes:
 
-- coordinated parallel sessions or worktrees;
-- stronger team roles and organization controls;
+- richer team and organization controls;
+- broader cross-host project continuity;
+- expanded evidence and audit workflows;
 - enterprise deployment models;
-- expanded review and audit workflows;
 - additional controlled integrations.
 
 These are future directions, not current beta promises.
@@ -133,10 +175,9 @@ These are future directions, not current beta promises.
 ## Explicitly out of scope for the current public claim
 
 - autonomous approval, merge or deployment;
-- a public release of the proprietary Core;
+- public release of the proprietary Core;
 - certified legal, security or compliance guarantees;
 - production-ready enterprise service;
-- general autonomous multi-agent orchestration;
 - operational Codex or Cursor support;
 - commercial availability.
 
@@ -145,7 +186,13 @@ These are future directions, not current beta promises.
 ## Current status
 
 ```text
-private beta in preparation
-marketplace not published
+Windows private beta: in preparation
+Linux: planned for later validation
+macOS: not announced
+Claude Code: first integration
+other host adapters: future direction
+marketplace: not published
 not commercial-ready
+not beta-ready
+not marketplace-ready
 ```
