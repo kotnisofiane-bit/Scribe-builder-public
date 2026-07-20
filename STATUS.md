@@ -1,79 +1,122 @@
 # Status
 
-DUBSAR is an active private-beta engineering project.
+DUBSAR is an active engineering project preparing a controlled private beta.
 
-It is **not commercial-ready**.
+It is **not commercial-ready, not beta-ready and not marketplace-ready**.
 
 ---
 
-## Current product state
+## Current product definition
 
-The current product is no longer defined as a speculative Launcher or a general multi-agent platform.
+DUBSAR is a governance layer for long-running, multi-session AI coding projects.
 
-The private beta is being built around one concrete experience:
+The Core is not tied to one coding agent. Host-specific adapters connect coding environments to the same governed Mission, decision memory, evidence model and Human Gates.
 
 ```text
-Claude Code
-  → DUBSAR plugin
-  → DUBSAR Desktop / local runtime
-  → private service boundary
+Coding agent
+  → DUBSAR host adapter
+  → local DUBSAR runtime
+  → private Backend
   → private Core
-  → Mission, decisions, contracts, evidence and Human Gates
+  → governed project state
+  → human-facing cockpit and decision
 ```
 
-The public product name is DUBSAR. Internal repositories, routes, commands, tokens and MCP identifiers may temporarily retain `scribe` names for compatibility.
+Claude Code is the first integration.
 
 ---
 
-## What exists
+## Technical state
 
 Private development currently includes:
 
 - a Claude Code plugin;
-- a Desktop/local runtime and bridge;
-- a private backend and Core;
+- a local Bridge and DUBSAR Desktop runtime;
+- a private Backend and Core;
 - persistent Mission and workspace continuity;
+- canonical session identity;
 - lots and execution contracts;
-- declared evidence and audit-oriented state;
-- explicit Human Gate boundaries;
-- a local cockpit direction;
-- controlled beta access work;
-- a Marketplace package staged privately for review.
+- real Git worktrees;
+- process identity and restart reconciliation;
+- declared and verified evidence boundaries;
+- explicit Human Gates;
+- a local cockpit;
+- controlled beta access and packaging work.
 
-These statements describe active engineering work. They are not a claim that every capability is publicly available or production-ready.
+Internal technical proofs have completed:
+
+- one real governed Claude Code session on Windows;
+- two real governed Claude Code sessions linked to the same Mission;
+- distinct canonical identities, processes and worktrees;
+- separated evidence;
+- explicit conflict handling without silent overwrite;
+- single-use authorization behavior;
+- individual process control and restart reconciliation.
+
+These are internal technical proofs. They do not establish that an external user can yet install and use the product independently.
+
+---
+
+## Current product-validation target
+
+The current target is a reproducible Windows product journey:
+
+1. install the approved package;
+2. start DUBSAR through the supported flow;
+3. recognize a workspace;
+4. create or resume a Mission;
+5. run a governed session;
+6. understand evidence, errors and Human Gates;
+7. restart and resume without hidden operator intervention;
+8. update or remove the product without corrupting user state.
+
+A public or external beta should not be announced until this journey is repeatable and honestly documented.
+
+---
+
+## Platform status
+
+### Windows
+
+First controlled private-beta target. Packaging and the autonomous tester journey are still being finalized.
+
+### Linux
+
+Planned for validation after the Windows path is stable. No Linux beta is currently announced.
+
+### macOS
+
+Not currently announced. Packaging, signing, permissions and runtime behavior remain to be evaluated.
+
+---
+
+## Integration status
+
+### Claude Code
+
+First supported integration and current engineering focus.
+
+### Codex, Cursor and other coding agents
+
+Future host-adapter direction. No operational beta support is currently claimed.
+
+The architecture is intended to reuse the same private Core rather than duplicate governance logic per host.
 
 ---
 
 ## Public distribution status
 
 - Public product repository: this existing repository, currently under a legacy GitHub name.
-- Public DUBSAR documentation: being realigned in this review.
-- Thin plugin source: publicly visible and downloadable in this repository.
-- DUBSAR Claude Code Marketplace: not yet activated or announced.
+- Public DUBSAR documentation: being realigned in PR #9.
+- Thin Claude Code plugin source: staged in the draft branch, not approved as the final publication pin.
+- DUBSAR Claude Code Marketplace: not activated or announced.
 - Supported public installation: none yet.
 - Public release: none.
 - Production deployment: none.
 - Commercial availability: none.
 - Repository rename: not performed.
 
-The private Marketplace staging package will be integrated into this same public repository only after the DUBSAR branding, package integrity, licence, security contact and beta instructions are validated.
-
----
-
-## Beta posture
-
-The intended first beta supports Claude Code only.
-
-The beta may contain ordinary bugs and incomplete polish. It must still remain honest about:
-
-- what is merely declared by an agent;
-- what has been independently verified;
-- which evidence is missing;
-- whether a Human Gate is pending;
-- whether a component is unavailable;
-- which functions are future rather than current.
-
-No agent-generated statement becomes a Human GO.
+The final public plugin runtime must be re-vendored from the approved canonical plugin commit after the current Windows product journey is stabilized.
 
 ---
 
@@ -85,21 +128,23 @@ DUBSAR is not currently presented as:
 - commercially available;
 - enterprise-ready;
 - a certified compliance or security system;
-- a general multi-agent orchestration platform;
+- a general autonomous multi-agent orchestrator;
 - an operational Codex or Cursor integration;
 - a public release of the private Core;
-- an autonomous coding or approval authority.
+- an autonomous coding, merge or approval authority.
+
+No agent-generated statement becomes a Human GO.
 
 ---
 
 ## Public / private boundary
 
-This repository is intended to contain the public documentation and thin distributable plugin package.
+This repository is intended to contain public documentation and thin distributable host-adapter code.
 
 It does not publish:
 
 - the proprietary Core;
-- private backend implementation details;
+- private Backend implementation details;
 - internal prompts, policies or sealed journals;
 - confidential proof artifacts;
 - secrets, tokens or trust material;
@@ -107,15 +152,17 @@ It does not publish:
 
 ---
 
-## Status labels
-
-Current canonical labels:
+## Canonical status labels
 
 ```text
-private beta in preparation
-thin plugin source publicly visible; no supported public installation yet
-marketplace not yet activated or announced
+Windows controlled private beta: in preparation
+internal one-session proof: completed
+internal two-session proof: completed
+external installation and usability proof: pending
+marketplace: not activated or announced
 not commercial-ready
+not beta-ready
+not marketplace-ready
 ```
 
-Any stronger readiness claim requires a separate verified decision.
+Any stronger readiness claim requires a separate verified decision and explicit Human GO.
