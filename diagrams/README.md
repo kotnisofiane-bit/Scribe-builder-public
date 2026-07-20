@@ -1,48 +1,63 @@
 # Diagrams
 
-The diagrams in this folder were created during earlier SCRIBE / Scribe Builder phases.
+The existing SVG files in this folder predate the current DUBSAR product architecture.
 
-They are retained temporarily as historical conceptual material. None of the existing SVG files should currently be treated as the canonical DUBSAR product architecture.
+They are retained temporarily as historical conceptual material. None should be treated as a current product diagram or embedded in the root README.
 
 ## Canonical current architecture
 
 ```text
-Claude Code
+Coding agent
     ↓
-DUBSAR plugin
+DUBSAR host adapter
     ↓
-DUBSAR Desktop / local bridge
+Local Bridge and DUBSAR runtime
     ↓
-Private service boundary
+Private Backend
     ↓
 Private DUBSAR Core
     ↓
-Governed state and Human Gates
+Mission / sessions / decisions / evidence / Human Gates
+    ↓
+DUBSAR cockpit and human decision
 ```
 
-See [Architecture](../ARCHITECTURE.md) for the current public explanation.
+Claude Code is the first host adapter.
+
+See [Architecture](../ARCHITECTURE.md) for the current explanation.
+
+## Required new diagrams
+
+Before this repository is presented as canonical DUBSAR documentation, it should contain at least:
+
+1. **DUBSAR architecture** — host adapter, Bridge, Desktop/runtime, Backend, Core, Runner and cockpit responsibilities.
+2. **Governed multi-session model** — one Mission, separate sessions, worktrees, processes and evidence, with conflict and Human Gate handling.
+3. **User journey** — install, start, Mission, governed work, evidence, Human Gate and resume.
+
+New diagrams should use the real DUBSAR visual direction:
+
+- dark graphite and night-blue background;
+- restrained turquoise for navigation and flows;
+- warm gold for evidence and Human Gates;
+- clear typography;
+- no purple, excessive neon or generic SaaS dashboard styling.
 
 ## Legacy files
 
-- `public-boundary.svg` — legacy SCRIBE branding and pre-plugin framing;
-- `governed-loop.svg` — historical multi-role collaboration model;
-- `architecture.svg` — historical roles-around-SCRIBE architecture;
-- `decision-memory.svg` — concept remains relevant, branding and context require revision;
-- `execution-contract.svg` — concept remains relevant, branding and context require revision;
-- `project-evolution.svg` — historical project trajectory.
+The current SVG files are historical and require one of three decisions:
 
-## Migration decision
+- redraw under DUBSAR;
+- move to an explicit legacy archive;
+- remove if they no longer add value.
 
-Before the public repository is merged and presented as canonical DUBSAR documentation, these files must be individually:
-
-- redrawn under DUBSAR;
-- retained in an explicit legacy archive; or
-- removed if they no longer add value.
-
-The old diagrams must not be embedded in the root README as the current product architecture.
+The files must not be mistaken for the current product architecture.
 
 ## Boundary
 
-Future public diagrams may explain product responsibilities and user-visible guarantees. They must not publish private Core logic, backend routes, internal policies, confidential proof artifacts, secrets or tester data.
+Future public diagrams may explain product responsibilities and user-visible guarantees. They must not publish private Core logic, Backend routes, internal policies, confidential proof artifacts, secrets or tester data.
 
-DUBSAR is not commercial-ready. The Marketplace is not published.
+```text
+not commercial-ready
+not beta-ready
+not marketplace-ready
+```
