@@ -5,7 +5,7 @@
     "url": "https://github.com/kotnisofiane-bit"
   },
   "metadata": {
-    "description": "DUBSAR marketplace — decision memory, evidence, and human governance for long-running Claude Code projects. Claude Code is the first integration; the local DUBSAR Desktop runtime is required. Private beta preview: access controlled, NOT published, production use unsupported. Some internal technical identifiers still use \"scribe\" for beta compatibility.",
+    "description": "DUBSAR Marketplace staging — governance for long-running, multi-session AI coding projects. Claude Code is the first integration and requires the local DUBSAR Desktop runtime. Controlled private beta in preparation for Windows; Marketplace not activated or announced. The current vendored plugin is an earlier staging pin and is not the final publication candidate.",
     "version": "0.11.1"
   },
   "plugins": [
@@ -13,14 +13,24 @@
       "name": "scribe-bridge",
       "source": "./plugins/scribe",
       "version": "0.11.1",
-      "description": "DUBSAR — decision memory, evidence, and human governance for long-running Claude Code projects. Thin, read-only Claude Code plugin (technical package scribe-bridge) that requires the local DUBSAR Desktop runtime: metadata-only start/activation/access-status/doctor surfaces plus read-only Mission, lot, contract, execution, evidence, and workspace-structure commands, served by the bundled scribe-bridge MCP server. Private beta preview: access controlled, production use unsupported. The private Backend/Core is not included and is reached only via bounded metadata; the plugin never handles a licence key.",
+      "description": "DUBSAR for Claude Code — thin host adapter for governed Mission continuity, decision memory, evidence and Human Gates across long-running sessions. Requires the local DUBSAR Desktop runtime and private Backend/Core. Historical technical package id: scribe-bridge. Controlled private-beta staging only; not published, production use unsupported, final publication pin not selected.",
       "author": {
         "name": "Sofiane Kotni"
       },
       "homepage": "https://github.com/kotnisofiane-bit/Scribe-builder-public",
       "repository": "https://github.com/kotnisofiane-bit/Scribe-builder-public",
-      "license": "LicenseRef-SCRIBE-Private-Beta",
-      "keywords": ["dubsar", "scribe", "governance", "decision-memory", "evidence", "claude-code", "read-only", "mcp"],
+      "license": "LicenseRef-DUBSAR-Private-Beta",
+      "keywords": [
+        "dubsar",
+        "governance",
+        "multi-session",
+        "decision-memory",
+        "evidence",
+        "human-gate",
+        "claude-code",
+        "mcp",
+        "scribe"
+      ],
       "category": "developer-tools"
     }
   ]
