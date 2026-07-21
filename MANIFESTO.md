@@ -16,7 +16,7 @@ DUBSAR begins from this observation.
 
 AI-assisted development often starts with conversation.
 
-Conversation can clarify, accelerate and propose. But it is long, partial and easy to lose when sessions restart or context is compacted.
+Conversation can clarify, accelerate and propose. But it is long, partial and easy to lose when sessions restart, context is compacted or work moves to another tool.
 
 Projects do not only need better conversations.
 
@@ -44,10 +44,11 @@ DUBSAR is designed to preserve:
 - decisions and their reasons;
 - active constraints;
 - bounded lots and contracts;
+- canonical session identity;
 - declared and verified evidence;
 - audit state;
 - explicit human decisions;
-- replay across sessions.
+- replay across sessions and supported hosts.
 
 The goal is not to store everything.
 
@@ -55,15 +56,17 @@ The goal is to prevent the project from forgetting what makes its current direct
 
 ---
 
-## Work with existing tools
+## Work with existing coding agents
 
-Claude Code already knows how to plan, edit, test and use tools.
+Coding agents already know how to plan, edit, test and use tools.
 
-DUBSAR should not become another coding agent or rebuild the host environment. It adds the project memory and governance layer that must survive beyond one agent session.
+DUBSAR should not become another coding agent or rebuild every host environment. It adds the project memory and governance layer that must survive beyond one session or one tool.
 
-Claude Code builds.
+Claude Code is the first supported integration. Future host adapters may connect Codex, Cursor and other coding-agent environments to the same governed Core.
 
-DUBSAR preserves decisions, constraints and evidence.
+Coding agents build.
+
+DUBSAR preserves decisions, boundaries and evidence.
 
 Humans decide.
 
@@ -87,4 +90,4 @@ It is built around continuity, evidence and coherence.
 
 Technology evolves quickly. Trust evolves deliberately.
 
-The purpose of structure is not to stop evolution. It is to let a project evolve without losing the reasoning and responsibility that hold it together.
+The purpose of structure is not to stop evolution. It is to let a project evolve across sessions and tools without losing the reasoning and responsibility that hold it together.
