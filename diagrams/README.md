@@ -1,62 +1,89 @@
-# Diagrams
+# DUBSAR diagrams
 
-The existing SVG files in this folder predate the current DUBSAR product architecture.
+This folder now contains the first canonical public DUBSAR visual set.
 
-They are retained temporarily as historical conceptual material. None should be treated as a current product diagram or embedded in the root README.
+The diagrams are explanatory product documentation. They do not expose private Core logic, Backend routes, internal policies, confidential proof artifacts, secrets or tester data.
 
-## Canonical current architecture
+## Canonical visuals
+
+### 1. Product architecture
+
+![DUBSAR host-independent architecture](dubsar-architecture.svg)
+
+Explains the real responsibility chain:
 
 ```text
 Coding agent
-    ↓
-DUBSAR host adapter
-    ↓
-Local Bridge and DUBSAR runtime
-    ↓
-Private Backend
-    ↓
-Private DUBSAR Core
-    ↓
-Mission / sessions / decisions / evidence / Human Gates
-    ↓
-DUBSAR cockpit and human decision
+  → DUBSAR host adapter
+  → local Bridge and runtime
+  → private Backend
+  → private DUBSAR Core
+  → cockpit and human authority
 ```
 
-Claude Code is the first host adapter.
+Claude Code is shown as the first integration. Codex, Cursor and other coding agents are clearly marked as future adapters rather than current availability.
 
-See [Architecture](../ARCHITECTURE.md) for the current explanation.
+### 2. Governed multi-session model
 
-## Required new diagrams
+![DUBSAR governed multi-session model](dubsar-multi-session.svg)
 
-Before this repository is presented as canonical DUBSAR documentation, it should contain at least:
+Shows one canonical Mission with:
 
-1. **DUBSAR architecture** — host adapter, Bridge, Desktop/runtime, Backend, Core, Runner and cockpit responsibilities.
-2. **Governed multi-session model** — one Mission, separate sessions, worktrees, processes and evidence, with conflict and Human Gate handling.
-3. **User journey** — install, start, Mission, governed work, evidence, Human Gate and resume.
+- separate session identities;
+- separate worktrees and processes;
+- attributable evidence streams;
+- explicit conflict handling;
+- shared Human Gate when required;
+- governed resume without silent overwrite.
 
-New diagrams should use the real DUBSAR visual direction:
+The diagram reflects an internal Windows technical proof, not a public beta claim.
 
-- dark graphite and night-blue background;
-- restrained turquoise for navigation and flows;
+### 3. Windows controlled private-beta journey
+
+![DUBSAR Windows controlled private beta journey](dubsar-windows-journey.svg)
+
+Shows the target user path:
+
+```text
+Install
+  → Connect
+  → Mission
+  → Governed work
+  → Evidence
+  → Human Gate
+  → Restart
+  → Resume
+```
+
+It distinguishes completed internal technical proof from product validation still pending.
+
+## Visual system
+
+The canonical DUBSAR visual language uses:
+
+- dark graphite and night-blue backgrounds;
+- restrained turquoise for product flows and active state;
 - warm gold for evidence and Human Gates;
-- clear typography;
-- no purple, excessive neon or generic SaaS dashboard styling.
+- clear typography and bounded information density;
+- no purple, excessive neon or generic SaaS styling.
 
 ## Legacy files
 
-The current SVG files are historical and require one of three decisions:
+The older SVG files in this folder were created during SCRIBE / Scribe Builder phases.
 
-- redraw under DUBSAR;
-- move to an explicit legacy archive;
-- remove if they no longer add value.
+They are historical and must not be treated as current DUBSAR product architecture. They should later be:
 
-The files must not be mistaken for the current product architecture.
+- moved to an explicit legacy archive;
+- redrawn under DUBSAR when the concept remains useful; or
+- removed when they no longer add value.
 
-## Boundary
+The root README embeds only the canonical DUBSAR architecture visual.
 
-Future public diagrams may explain product responsibilities and user-visible guarantees. They must not publish private Core logic, Backend routes, internal policies, confidential proof artifacts, secrets or tester data.
+## Current status
 
 ```text
+Windows controlled private beta: in preparation
+Marketplace: not activated or announced
 not commercial-ready
 not beta-ready
 not marketplace-ready
