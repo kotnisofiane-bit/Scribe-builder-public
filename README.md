@@ -12,6 +12,12 @@ Humans retain final authority.
 
 ---
 
+<p align="center">
+  <img src="diagrams/dubsar-architecture.svg" alt="DUBSAR host-independent product architecture: coding agent, DUBSAR host adapter, local Bridge and Desktop runtime, private Backend, private Core, cockpit and human authority." />
+</p>
+
+---
+
 ## What is DUBSAR?
 
 AI coding agents can plan, edit, test and move quickly. Long-running projects face a different problem: continuity and authority.
@@ -83,6 +89,10 @@ Additional host adapters, including Codex, Cursor and other coding-agent environ
 
 DUBSAR is intended for projects that outlive one chat, one process or one agent session.
 
+<p align="center">
+  <img src="diagrams/dubsar-multi-session.svg" alt="DUBSAR governed multi-session model: one canonical Mission, separate sessions, worktrees, processes and evidence, explicit conflict handling and Human Gate." />
+</p>
+
 Its governed model relates:
 
 ```text
@@ -119,6 +129,10 @@ A Human Gate is a separate authenticated human decision. It cannot be inferred f
 ---
 
 ## Platform status
+
+<p align="center">
+  <img src="diagrams/dubsar-windows-journey.svg" alt="Target DUBSAR Windows controlled private beta journey from installation to Mission, governed work, evidence, Human Gate, restart and resume." />
+</p>
 
 ### Windows
 
@@ -192,6 +206,7 @@ Start here:
 6. [Installation](INSTALLATION.md)
 7. [FAQ](FAQ.md)
 8. [Roadmap](ROADMAP.md)
+9. [Canonical diagrams](diagrams/README.md)
 
 Core doctrine:
 
