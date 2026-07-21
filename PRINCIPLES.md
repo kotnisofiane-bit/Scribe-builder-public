@@ -43,7 +43,7 @@ It should not be an unexplained final label applied after the work.
 
 ## 5. Contracts make work governable
 
-A governed lot should make its objective, scope, allowed and forbidden actions, expected evidence and Human Gate conditions explicit.
+A governed lot should make its objective, scope, allowed and forbidden actions, expected evidence, session expectations and Human Gate conditions explicit.
 
 A contract does not guarantee correctness. It makes divergence visible.
 
@@ -62,7 +62,7 @@ Missing or invalid evidence must remain visible. Confidence and fluent explanati
 The meaningful path should remain reconstructable:
 
 ```text
-Mission → Decision → Contract → Proposal → Audit → Evidence → Human Gate → Result
+Mission → Decision → Contract → Session → Proposal → Audit → Evidence → Human Gate → Result
 ```
 
 Replay does not require storing every token of every conversation.
@@ -79,19 +79,21 @@ Fail-closed behavior must be targeted. DUBSAR should not interrupt harmless read
 
 ## 9. Reuse the host instead of rebuilding it
 
-Claude Code already provides intelligence, tools, editing, tests, sub-agents and worktrees.
+Coding-agent hosts already provide intelligence, tools, editing, tests and execution environments.
 
-DUBSAR adds governed project state. It should not duplicate the host's native capabilities or move proprietary Core logic into the plugin.
+DUBSAR adds governed project state. It should not duplicate a host's native capabilities or move proprietary Core logic into a host adapter.
+
+Claude Code is the first supported integration, not the permanent boundary of the product.
 
 ---
 
 ## 10. Public surfaces stay thin and honest
 
-The public repository may distribute the thin plugin and explain the product.
+The public repository may distribute thin host adapters and explain the product.
 
-The private Core, internal policies, confidential proofs, secrets and tester data remain private.
+The private Core, private Backend, internal policies, confidential proofs, secrets and tester data remain private.
 
-Every public capability claim must distinguish what exists, what is in private beta and what is only future direction.
+Every public capability claim must distinguish what exists, what is in private-beta preparation and what is only future direction.
 
 ---
 
@@ -99,14 +101,22 @@ Every public capability claim must distinguish what exists, what is in private b
 
 The public brand is DUBSAR.
 
-Internal `scribe` repository, route, command, MCP, token or storage identifiers may remain temporarily where immediate renaming would break the beta. Migration should be deliberate and testable.
+Internal `scribe` repository, route, command, MCP, token or storage identifiers may remain temporarily where immediate renaming would break compatibility. Migration should be deliberate and testable.
 
 ---
 
-## 12. Each iteration must produce user-visible progress
+## 12. One Core, multiple host adapters
+
+Future integrations should reuse the same Mission, decisions, contracts, evidence and Human Gates.
+
+DUBSAR should not create a different governance brain for Claude Code, Codex, Cursor or each future coding-agent environment.
+
+---
+
+## 13. Each iteration must produce user-visible progress
 
 Tests and safety boundaries are necessary, but a macro-lot should also complete a user sentence such as:
 
-> In Claude Code, the user can now start, resume, understand or review a governed DUBSAR project.
+> In a supported coding-agent host, the user can now start, resume, understand or review a governed DUBSAR project.
 
 DUBSAR exists to make AI-assisted projects more coherent, not to accumulate internal proofs with no visible product result.
