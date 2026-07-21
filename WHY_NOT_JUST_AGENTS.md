@@ -4,7 +4,7 @@ AI agents are useful. Multiple agents can also be useful.
 
 DUBSAR does not reject agentic development. It asks a different question:
 
-> What does the project remember, verify and require when the agent session ends?
+> What does the project remember, verify and require when an agent session ends or work moves to another tool?
 
 ---
 
@@ -33,6 +33,7 @@ A long-running project still needs to know:
 - which Mission is active;
 - which decisions and constraints apply;
 - what the current lot permits;
+- which canonical session owns the work;
 - what evidence is expected;
 - what was merely declared;
 - what was independently verified;
@@ -53,6 +54,7 @@ It governs the project state around their work:
 Mission
   → decisions and constraints
   → bounded contract
+  → canonical session
   → agent proposal or execution
   → audit and evidence
   → Human Gate
@@ -63,11 +65,15 @@ The host agent remains capable. The project becomes more coherent.
 
 ---
 
-## Why Claude Code remains in control of execution
+## Why the host remains in control of execution
 
-Claude Code already supplies planning, tools, editing, tests, sub-agents and worktrees.
+Coding-agent environments already supply planning, tools, editing, tests and execution capabilities.
 
-DUBSAR should not create a competing coding agent or orchestration engine merely to claim ownership of execution. It uses Claude Code as the first host while keeping Mission, decision, evidence and Human Gate truth in the DUBSAR Core.
+DUBSAR should not create a competing coding agent or orchestration engine merely to claim ownership of execution.
+
+It connects through a thin host adapter while keeping Mission, decision, evidence and Human Gate truth in the private DUBSAR Core.
+
+Claude Code is the first supported host. Codex, Cursor and other adapters are future direction, not currently available integrations.
 
 ---
 
@@ -85,13 +91,13 @@ These roles do not require DUBSAR to host a full proprietary team of agents. The
 
 ---
 
-## One governed memory across sessions
+## One governed memory across sessions and hosts
 
-A user should not have to rebuild the project's core reasoning manually every time Claude Code restarts or compacts context.
+A user should not have to rebuild the project's core reasoning every time a host restarts, compacts context or work moves to another supported coding-agent environment.
 
 DUBSAR provides the continuing Mission and decision memory around those sessions.
 
-Claude Code may propose and act. DUBSAR preserves the governed project context. The human decides protected movement.
+Coding agents may propose and act. DUBSAR preserves the governed project context. The human decides protected movement.
 
 ---
 
@@ -99,7 +105,7 @@ Claude Code may propose and act. DUBSAR preserves the governed project context. 
 
 Long-running AI projects need more than agent activity.
 
-They need durable Mission state, decisions, constraints, evidence, audit, Human Gates and replay.
+They need durable Mission state, canonical sessions, decisions, constraints, evidence, audit, Human Gates and replay.
 
 DUBSAR adds that project layer.
 
