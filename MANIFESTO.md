@@ -2,21 +2,13 @@
 
 Software is increasingly built with AI.
 
-That changes how projects move.
-
-Ideas become faster.
-
-Code becomes faster.
-
-Reviews become faster.
+Ideas become faster. Code becomes faster. Reviews become faster.
 
 But speed does not automatically create coherence.
 
-A project can move quickly and still lose its memory.
+A project can move quickly and still lose its memory. A capable agent can produce a reasonable change while forgetting why the project rejected the same direction three sessions earlier.
 
-A system can generate more answers and still forget why decisions were made.
-
-SCRIBE Builder begins from this observation.
+DUBSAR begins from this observation.
 
 ---
 
@@ -24,43 +16,59 @@ SCRIBE Builder begins from this observation.
 
 AI-assisted development often starts with conversation.
 
-A conversation can be useful.
-
-It can clarify, accelerate and propose.
-
-But conversations are fragile.
-
-They are long.
-
-They are partial.
-
-They are easy to forget.
-
-They rarely become durable project memory by themselves.
+Conversation can clarify, accelerate and propose. But it is long, partial and easy to lose when sessions restart, context is compacted or work moves to another tool.
 
 Projects do not only need better conversations.
 
-They need better decision structures.
+They need durable decision structures.
 
 ---
 
-## Intelligence is not enough
+## Intelligence is not authority
 
-More capable AI models can produce better proposals.
+More capable models can produce better proposals.
 
-But proposals are not decisions.
+A proposal is still not a decision. An agent report is still not independent proof. A green-looking result is still not a Human GO.
 
-A proposal must be checked.
+A proposed change must be bounded. Evidence must be distinguished from assertion. Responsibility must remain visible.
 
-A change must be bounded.
+DUBSAR exists because intelligence alone does not make a long-running project reliable.
 
-Evidence must be preserved.
+---
 
-Responsibility must remain visible.
+## Preserve what the project depends on
 
-Without governance, even good proposals can accumulate into drift.
+DUBSAR is designed to preserve:
 
-SCRIBE exists because intelligence alone does not make a project reliable.
+- the Mission;
+- decisions and their reasons;
+- active constraints;
+- bounded lots and contracts;
+- canonical session identity;
+- declared and verified evidence;
+- audit state;
+- explicit human decisions;
+- replay across sessions and supported hosts.
+
+The goal is not to store everything.
+
+The goal is to prevent the project from forgetting what makes its current direction coherent.
+
+---
+
+## Work with existing coding agents
+
+Coding agents already know how to plan, edit, test and use tools.
+
+DUBSAR should not become another coding agent or rebuild every host environment. It adds the project memory and governance layer that must survive beyond one session or one tool.
+
+Claude Code is the first supported integration. Future host adapters may connect Codex, Cursor and other coding-agent environments to the same governed Core.
+
+Coding agents build.
+
+DUBSAR preserves decisions, boundaries and evidence.
+
+Humans decide.
 
 ---
 
@@ -68,52 +76,18 @@ SCRIBE exists because intelligence alone does not make a project reliable.
 
 Saying that humans remain responsible is not enough.
 
-Responsibility must be supported by structure.
+A human cannot meaningfully approve what is unclear, scattered or unsupported. Responsibility needs a readable dossier, explicit boundaries and evidence that can be questioned.
 
-A human cannot meaningfully approve what is unclear.
-
-A human cannot govern what is scattered across forgotten conversations.
-
-A human cannot replay what was never preserved.
-
-SCRIBE attempts to make human responsibility easier to exercise.
-
-Not by slowing every action.
-
-But by making important actions traceable, bounded and reviewable.
-
----
-
-## Governed collaboration
-
-SCRIBE explores governed collaboration between humans and AI roles.
-
-Architects may frame work.
-
-Coders may propose changes.
-
-Auditors may review proposals.
-
-But no role validates itself.
-
-And no agent becomes the final authority.
-
-The final decision remains human.
-
-The system preserves the path that led to that decision.
+DUBSAR is not designed to slow every action. It is designed to make protected movement traceable, bounded and reviewable.
 
 ---
 
 ## A quieter form of progress
 
-SCRIBE is not built around hype.
+DUBSAR is not built around claims of autonomous certainty.
 
 It is built around continuity, evidence and coherence.
 
-Technology evolves quickly.
+Technology evolves quickly. Trust evolves deliberately.
 
-Trust evolves deliberately.
-
-The purpose of structure is not to restrict evolution.
-
-It is to preserve coherence while evolution happens.
+The purpose of structure is not to stop evolution. It is to let a project evolve across sessions and tools without losing the reasoning and responsibility that hold it together.

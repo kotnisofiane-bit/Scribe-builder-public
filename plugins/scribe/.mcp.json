@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "scribe-bridge": {
+      "command": "scribe-mcp",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/bin/scribe_mcp.mjs"]
+    }
+  }
+}

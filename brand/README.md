@@ -1,32 +1,26 @@
-# Brand assets
+# DUBSAR brand assets
 
-This folder holds a small, sober visual source for SCRIBE.
+This directory contains the canonical public identity assets used by this repository.
 
-It exists to keep the public GitHub repository visually consistent with the SCRIBE website direction (Decision Trace / Checkpoint Grammar) without turning the repository into a landing page.
+| Asset | Purpose |
+|---|---|
+| `dubsar-mark.svg` | Transparent checkpoint mark for compact placements |
+| `dubsar-app-icon.svg` | Square application and plugin icon source |
+| `dubsar-app-icon-{32,64,128,256,512,1024}.png` | Ready-to-use transparent PNG icon sizes |
+| `dubsar-readme-header.svg` | English README header |
+| `dubsar-readme-header-fr.svg` | French README header |
+| `dubsar-readme-header.png` / `dubsar-readme-header-fr.png` | Raster header previews |
+| `dubsar-github-social-preview.svg` | Source artwork for repository sharing cards |
+| `dubsar-github-social-preview.png` | Upload-ready GitHub social preview, 1280 × 640 |
 
-## Files
+## Identity rule
 
-- [`scribe-github-social-preview.svg`](scribe-github-social-preview.svg) — a sober 1280×640 source intended for use as a GitHub social preview image.
+The resting DUBSAR mark is turquoise. Amber is reserved for active Human Gates, decisions and audit states; it is not part of the permanent logo.
 
-## About the social preview
+The symbol means **trace → governed checkpoint → trace**: work enters a controlled decision point, remains attributable and continues with human authority preserved.
 
-`scribe-github-social-preview.svg` is a **source file only**.
+## GitHub boundary
 
-- It is not applied automatically.
-- Setting it as the repository social preview is a manual action in **GitHub → repository Settings → Social preview**.
-- GitHub currently expects a raster image (PNG/JPG) for that setting, so the SVG would need to be exported to a 1280×640 PNG before uploading.
+The social-preview source and export are versioned here, but applying the image remains a separate GitHub repository-settings action.
 
-Nothing in this repository changes GitHub settings on its own.
-
-## Style
-
-The assets are intentionally sober and technical:
-
-- graphite / night-blue background;
-- a thin cyan decision-trace mark;
-- a discreet amber outline for the Human GO / evidence checkpoint;
-- clear, restrained typography using system fonts only.
-
-They are documentation assets, not marketing banners. No badges, no product claims, and no suggestion that SCRIBE is installable or commercially available.
-
-not commercial-ready.
+Keep product-readiness claims synchronized with [`STATUS.md`](../STATUS.md).

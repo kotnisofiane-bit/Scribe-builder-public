@@ -1,162 +1,225 @@
-# Product Surfaces
+# Product and Surfaces
 
-This document describes the current public product direction of SCRIBE without exposing the private implementation.
+DUBSAR is one product with several technical surfaces. It is also used by Sofiane as the governed operator system behind a bounded professional audit service.
 
-SCRIBE is not another coding agent.
+The user should not have to understand a collection of brands, launchers or private repositories. The public product is **DUBSAR**.
 
-It is a decision-memory, audit and human-validation layer around AI-assisted software projects.
+---
 
-The current product direction is hybrid:
+## Product definition
+
+DUBSAR is a governance layer for long-running, multi-session AI coding projects.
+
+It adds a persistent project layer around coding agents without rebuilding their native capabilities.
 
 ```text
-Existing AI coding workflow
-        ↓
-SCRIBE Launcher / connector surface
-        ↓
-Private service boundary
-        ↓
-Private SCRIBE decision core
-        ↓
-Evidence, memory and Human GO surfaced for review
+Coding agents build
+DUBSAR preserves Mission, decisions, boundaries and evidence
+Humans decide protected movement
 ```
 
-This is a public framing, not an implementation map.
-
-No private routes, schemas, prompts, policies, logs, proof artifacts, write mechanisms, trust material or backend details are published here.
+Claude Code is the first supported host. Codex, Cursor and other adapters are future product direction, not currently available integrations.
 
 ---
 
-## SCRIBE Launcher
+## 1. Host adapter
 
-SCRIBE Launcher is the first product surface being explored.
+A host adapter connects a coding-agent environment to DUBSAR.
 
-Its purpose is to sit around AI-assisted coding workflows and help keep project movement bounded by:
+For Claude Code, the adapter is the DUBSAR plugin.
 
-- project memory;
-- locked constraints;
-- audit questions;
-- evidence;
-- Human GO;
-- replay.
+Its role is to:
 
-Launcher does not replace the AI coding tool.
+- propagate the native host session identity;
+- expose bounded DUBSAR commands and tools;
+- recognize or resume governed workspace context;
+- display bounded canonical project state;
+- connect the host to the local DUBSAR runtime;
+- surface the next action and Human Gate status.
 
-It does not act as a complete local brain.
+The adapter remains thin. It does not contain the proprietary decision engine and does not make canonical business decisions locally.
 
-It does not make the AI agent an authority over the project.
-
-Depending on the host environment, future delivery forms may include a connector, plugin or MCP-compatible integration.
-
-That does not mean a public connector is available today.
-
-Current status:
-
-- no public installation package;
-- no stable public connector API;
-- no public MCP server package;
-- no production deployment;
-- no commercial availability.
+Some command, MCP and environment identifiers may temporarily retain an internal `scribe` prefix for compatibility. Public labels and documentation use DUBSAR.
 
 ---
 
-## Eyes of SCRIBE
+## 2. Local Bridge
 
-Eyes of SCRIBE is the cockpit / observation direction.
+The Bridge provides bounded local transport between the host adapter and the local product runtime.
 
-Its role is to make SCRIBE's checks readable to the human.
+It may support:
 
-It should help answer questions such as:
+- local continuity references;
+- closed request and response transport;
+- start and status orchestration;
+- session-to-runtime connectivity.
 
-- What did SCRIBE see?
-- What memory applied?
-- Which constraints were relevant?
-- What was excluded?
-- What evidence exists?
-- What remains uncertain?
-- What requires Human GO?
-- What can be replayed later?
-
-Eyes of SCRIBE is not an autonomous execution engine.
-
-It does not replace human review.
-
-It should make responsibility easier to exercise, not hide it.
-
-This direction is still under active development.
+The Bridge is not the source of truth for Mission, decisions, contracts, evidence or Human Gates.
 
 ---
 
-## Private service boundary
+## 3. DUBSAR Desktop and local runtime
 
-The private service boundary exists to keep public surfaces thin and the proprietary core protected.
+DUBSAR Desktop supplies the local runtime required by the current Claude Code integration.
 
-Public surfaces may show sanitized, bounded and reviewable information.
+Its responsibilities include:
 
-They must not expose:
+- bounded local process startup;
+- process identity and lifecycle control;
+- worktree provisioning through governed references;
+- restart observations and reconciliation requests;
+- secure local configuration and access state;
+- navigation to the cockpit and Human Gate surfaces.
 
-- private decision logic;
-- internal prompts or policies;
-- sealed journals;
-- operational proof artifacts;
-- write mechanisms;
-- trust or signing material;
-- backend routes or payloads;
-- sensitive project history.
+Desktop is not marketed as a separate product and is not the proprietary Core.
 
-This boundary is part of the product design.
+The legacy term “Launcher” no longer describes a public product. Internal launcher components may remain where changing them would break compatibility.
 
 ---
 
-## Private SCRIBE core
+## 4. Private Backend
 
-The private core is where SCRIBE's proprietary decision-memory, audit, proof and replay logic evolves.
+The Backend is the protected service boundary and the only supported product writer to canonical Core state.
 
-This repository does not publish that core.
+It validates and limits requests, verifies runtime bindings, rejects stale mutations and protects private implementation details.
 
-The public repository may describe abstract concepts such as memory, contracts, evidence, Human GO and replay.
-
-It must not publish the mechanisms that enforce those concepts internally.
+The Backend is not distributed through this repository.
 
 ---
 
-## MCP / plugin / connector direction
+## 5. Private DUBSAR Core
 
-MCP, plugins and connectors are possible delivery forms.
+The Core is the source of truth for governed project state, including:
 
-They are not the product definition.
+- Mission;
+- decisions and constraints;
+- lots and execution contracts;
+- canonical DUBSAR sessions;
+- runtime allocations and process state;
+- evidence relationships and verification tiers;
+- audit state;
+- Human Gates and authorizations;
+- replay and reconciliation decisions.
 
-The product definition is the decision-memory and audit layer around agent-assisted project movement.
-
-A cautious public wording is:
-
-> SCRIBE Launcher is being explored as a thin connection surface around existing AI coding workflows. Depending on the host environment, future delivery forms may include a connector, plugin or MCP-compatible integration. No public installation package or stable connector API is available today.
-
-Avoid wording that suggests SCRIBE is already installable, publicly packaged or marketplace-ready.
+The Core remains private.
 
 ---
 
-## What should remain private
+## 6. Runner
 
-Do not publish:
+The Runner produces bounded mechanical evidence such as:
 
-- install commands for a product that is not publicly installable;
-- connector manifests that are not stable and public;
-- real backend routes;
-- private schemas;
-- provider-specific logic;
-- prompts;
-- internal gates;
-- sealed journals;
-- trust material;
-- write-path details;
-- confidential proof artifacts.
+- snapshots;
+- diffs;
+- test results;
+- hashes;
+- execution artefact references.
+
+It does not own Mission state and cannot create a Human GO.
+
+---
+
+## 7. DUBSAR cockpit
+
+The cockpit makes governed state readable to the human.
+
+It is intended to show:
+
+- the recognized project and active Mission;
+- active sessions and their state;
+- lots, contracts and worktrees;
+- relevant decisions and constraints;
+- declared and verified evidence without conflating them;
+- conflicts and stale state;
+- pending Human Gates;
+- bounded diagnostics and availability state.
+
+The cockpit displays and controls through governed boundaries. It does not become the authority that approves its own state.
+
+The former public label “Eyes of SCRIBE” is historical and should not remain a separate product brand.
+
+---
+
+## 8. Professional audit surface
+
+DUBSAR Audit is a professional service, not a second autonomous software platform.
+
+For an audit engagement, the operating surface combines:
+
+- an agreed mandate and authorized sources;
+- bounded collection through approved client tools;
+- DUBSAR Mission, evidence, contradiction and decision records;
+- human classification and validation;
+- a professional report and evidence register.
+
+The service may examine a project that was not already using the Claude Code plugin. In that case, the audit is retrospective and its conclusions are limited by the sources that exist and were authorized.
+
+The audit does not expose the private Core, grant autonomous authority to an agent or imply that the client has deployed the private-beta product.
+
+---
+
+## 9. Multi-session surface
+
+DUBSAR relates several active sessions to one Mission while preserving isolation.
+
+```text
+Mission
+  ├── Session A → Worktree A → Process A → Evidence A
+  └── Session B → Worktree B → Process B → Evidence B
+                 ↓
+          Conflict / Human Gate when required
+```
+
+Internal technical proofs have validated this model on Windows. The public product journey remains under validation.
+
+---
+
+## Public distribution
+
+This repository is intended to become both:
+
+- the public product and doctrine repository;
+- the Claude Code Marketplace repository for the thin first host adapter.
+
+The Marketplace is not activated or announced. No installation command should be treated as active until the package, supported platform, licence, security contacts and beta access flow are validated.
+
+---
+
+## Platform boundary
+
+- **Windows:** first controlled private-beta target, still in preparation.
+- **Linux:** planned for later validation; not announced.
+- **macOS:** not announced; feasibility and packaging remain to be evaluated.
+
+---
+
+## Current beta boundary
+
+The current private-beta preparation covers:
+
+- Claude Code as the first host;
+- the DUBSAR plugin;
+- local Bridge and DUBSAR Desktop;
+- a private Backend and Core;
+- Mission continuity;
+- canonical one- and multi-session governance;
+- explicit Human Gates.
+
+Not currently claimed as available:
+
+- operational Codex or Cursor adapters;
+- public Linux or macOS packages;
+- enterprise on-premise deployment;
+- certified compliance or security guarantees;
+- autonomous approval or release authority;
+- a commercial-ready public service.
+
+This beta boundary applies to the installable product. The separately scoped DUBSAR Audit professional service is available on request under the boundaries documented in [AUDIT.md](AUDIT.md).
 
 ---
 
 ## Summary
 
-The public surfaces explain and expose enough for humans to understand SCRIBE.
+DUBSAR is one product and one governance method.
 
-The private core remains protected.
-
-That separation is intentional.
+The host adapter connects the coding agent. The Bridge transports locally. Desktop supplies the runtime. The Backend protects canonical writes. The Core owns governed state. The Runner produces mechanical evidence. The cockpit makes the state understandable. The audit surface applies the same method to a bounded professional engagement. Humans remain the final authority.

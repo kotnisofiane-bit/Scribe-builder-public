@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="650" viewBox="0 0 1400 650" role="img" aria-labelledby="title desc">
+  <title id="title">DUBSAR Windows controlled private beta journey</title>
+  <desc id="desc">Target Windows journey from approved package installation through Mission, governed work, evidence, Human Gate and resumable continuity.</desc>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0,10 4,0 8" fill="#4fd1c5"/></marker>
+    <style>
+      text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.bg{fill:#081016}.title{fill:#f4f7f9;font-size:34px;font-weight:700}.sub{fill:#9eacb8;font-size:17px}.label{fill:#f0f4f6;font-size:16px;font-weight:650}.small{fill:#bdc8d0;font-size:13px}.tiny{fill:#93a1ac;font-size:11px}.cyan{fill:#4fd1c5}.gold{fill:#d7a640}
+    </style>
+  </defs>
+  <rect class="bg" width="1400" height="650"/>
+  <rect x="22" y="22" width="1356" height="606" rx="18" fill="none" stroke="#1d2a34"/>
+  <text x="60" y="78" class="title">Windows controlled private beta journey</text>
+  <text x="60" y="110" class="sub">Target product path — not a public installation claim.</text>
+
+  <line x1="125" y1="280" x2="1270" y2="280" stroke="#28404a" stroke-width="3"/>
+
+  <g transform="translate(55 170)">
+    <circle cx="70" cy="110" r="28" fill="#0d2225" stroke="#4fd1c5" stroke-width="2"/><text x="70" y="117" text-anchor="middle" class="label cyan">1</text>
+    <text x="70" y="165" text-anchor="middle" class="label">Install</text>
+    <text x="70" y="190" text-anchor="middle" class="small">approved package</text>
+    <text x="70" y="211" text-anchor="middle" class="tiny">Desktop + local runtime</text>
+  </g>
+  <line x1="155" y1="280" x2="235" y2="280" stroke="#4fd1c5" stroke-width="2" marker-end="url(#a)"/>
+
+  <g transform="translate(220 170)">
+    <circle cx="70" cy="110" r="28" fill="#0d2225" stroke="#4fd1c5" stroke-width="2"/><text x="70" y="117" text-anchor="middle" class="label cyan">2</text>
+    <text x="70" y="165" text-anchor="middle" class="label">Connect</text>
+    <text x="70" y="190" text-anchor="middle" class="small">Claude Code plugin</text>
+    <text x="70" y="211" text-anchor="middle" class="tiny">Bridge + Backend status</text>
+  </g>
+  <line x1="320" y1="280" x2="400" y2="280" stroke="#4fd1c5" stroke-width="2" marker-end="url(#a)"/>
+
+  <g transform="translate(385 170)">
+    <circle cx="70" cy="110" r="28" fill="#0d2225" stroke="#4fd1c5" stroke-width="2"/><text x="70" y="117" text-anchor="middle" class="label cyan">3</text>
+    <text x="70" y="165" text-anchor="middle" class="label">Mission</text>
+    <text x="70" y="190" text-anchor="middle" class="small">create or resume</text>
+    <text x="70" y="211" text-anchor="middle" class="tiny">workspace recognized</text>
+  </g>
+  <line x1="485" y1="280" x2="565" y2="280" stroke="#4fd1c5" stroke-width="2" marker-end="url(#a)"/>
+
+  <g transform="translate(550 170)">
+    <circle cx="70" cy="110" r="28" fill="#0d2225" stroke="#4fd1c5" stroke-width="2"/><text x="70" y="117" text-anchor="middle" class="label cyan">4</text>
+    <text x="70" y="165" text-anchor="middle" class="label">Governed work</text>
+    <text x="70" y="190" text-anchor="middle" class="small">lot + contract</text>
+    <text x="70" y="211" text-anchor="middle" class="tiny">agent acts in bounds</text>
+  </g>
+  <line x1="650" y1="280" x2="730" y2="280" stroke="#4fd1c5" stroke-width="2" marker-end="url(#a)"/>
+
+  <g transform="translate(715 170)">
+    <circle cx="70" cy="110" r="28" fill="#0d2225" stroke="#4fd1c5" stroke-width="2"/><text x="70" y="117" text-anchor="middle" class="label cyan">5</text>
+    <text x="70" y="165" text-anchor="middle" class="label">Evidence</text>
+    <text x="70" y="190" text-anchor="middle" class="small">declared vs verified</text>
+    <text x="70" y="211" text-anchor="middle" class="tiny">missing stays visible</text>
+  </g>
+  <line x1="815" y1="280" x2="895" y2="280" stroke="#d7a640" stroke-width="2" marker-end="url(#a)"/>
+
+  <g transform="translate(880 170)">
+    <circle cx="70" cy="110" r="28" fill="#19170e" stroke="#d7a640" stroke-width="2"/><text x="70" y="117" text-anchor="middle" class="label gold">6</text>
+    <text x="70" y="165" text-anchor="middle" class="label gold">Human Gate</text>
+    <text x="70" y="190" text-anchor="middle" class="small">review and decide</text>
+    <text x="70" y="211" text-anchor="middle" class="tiny">no conversational GO</text>
+  </g>
+  <line x1="980" y1="280" x2="1060" y2="280" stroke="#4fd1c5" stroke-width="2" marker-end="url(#a)"/>
+
+  <g transform="translate(1045 170)">
+    <circle cx="70" cy="110" r="28" fill="#0d2225" stroke="#4fd1c5" stroke-width="2"/><text x="70" y="117" text-anchor="middle" class="label cyan">7</text>
+    <text x="70" y="165" text-anchor="middle" class="label">Restart</text>
+    <text x="70" y="190" text-anchor="middle" class="small">reconcile honestly</text>
+    <text x="70" y="211" text-anchor="middle" class="tiny">no phantom running state</text>
+  </g>
+  <line x1="1145" y1="280" x2="1225" y2="280" stroke="#4fd1c5" stroke-width="2" marker-end="url(#a)"/>
+
+  <g transform="translate(1210 170)">
+    <circle cx="70" cy="110" r="28" fill="#0d2225" stroke="#4fd1c5" stroke-width="2"/><text x="70" y="117" text-anchor="middle" class="label cyan">8</text>
+    <text x="70" y="165" text-anchor="middle" class="label">Resume</text>
+    <text x="70" y="190" text-anchor="middle" class="small">traceable continuity</text>
+    <text x="70" y="211" text-anchor="middle" class="tiny">Mission remains coherent</text>
+  </g>
+
+  <rect x="60" y="445" width="390" height="112" rx="12" fill="#0a171d" stroke="#28414b"/>
+  <text x="88" y="482" class="label cyan">Technical proof already completed</text>
+  <text x="88" y="512" class="small">One-session and two-session governed execution on Windows.</text>
+  <text x="88" y="537" class="tiny">Identity, worktrees, conflicts, Human Gates and reconciliation.</text>
+
+  <rect x="505" y="445" width="390" height="112" rx="12" fill="#17170e" stroke="#d7a640"/>
+  <text x="533" y="482" class="label gold">Product validation still pending</text>
+  <text x="533" y="512" class="small">Repeatable install, onboarding, update, removal and recovery.</text>
+  <text x="533" y="537" class="tiny">No hidden expert repair step.</text>
+
+  <rect x="950" y="445" width="390" height="112" rx="12" fill="#0a171d" stroke="#28414b"/>
+  <text x="978" y="482" class="label cyan">Platform posture</text>
+  <text x="978" y="512" class="small">Windows first · Linux later validation · macOS not announced.</text>
+  <text x="978" y="537" class="tiny">No support claim before real package and journey proof.</text>
+
+  <text x="700" y="610" text-anchor="middle" class="tiny">Controlled private beta in preparation · no public installation · Marketplace not activated or announced</text>
+</svg>

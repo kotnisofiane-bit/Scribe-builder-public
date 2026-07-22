@@ -1,0 +1,37 @@
+{
+  "name": "dubsar",
+  "owner": {
+    "name": "Sofiane Kotni",
+    "url": "https://github.com/kotnisofiane-bit"
+  },
+  "metadata": {
+    "description": "DUBSAR Marketplace staging — governance for long-running, multi-session AI coding projects. Claude Code is the first integration and requires the local DUBSAR Desktop runtime. Controlled private beta in preparation for Windows; Marketplace not activated or announced. The current vendored plugin is an earlier staging pin and is not the final publication candidate.",
+    "version": "0.11.1"
+  },
+  "plugins": [
+    {
+      "name": "scribe-bridge",
+      "source": "./plugins/scribe",
+      "version": "0.11.1",
+      "description": "DUBSAR for Claude Code — thin host adapter for governed Mission continuity, decision memory, evidence and Human Gates across long-running sessions. Requires the local DUBSAR Desktop runtime and private Backend/Core. Historical technical package id: scribe-bridge. Controlled private-beta staging only; not published, production use unsupported, final publication pin not selected.",
+      "author": {
+        "name": "Sofiane Kotni"
+      },
+      "homepage": "https://github.com/kotnisofiane-bit/Scribe-builder-public",
+      "repository": "https://github.com/kotnisofiane-bit/Scribe-builder-public",
+      "license": "LicenseRef-DUBSAR-Private-Beta",
+      "keywords": [
+        "dubsar",
+        "governance",
+        "multi-session",
+        "decision-memory",
+        "evidence",
+        "human-gate",
+        "claude-code",
+        "mcp",
+        "scribe"
+      ],
+      "category": "developer-tools"
+    }
+  ]
+}

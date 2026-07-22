@@ -1,175 +1,237 @@
 # FAQ
 
-## Is SCRIBE another coding agent?
+## Is DUBSAR another coding agent?
 
 No.
 
-SCRIBE is not another autonomous coding agent and it is not a replacement for developers.
+DUBSAR does not replace coding agents or developers. It is a governance layer around long-running AI coding projects.
 
-It is a decision-memory, audit and human-validation layer around AI-assisted development workflows.
-
-Agents propose. SCRIBE checks. Humans decide.
+Coding agents build. DUBSAR preserves Mission, decisions, boundaries and evidence. Humans decide protected movement.
 
 ---
 
-## What problem does SCRIBE address?
+## What problem does DUBSAR address?
 
-AI agents can move quickly, but long-running projects need continuity.
+AI coding agents can move quickly, but a project that continues across many sessions can lose:
 
-SCRIBE is designed for the moments where a project needs to remember:
-
-- previous decisions;
-- locked constraints;
-- sensitive boundaries;
+- prior decisions and their reasons;
+- active constraints;
+- the scope of current work;
+- the relationship between sessions, processes and worktrees;
 - required evidence;
-- what still needs Human GO;
-- what should be replayable later.
+- the difference between a declaration and a verification;
+- pending Human Gates;
+- the path needed to resume later.
 
-Without that structure, a project can drift even when each individual AI answer looks reasonable.
+DUBSAR gives that project state a durable governed structure.
 
 ---
 
-## Does SCRIBE replace Claude Code, Codex, Cursor or other AI coding tools?
+## Is DUBSAR only for Claude Code?
 
 No.
 
-SCRIBE is meant to sit around AI-assisted workflows, not replace them.
+DUBSAR is designed around host adapters. The private Core, Mission, decision memory, evidence model and Human Gates are intended to remain independent of any single coding agent.
 
-The current product direction explores thin surfaces around existing tools: a launcher, connector, plugin or MCP-compatible integration may become a delivery form depending on the host environment.
+Claude Code is the first supported integration.
 
-No stable public connector API or public installation package is available today.
-
----
-
-## What is SCRIBE Launcher?
-
-SCRIBE Launcher is the first product surface being explored.
-
-Its role is to help frame work, surface project memory, expose constraints, preserve evidence and keep Human GO explicit around AI-assisted changes.
-
-Launcher should be understood as a thin guardrail / connector surface.
-
-It is not the private SCRIBE core and it is not an autonomous brain running locally inside the public repository.
+Codex, Cursor and other coding-agent adapters are future product direction. They are not currently available integrations.
 
 ---
 
-## What is Eyes of SCRIBE?
+## What is the first product?
 
-Eyes of SCRIBE is the cockpit / observation direction.
+The first product journey combines:
 
-Its purpose is to show what SCRIBE has seen, checked, excluded, evidenced and left awaiting human decision.
+- the DUBSAR Claude Code plugin;
+- a local Bridge;
+- DUBSAR Desktop and local runtime;
+- a private Backend;
+- a private Core;
+- a human-facing cockpit and Human Gate surface.
 
-It is a review and decision context, not an autonomous execution engine.
+The user experiences one product called DUBSAR. These are technical surfaces, not separate offers.
 
-This direction is still under active development.
+---
+
+## What happened to Scribe Builder, Scribe Launcher and Eyes of SCRIBE?
+
+They belong to earlier stages of the project and are no longer public product brands.
+
+The public product is DUBSAR.
+
+Some internal repository, command, route, MCP, environment or storage identifiers may retain `scribe` temporarily to preserve compatibility. They should not be interpreted as separate products.
+
+---
+
+## Does DUBSAR replace native worktrees, tools or sub-agents?
+
+No.
+
+The coding-agent host keeps its native execution capabilities. For Claude Code, that includes planning, editing, tools, tests, sub-agents and worktrees.
+
+DUBSAR governs the project state around those capabilities. It should not rebuild the host without a specific governance reason.
+
+---
+
+## Does DUBSAR support multiple sessions?
+
+The architecture and internal Windows technical proofs support governed one-session and two-session execution linked to the same canonical Mission.
+
+The proof covered distinct identities, processes and worktrees, separated evidence, explicit conflict handling, Human Gates and restart reconciliation.
+
+This is internal technical validation. It does not mean the public beta or external installation journey is available yet.
+
+---
+
+## What is the cockpit?
+
+The cockpit is DUBSAR's human-facing view.
+
+It is intended to show:
+
+- the active Mission;
+- sessions, lots, contracts and worktrees;
+- decisions and constraints;
+- evidence status;
+- conflicts and stale state;
+- availability and process state;
+- pending Human Gates.
+
+It displays governed state and sends bounded actions through the product boundary. It does not approve its own state.
 
 ---
 
 ## Why not just let agents collaborate directly?
 
-Agents can collaborate directly.
+Agents can collaborate, but agent-to-agent conversation does not automatically create durable project memory, canonical identity, evidence, authority boundaries or replay.
 
-The problem is that agent-to-agent interaction does not automatically create durable project memory, evidence, approval boundaries or replay.
+Whether a project uses one agent or many, it still needs to know:
 
-Whether one agent or several agents are involved, the project still needs:
+- which Mission is active;
+- which decisions apply;
+- which constraints are active;
+- what each session is allowed to do;
+- what evidence is expected;
+- what has actually been verified;
+- which movement requires a human decision.
 
-- memory;
-- constraints;
-- audit;
-- evidence;
-- Human GO;
-- replay.
-
-SCRIBE focuses on that project layer.
+DUBSAR focuses on that project layer.
 
 ---
 
-## Does SCRIBE make AI models more intelligent?
+## What is decision memory?
+
+Decision memory preserves what became meaningful for the project:
+
+- the decision;
+- its reason;
+- applicable constraints;
+- supporting evidence;
+- what replaced it later;
+- the human decision when protected movement occurred.
+
+It is different from storing every conversation.
+
+---
+
+## Does DUBSAR verify everything an agent says?
 
 No.
 
-SCRIBE is model-agnostic.
+An agent report is a declaration. DUBSAR distinguishes declarations from evidence checked by an identified deterministic verifier. Missing and invalid evidence must remain visible.
 
-It does not try to improve the intelligence of a model.
-
-It tries to improve the structure around AI-assisted work.
-
-Intelligence produces proposals.
-
-SCRIBE keeps project movement bounded by memory, evidence and human decision.
+DUBSAR does not turn persuasive wording into proof.
 
 ---
 
-## What does “decision memory” mean?
+## What is a Human Gate?
 
-Decision memory is the structured memory of what was decided, why it was decided and what evidence supported that decision.
+A Human Gate is an explicit authenticated human decision before protected movement such as merge, release, deployment, sensitive scope or another irreversible action.
 
-It is different from conversation history.
-
-Conversation history records what was said.
-
-Decision memory preserves what became meaningful for the project.
+No agent can create a Human GO by claiming approval. DUBSAR can prepare and display the relevant dossier; the decision remains human.
 
 ---
 
-## What does SCRIBE govern?
+## Which operating systems are supported?
 
-SCRIBE does not govern AI agents as personalities.
+### Windows
 
-It governs how proposed project changes move through checkpoints:
+Windows is the first target for the controlled private beta. The product journey is still being finalized and validated.
 
-```text
-Memory -> Constraint -> Proposal -> Audit -> Evidence -> Human GO -> Replay
-```
+### Linux
 
-The goal is not to make agents less capable.
+Linux validation is planned after the Windows path is stable. No Linux beta is currently announced.
 
-The goal is to make project movement more reliable.
+### macOS
+
+macOS support is not currently announced. Packaging, signing, permissions and runtime behavior must be evaluated before any support claim.
 
 ---
 
-## Is SCRIBE open source?
+## Is DUBSAR open source?
+
+The public repository and thin distributable host-adapter code are publicly viewable under the applicable beta licence.
+
+The proprietary Core, private Backend implementation, internal policies, sealed journals and confidential proof artifacts are not open source and are not distributed here.
+
+Publicly visible source is not automatically an open-source licence grant.
+
+---
+
+## Is the Marketplace live?
 
 No.
 
-This is a publicly viewable documentation repository.
-
-It is not an open-source release of the SCRIBE core and it does not contain an installable product package.
-
-The private implementation, backend, internal audit history, prompts, sealed project journals, proof artifacts, operational write mechanisms and trust material are not part of this repository.
+The repository contains Marketplace staging material, but the DUBSAR Marketplace is not activated or announced. No installation command should be treated as active until publication is explicitly authorized.
 
 ---
 
-## Is SCRIBE production-ready?
+## What is DUBSAR Audit?
+
+DUBSAR Audit is a bounded professional service operated by Sofiane with DUBSAR.
+
+It currently supports two types of mandate:
+
+- launch readiness;
+- agent governance.
+
+The audit examines only authorized sources, preserves the provenance and limitations of findings, and produces a human-reviewed professional report. It is remote and read-only by default.
+
+See [DUBSAR Audit](AUDIT.md).
+
+---
+
+## Must a client already use the DUBSAR plugin to request an audit?
 
 No.
 
-SCRIBE is not commercial-ready.
-
-There is currently no public installation package, no stable public API, no production deployment and no commercial availability.
-
-The current focus is clarity, correctness, proof, Human GO and protecting the public/private boundary.
+An audit may use existing authorized sources such as GitHub, Jira, Confluence, Linear, Notion, Slack or Google Drive. When the project was not already governed by DUBSAR, the report must state that it is retrospective and limited by the evidence that exists and is accessible.
 
 ---
 
-## Why publish this repository now?
+## Is the audit fully automated?
 
-Because ideas also need durable references.
+No.
 
-This repository makes the reasoning behind SCRIBE visible without exposing the private engine.
+Software and agents can collect, compare and structure evidence. DUBSAR preserves the mandate, provenance, contradictions, limitations and Human Gates. Sofiane reviews and validates the final classification and conclusion.
 
-It is not a product launch.
-
-It is a public marker for an engineering exploration.
+No agent-generated statement becomes the final professional verdict by itself.
 
 ---
 
-## What is the long-term vision?
+## Is DUBSAR beta-ready or production-ready?
 
-The long-term vision is to explore whether humans and AI systems can build together through durable memory, evidence, constraints, replay and explicit human decision.
+The installable product is not generally available or production-ready.
 
-SCRIBE applies that idea first to AI-assisted software development.
+DUBSAR is preparing a controlled private beta beginning with Windows and Claude Code. Internal technical proofs are complete for key one-session and multi-session governance paths, but the external installation and usability journey is still pending.
 
-The broader question is:
+The separately scoped DUBSAR Audit professional service is available on request. That availability does not imply that the product or Marketplace is generally available.
 
-How should humans and AI build together when projects last longer than a single chat, a single pull request or a single agent session?
+---
+
+## Why is the GitHub repository still named Scribe-builder-public?
+
+The repository name is a legacy identifier. Renaming a public repository is a separate human action and has not been performed inside this documentation work.
+
+The product described here is DUBSAR.

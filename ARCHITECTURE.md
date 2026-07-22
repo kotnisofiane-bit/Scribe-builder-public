@@ -1,247 +1,311 @@
 # Architecture
 
-SCRIBE is not designed as a single autonomous agent.
+DUBSAR is not a coding agent and not a replacement for coding agents.
 
-It is a decision-memory, audit and human-validation layer around AI-assisted software projects.
+It is a governance layer for long-running, multi-session AI coding projects.
 
-The architecture is organized around one idea:
-
-> Intelligence may produce proposals, but project movement must remain bounded by memory, evidence and Human GO.
+> Coding agents may plan and act. Project movement remains bounded by Mission state, decisions, evidence and human authority.
 
 ---
 
-## Current public architecture
+## Host-independent product architecture
 
-The current product direction is hybrid.
-
-SCRIBE is not published as a full local brain and the private core is not distributed. Public surfaces are intended to remain thin, explainable and bounded.
+DUBSAR is designed around host adapters rather than a Core tied to one provider.
 
 ```text
-Existing AI coding workflow
-        ↓
-SCRIBE Launcher / connector surface
-        ↓
-Private service boundary
-        ↓
-Private SCRIBE decision core
-        ↓
-Evidence, memory and Human GO shown for review
+Coding agent
+    ↓
+DUBSAR host adapter
+    ↓
+Local Bridge and runtime
+    ↓
+Private Backend
+    ↓
+Private DUBSAR Core
+    ↓
+Governed state returned to product surfaces
+    ↓
+Human decision when required
 ```
 
-This public repository documents the concept, not the implementation.
-
-It does not publish the backend, the private core, prompts, internal policies, sealed journals, operational write mechanisms, trust material or provider-specific details.
+Claude Code is the first supported host. Codex, Cursor and other coding-agent integrations are future adapter directions, not currently available product claims.
 
 ---
 
-## Design principle
-
-The number of agents is not the architecture.
-
-A project may use one agent or several. The same problem remains:
+## Current Claude Code architecture
 
 ```text
-Intent
-  -> Agent proposal
-  -> SCRIBE checks memory, constraints and evidence
-  -> Human GO when protected project movement is required
-  -> Evidence and replay remain available
+Claude Code
+    ↓
+DUBSAR plugin
+    ↓
+Local Bridge
+    ↓
+Private Backend
+    ↓
+Private DUBSAR Core
+    ↓
+Mission / sessions / contracts / decisions / evidence / Human Gates
+    ↓
+DUBSAR Desktop and cockpit
+    ↓
+Human decision
 ```
 
-SCRIBE does not depend on claiming that AI agents can govern themselves.
-
-It exists because AI-assisted projects need a structure around proposals before those proposals become decisions.
+DUBSAR Desktop supplies the local runtime and human-facing product surface. It is not a separate product and it is not the canonical source of business state.
 
 ---
 
-## Main public layers
+## Responsibility boundaries
 
-### 1. Existing AI coding workflow
+### Coding agent host
 
-SCRIBE is designed to sit around AI coding workflows that developers already use.
+The host remains responsible for its native capabilities, including where available:
 
-Examples of host environments may include AI coding tools, code assistants, IDE agents or agentic development workflows.
+- planning and reasoning;
+- editing;
+- tools;
+- tests;
+- sub-agents;
+- worktrees;
+- checkpoints and context management.
 
-This repository does not claim that a public integration is available today.
+DUBSAR should configure, observe or govern these capabilities where necessary. It should not rebuild them without a clear governance reason.
 
-### 2. SCRIBE Launcher / connector surface
+### DUBSAR host adapter
 
-SCRIBE Launcher is the first product surface being explored.
+The adapter is the entry point inside the coding-agent environment.
 
-Its public role is to frame work, expose boundaries, surface checks and keep Human GO explicit around agent-assisted changes.
+For Claude Code, this is the DUBSAR plugin.
 
-Depending on the host environment, future delivery forms may include a connector, plugin or MCP-compatible integration.
+Its responsibilities include:
 
-Launcher should be understood as a thin surface around existing tools, not as the proprietary SCRIBE brain.
+- propagating the native session identity;
+- exposing bounded DUBSAR commands and tools;
+- projecting canonical state to the host;
+- connecting the host to the local Bridge;
+- surfacing the next governed action and Human Gate status.
 
-### 3. Private service boundary
+The adapter remains thin:
 
-The service boundary mediates what can be exposed publicly and what must remain private.
+- no proprietary Core logic;
+- no independent canonical state;
+- no secret handling through chat or command arguments;
+- no independent Human GO generation.
 
-In the public framing, this layer is responsible for preserving the separation between:
+### Local Bridge
 
-- public documentation and product surfaces;
-- private decision logic;
-- internal audit state;
-- operational proof material;
-- implementation details that are still evolving.
+The Bridge is a bounded local transport and orchestration layer.
 
-No private routes, schemas, payloads or trust mechanisms are documented here.
+It may:
 
-### 4. Private SCRIBE decision core
+- connect the host adapter to the local product runtime;
+- maintain bounded local continuity references;
+- transport closed requests and responses;
+- support local lifecycle coordination.
 
-The private core is where the proprietary decision-memory, audit, proof and validation logic evolves.
+It must not become the owner of Mission, contract, decision, evidence or Human Gate truth.
 
-It is not published in this repository.
+### Private Backend
 
-The public documentation may describe abstract concepts such as decision memory, contracts, evidence, replay and Human GO, but it must not expose the private mechanisms that enforce them.
+The Backend is the protected product boundary and the only supported product writer to canonical Core state.
 
-### 5. Human-facing review surfaces
+It is responsible for:
 
-SCRIBE needs a surface where the human can see what matters before movement.
+- authentication and authorization boundaries;
+- schema and request validation;
+- controlled access to private Core functions;
+- runtime binding verification;
+- projecting only the state required by product surfaces;
+- rejecting stale or inconsistent mutations.
 
-This direction is currently represented by the idea of Eyes of SCRIBE: a cockpit / observation layer that shows what SCRIBE has seen, checked, excluded, evidenced and left awaiting Human GO.
+### Private DUBSAR Core
 
-Eyes of SCRIBE is not an autonomous execution engine. It is a review and decision context.
+The Core is the canonical authority for governed project state:
 
----
+- Projects and Missions;
+- decision memory;
+- lots and execution contracts;
+- canonical DUBSAR sessions;
+- runtime allocations and bindings;
+- evidence relationships and verification tiers;
+- audit state;
+- Human Gates and single-use authorizations;
+- deterministic resume, replay and reconciliation decisions.
 
-## Decision memory
+The Core is private and is not distributed through this public repository.
 
-Decision memory is the persistent structure behind SCRIBE.
+### Runner
 
-It records meaningful project decisions rather than preserving every word of every conversation.
+The Runner is the mechanical evidence authority for bounded execution artifacts such as:
 
-Decision memory helps answer questions such as:
-
-- What was decided?
-- Why was it decided?
-- What evidence supported it?
-- What constraints existed?
-- What changed afterward?
-- Can the decision path be replayed?
-
-Without decision memory, long-running AI-assisted projects become fragile.
-
----
-
-## Constraints and contracts
-
-A contract or constraint set defines the boundaries of a proposed task.
-
-It may describe:
-
-- what is allowed;
-- what is forbidden;
-- what evidence is required;
-- what requires Human GO;
-- what should fail closed.
-
-A contract does not make a proposal correct.
-
-It makes the proposal auditable and governable.
-
----
-
-## Evidence
-
-Evidence is the material that makes the process reviewable.
-
-Depending on the context, evidence may include:
-
-- summaries;
+- snapshots;
 - diffs;
-- hashes;
 - test results;
-- audit verdicts;
-- approval records;
-- proof pack metadata;
-- replay information.
+- hashes;
+- execution artefact references.
 
-Evidence is not decoration.
+It does not own Mission state and does not create Human GO.
 
-It is what allows a future reviewer to understand what happened.
+### DUBSAR Desktop and cockpit
 
-Public examples must remain sanitized and must not expose sensitive project history or private proof artifacts.
+Desktop provides the local runtime and operator-facing controls.
 
----
-
-## Human GO
-
-Human GO is the explicit human decision point before protected project movement.
-
-It does not mean the human must approve every trivial action.
-
-It means that when a change crosses a meaningful boundary — scope, merge, release, locked constraints, sensitive areas or irreversible movement — the system must keep the human decision visible and explicit.
-
-No agent validates itself.
+The cockpit displays governed state and evidence available to the human. It may trigger bounded product actions through the Backend, but it does not fabricate canonical state or approve itself.
 
 ---
 
-## Replay
+## Canonical session model
 
-Replay is the ability to reconstruct the decision path later.
+A governed session links distinct identities rather than collapsing them into one ambiguous "session" value.
 
-Replay does not require preserving every token of every interaction.
-
-It requires preserving the meaningful sequence:
+A canonical relationship may include:
 
 ```text
-Intent -> Constraint -> Proposal -> Audit -> Evidence -> Human GO -> Result
+dubsar_session_id
+  ↔ native host session id
+  ↔ Mission
+  ↔ lot and contract
+  ↔ runtime allocation
+  ↔ worktree binding
+  ↔ base SHA
+  ↔ process identity
+  ↔ session revision and Mission head
 ```
 
-Replay makes project memory durable.
+The Core mints the canonical DUBSAR session identity. Native host identities, local transport references and operating-system process identities remain distinct but linked.
+
+No product path should use a generic `default` identity for real multi-session work.
 
 ---
 
-## Role separation
+## Multi-session governance
 
-Earlier SCRIBE documentation used Architect, Coder and Auditor roles to explain why no AI role should validate itself.
+Two sessions on one Mission must share governed project state without sharing execution identity.
 
-That doctrine remains useful.
+```text
+Canonical Mission
+  ├── Session A
+  │     ├── lot / contract A
+  │     ├── worktree A
+  │     ├── process A
+  │     └── evidence A
+  │
+  └── Session B
+        ├── lot / contract B
+        ├── worktree B
+        ├── process B
+        └── evidence B
+```
 
-However, those roles should not be read as the current product architecture. SCRIBE does not need to host a full internal team of agents to be useful.
+Required properties include:
 
-Whether one agent or several agents are involved, SCRIBE focuses on the project layer:
+- distinct native and DUBSAR session identities;
+- distinct runtime allocations and worktrees;
+- shared canonical Mission and decisions;
+- revision and head checks before mutation;
+- explicit conflict detection;
+- no silent last-writer-wins behavior;
+- separated journals and evidence;
+- shared Human Gate when a protected conflict or movement requires it;
+- honest restart reconciliation.
 
-- memory;
-- boundaries;
-- audit;
-- evidence;
-- Human GO;
-- replay.
+Internal Windows technical proofs have validated governed one-session and two-session execution. Public product reproducibility remains under validation.
 
 ---
 
-## Design boundary
+## Governed project path
 
-This public repository documents the architecture at a conceptual level.
+```text
+Mission
+  → applicable decisions and constraints
+  → bounded lot and contract
+  → canonical session and runtime binding
+  → agent proposal or execution
+  → mechanical evidence and audit
+  → Human Gate when required
+  → result and replay
+```
 
-It does not expose:
+An agent report is an assertion. It does not become verified evidence because the report says that work passed.
 
-- the private engine;
-- backend implementation details;
-- internal audit logs;
-- sealed journals;
-- private prompts;
-- private policies;
+A Human Gate is a separate authenticated human decision. It cannot be inferred from agent wording, a green check or a client-provided flag.
+
+---
+
+## Evidence model
+
+DUBSAR distinguishes at least:
+
+- **DECLARED** — asserted by an agent, tool or user;
+- **VERIFIED** — checked by an identified deterministic verifier;
+- **MISSING** — expected evidence was not supplied;
+- **INVALID** — malformed, inconsistent or tampered evidence.
+
+Public documentation describes these guarantees without publishing the private enforcement mechanisms.
+
+---
+
+## Concurrency and integrity
+
+Protected mutations should be bound to the canonical state they were prepared from.
+
+Relevant mechanisms include:
+
+- expected revision checks;
+- Mission and lot heads;
+- base SHA commitments;
+- content hashes;
+- idempotency keys;
+- single-use authorization nonces;
+- stale-write rejection;
+- explicit divergence states;
+- fail-closed reconciliation.
+
+A stale session must not silently overwrite newer canonical state.
+
+---
+
+## Distribution architecture
+
+This public repository is intended to host:
+
+- product documentation;
+- Marketplace metadata;
+- thin public host-adapter packages;
+- security, privacy, licence and changelog material.
+
+It must not host:
+
+- the private Core;
+- private Backend source;
+- internal audit histories or sealed journals;
+- private prompts or policies;
 - confidential proof artifacts;
-- operational write mechanisms;
-- trust or signing material;
-- evolving implementation details.
+- secrets, tokens or trust material;
+- private tester data.
 
-The goal of this document is to explain the public architecture of SCRIBE without publishing sensitive internals.
+The Marketplace is not activated or announced.
+
+---
+
+## Compatibility boundary
+
+The public product is DUBSAR.
+
+Internal technical identifiers may remain temporarily in:
+
+- private repository names;
+- routes and schema identifiers;
+- component and token names;
+- MCP server and command identifiers;
+- environment variables;
+- local storage paths.
+
+They must be migrated only through deliberate compatibility plans, not global search-and-replace changes.
 
 ---
 
 ## Summary
 
-SCRIBE is a decision-memory and audit layer for AI-driven software projects.
-
-It keeps proposed project movement bounded by memory, constraints, evidence and Human GO.
-
-It can work around one agent or several agents.
-
-It does not try to make AI agents autonomous authorities.
-
-It tries to make AI-assisted development more reliable over time.
+Coding agents act. DUBSAR remembers the Mission, governs canonical sessions, links evidence and keeps Human Gates explicit. The private Core remains the source of truth. Humans remain the final authority.

@@ -1,142 +1,108 @@
 # Status
 
-SCRIBE is an experimental engineering project.
+DUBSAR is an active product and professional audit system. Its two current paths have different maturity levels and must not be conflated.
 
-It is not commercial-ready.
-
-This public repository documents the concepts, principles, product direction and public boundary of SCRIBE.
-
-It does not expose the private implementation.
-
----
-
-## Current state
-
-SCRIBE is currently focused on decision memory, audit, evidence, Human GO and replay for AI-assisted software projects.
-
-The current product direction includes:
-
-- **SCRIBE Launcher** — a first product surface / guardrail direction around existing AI coding workflows;
-- **Eyes of SCRIBE** — a cockpit / observation direction for showing what SCRIBE has seen, checked, evidenced and left for human decision;
-- **private decision core** — the proprietary logic for memory, audit, contracts, proof and replay;
-- **public documentation** — this repository, which explains the doctrine without publishing the private core.
-
-The project is active, but still evolving.
+| Surface | Current status |
+|---|---|
+| DUBSAR for Claude Code | Functional controlled private beta being finalized |
+| External beta access | Selective, on invitation, after compatibility review |
+| Public Marketplace | Not activated or announced |
+| DUBSAR Audit | Professional service available on request |
+| Codex / Cursor adapters | Future product direction, not currently available |
+| Private Core | Proprietary, active development, not distributed here |
 
 ---
 
-## Public repository scope
+## Product status
 
-This repository is intentionally limited.
+DUBSAR for Claude Code combines:
 
-It contains public, non-sensitive material such as:
+- a Claude Code plugin;
+- a local Bridge and DUBSAR Desktop runtime;
+- a protected Backend and private Core;
+- persistent Mission and workspace continuity;
+- canonical session identity;
+- lots and execution contracts;
+- evidence boundaries and Human Gates;
+- a human-facing cockpit.
 
-- project doctrine;
-- product positioning;
-- conceptual architecture;
-- design principles;
-- public roadmap direction;
-- explanatory examples;
-- public RFCs;
-- conceptual diagrams.
+Internal Windows proofs have completed:
 
-Its purpose is to make the reasoning behind SCRIBE visible.
+- one real governed Claude Code session;
+- two sessions linked to the same canonical Mission;
+- distinct identities, processes and worktrees;
+- separated evidence and explicit conflict handling;
+- single-use authorization behavior;
+- process control and restart reconciliation.
 
-It is not a release package.
+These results prove important technical capabilities. They do not yet prove that an external user can independently install, understand and operate the full product journey.
 
-It is not an open-source release of the private SCRIBE core.
-
----
-
-## What is not included
-
-This repository does not contain:
-
-- the private SCRIBE engine;
-- backend implementation details;
-- internal audit logs;
-- sealed project journals;
-- private prompts;
-- private policies;
-- confidential proof artifacts;
-- private development reports;
-- operational write mechanisms;
-- trust or signing material;
-- implementation details that are still changing;
-- sensitive project history.
-
-The absence of those materials is intentional.
-
-SCRIBE is being documented publicly without exposing its private working core.
+The current validation target is therefore a reproducible Windows path from approved installation to Mission, governed work, evidence, Human Gate, restart and resume.
 
 ---
 
-## Product availability
+## Audit-service status
 
-SCRIBE should not currently be described as:
+DUBSAR Audit is a professional service available on request. It is operated with a bounded mandate, authorized sources, read-only access by default and human validation.
 
-- production-ready;
-- commercially available;
-- enterprise-ready;
-- a hosted platform;
-- a finished developer tool;
-- a public MCP server;
-- a public connector package;
-- an installable open-source product;
-- an autonomous coding product.
+Current audit modes:
 
-There is currently:
+- launch readiness;
+- agent governance.
 
-- no public installation package;
-- no stable public API;
-- no commercial availability;
-- no public connector manifest;
-- no public release of the private engine.
+The service can use DUBSAR with existing client sources without claiming that the client is deploying the private-beta product as an enterprise platform.
 
-The project is still in a research and engineering phase.
+The audit method, report framework and operator workflow have been prepared. Each real engagement still requires explicit agreement on scope, permissions, sources, retention, timing and price.
 
-The current priority is clarity, correctness, proof, Human GO and protecting the public/private boundary.
+See [DUBSAR Audit](AUDIT.md).
 
 ---
 
-## Private engine
+## Platform and integration status
 
-A private implementation exists and continues to evolve.
+### Windows
 
-The public repository does not mirror that implementation.
+First controlled private-beta target. Packaging and the autonomous external-tester journey are being finalized.
 
-This separation allows the project to publish its doctrine and public architecture while keeping unfinished or sensitive internals private.
+### Linux
 
-The public material should be treated as conceptual and product-direction documentation.
+Planned for later validation. No Linux beta is currently announced.
 
-Not as a complete technical specification of the engine.
+### macOS
 
----
+Not currently announced. Feasibility, packaging, signing and runtime behavior must be evaluated first.
 
-## Future public material
+### Claude Code
 
-Future updates may include:
+First product integration and current engineering focus.
 
-- updated public diagrams;
-- simplified product-surface notes;
-- sanitized proof-pack examples;
-- fictional mediated-loop examples;
-- public design notes;
-- additional conceptual documentation;
-- selected non-sensitive implementation patterns.
+### Codex, Cursor and other agents
 
-Any future publication should preserve the same boundary:
-
-public reasoning, private engine.
+Future host-adapter direction. No operational public support is currently claimed.
 
 ---
 
-## Summary
+## Public distribution status
 
-SCRIBE is public enough to explain its purpose.
+- This repository is the intended public documentation and future Marketplace home.
+- The thin Claude Code plugin source is staged, but its final publication pin is not approved.
+- No supported public installation command is active.
+- No public product release or production deployment is claimed.
+- The repository still has a legacy GitHub name; renaming is a separate human action.
 
-It remains private enough to protect its unfinished core.
+---
 
-The project should be understood as a serious engineering investigation into decision memory, audit and Human GO for AI-assisted software development.
+## Claims not made
 
-Not as a finished product launch.
+DUBSAR is not currently presented as:
+
+- a generally available or production-ready software product;
+- an autonomous coding, merge, release or approval authority;
+- a certified compliance or security system;
+- an operational Codex or Cursor integration;
+- a public release of the private Core;
+- a guarantee that an audited product is defect-free or secure.
+
+The professional audit service being available does not change these product boundaries.
+
+Any stronger product-readiness claim requires verified evidence and an explicit Human GO.

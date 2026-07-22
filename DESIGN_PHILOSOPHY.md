@@ -1,205 +1,132 @@
 # Design Philosophy
 
-SCRIBE Builder was not designed around AI hype.
+DUBSAR is designed around a practical question:
 
-It was designed around engineering constraints.
+> How can AI-assisted work remain understandable and governable as a project grows across sessions, agents and tools?
 
-The central question is not:
-
-> How can AI do more?
-
-The central question is:
-
-> How can AI-assisted work remain understandable as complexity grows?
-
-SCRIBE explores a design philosophy based on clarity, continuity, evidence and human responsibility.
+The answer is not to rebuild the coding agent. It is to preserve the project layer around it.
 
 ---
 
-## Build around decisions, not conversations
+## Start from the real host
 
-AI tools often begin with conversation.
+Coding-agent hosts already provide intelligence, editing, tools, tests and execution environments.
 
-SCRIBE begins with decisions.
+DUBSAR should use those native capabilities rather than duplicate them. A host adapter stays thin, the local runtime handles bounded integration and the private Core owns governed project state.
 
-A conversation may help produce an idea.
+Claude Code is the first supported host. Future adapters may connect Codex, Cursor and other environments to the same Core.
 
-But a project evolves when a decision is made, approved, rejected, revised or replayed.
+---
 
-For that reason, SCRIBE focuses on the path from intent to decision:
+## Build around Missions and decisions
+
+A conversation can produce useful ideas. A project evolves through decisions made within a continuing Mission.
+
+DUBSAR therefore focuses on:
 
 ```text
-Intent → Contract → Proposal → Audit → Evidence → Human Decision → Result
+Mission → Decision → Contract → Session → Proposal → Audit → Evidence → Human Gate → Result
 ```
 
-The conversation is useful.
-
-The decision path is essential.
+The decision path is more durable than the current conversation window or host session.
 
 ---
 
-## Separate responsibilities
+## Keep responsibilities separate
 
-A governed system should avoid mixing responsibilities.
+- The coding-agent host interprets, proposes and acts through its native capabilities.
+- The DUBSAR adapter exposes governed state inside that host.
+- The local runtime connects the host to the private service.
+- The Backend protects canonical writes.
+- The Core owns Mission and governance state.
+- Deterministic verifiers produce bounded verification.
+- Humans decide protected movement.
 
-In SCRIBE:
-
-- the human defines intent and decides;
-- the architect frames the work;
-- the coder proposes;
-- the auditor reviews;
-- SCRIBE coordinates the process;
-- evidence supports replay.
-
-This separation does not make the system slower by default.
-
-It makes responsibility visible.
+No layer should quietly absorb another layer's authority.
 
 ---
 
 ## Prefer explicit boundaries
 
-AI systems are powerful because they can adapt.
+A lot or execution contract should make clear:
 
-But projects also need boundaries.
+- the objective;
+- allowed and forbidden scope;
+- the applicable base or workspace;
+- required evidence;
+- relevant roles;
+- session and runtime expectations;
+- Human Gate conditions.
 
-SCRIBE prefers explicit contracts over implicit assumptions.
-
-Before execution, the system should know:
-
-- what the task is;
-- what is in scope;
-- what is out of scope;
-- what evidence is required;
-- what requires human approval.
-
-Boundaries make useful work safer.
-
----
-
-## Preserve context instead of rebuilding it
-
-Long-running projects often lose time because context must be rebuilt again and again.
-
-SCRIBE treats prior decisions as project infrastructure.
-
-The system should not depend only on what the current conversation remembers.
-
-It should inherit what the project has already decided.
-
-This is what makes continuity possible.
-
----
-
-## Reduce cognitive load
-
-Governance should not overwhelm the human.
-
-The goal is not to show everything.
-
-The goal is to show what matters.
-
-A human should be able to understand:
-
-- what is being proposed;
-- why it matters;
-- what constraints apply;
-- what evidence exists;
-- what decision is required.
-
-Good governance reduces confusion.
-
-It does not create more noise.
+Boundaries do not make work correct. They make divergence reviewable.
 
 ---
 
 ## Evidence over confidence
 
-AI systems can sound confident.
+Fluent explanations are useful but not sufficient.
 
-Confidence is not proof.
-
-SCRIBE gives more weight to evidence than to persuasive explanation.
-
-A proposal should be supported by verifiable material when possible:
-
-- tests;
-- diffs;
-- hashes;
-- audit findings;
-- approval records;
-- proof summaries;
-- replay data.
-
-Trust should not depend only on fluency.
+DUBSAR distinguishes declarations from deterministic verification and keeps missing or invalid evidence visible. A tool or agent cannot promote its own statement to verified truth by adding a field or stronger wording.
 
 ---
 
-## Fail closed
+## Reduce cognitive load
 
-When the system is uncertain, it should not silently continue.
+Governance should show the human what matters now:
 
-If evidence is missing, stop.
+- the active Mission;
+- the current lot and next action;
+- active sessions and their state;
+- applicable decisions and constraints;
+- evidence and its status;
+- the decision required.
 
-If scope is unclear, stop.
-
-If approval is required, stop.
-
-If the contract is violated, stop.
-
-A governed system should make uncertainty visible.
-
----
-
-## Design for evolution
-
-A project should be able to evolve without losing coherence.
-
-Structure should not freeze the project.
-
-It should preserve the reasoning that allows future change to happen responsibly.
-
-A decision can be revised.
-
-A contract can evolve.
-
-A prior assumption can be challenged.
-
-But the system should remember that this happened.
-
-The purpose of structure is not to restrict evolution.
-
-It is to preserve coherence while evolution happens.
+The product should not expose every internal event merely because it exists.
 
 ---
 
-## Build slowly
+## Fail closed selectively
 
-SCRIBE is built incrementally.
+Protected movement should stop when required identity, scope, evidence or human approval is missing.
 
-Every iteration should leave the project more understandable than before.
+Harmless reads should not become unusable through indiscriminate blocking. Fail-closed behavior must protect meaningful boundaries rather than perform security theatre.
 
-A feature is not mature only because it works.
+---
 
-It becomes mature when it can be explained, governed, tested and replayed.
+## Preserve local continuity, keep canonical authority private
 
-This is why SCRIBE prioritizes clarity over speed.
+Local state helps reconnect sessions, workspaces, processes and the cockpit.
+
+Canonical Mission, decision, contract, session, evidence and Human Gate authority remains in the private Core. The adapter, Bridge and Desktop are not allowed to become accidental second business brains.
+
+---
+
+## Public first, internal rename later
+
+The public product is DUBSAR.
+
+Internal `scribe` identifiers may remain while compatibility depends on them. A controlled migration is preferable to a global rename that breaks commands, routes or stored state.
+
+---
+
+## Visible product progress
+
+Internal tests, hashes and guardrails are necessary. They are not the whole product.
+
+Each major iteration should produce a real user-visible capability in a supported host or the cockpit: start, resume, understand, review or decide.
 
 ---
 
 ## Summary
 
-SCRIBE Builder is designed to support reliable collaboration between humans and AI roles.
+DUBSAR favors:
 
-It favors:
-
-- memory over forgetting;
-- contracts over assumptions;
+- Missions over isolated sessions;
+- decisions over raw transcripts;
+- contracts over implicit assumptions;
 - evidence over confidence;
 - replay over opacity;
-- responsibility over autonomy;
-- coherence over speed.
-
-The objective is not to make AI collaboration look impressive.
-
-The objective is to make it governable.
+- host adapters over provider lock-in;
+- compatibility over cosmetic purity;
+- human authority over autonomous approval;
+- visible product value over endless internal validation.

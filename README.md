@@ -1,249 +1,209 @@
-# SCRIBE
+<p align="center">
+  <img src="brand/dubsar-readme-header.svg" alt="DUBSAR — Govern the path from intent to evidence. Keep human authority." width="100%" />
+</p>
 
-**Decision memory and audit for AI-driven software projects.**
+# DUBSAR
 
-Your AI agent moves fast.  
-SCRIBE keeps it from forgetting, breaking things, or merging too early.
+**Govern the path from intent to evidence. Keep human authority.**
 
-Agents propose. SCRIBE checks. Humans decide.
+DUBSAR makes software projects built with coding agents easier to explain, review and control over time.
 
-**Public documentation · Private core · not commercial-ready**
+It is one governance system with two current ways to work with it:
+
+| Product | Professional service |
+|---|---|
+| **DUBSAR for Claude Code** — a controlled private beta for governing real projects while they are being built. | **DUBSAR Audit** — a bounded, evidence-backed audit of launch readiness or agent governance. |
+| Invitation only · Windows first | Available on request · Remote · Read-only by default |
+
+[Request private beta access](https://dubsar.ai/early-access) · [Request an audit](https://dubsar.ai/audit) · [Version française](README.fr.md)
 
 ---
 
 <p align="center">
-  <img src="diagrams/public-boundary.svg" alt="SCRIBE public boundary and decision trace: Agent proposal, SCRIBE check, Evidence, Human GO, Replay; and the public / private boundary between public surfaces, the private service boundary and the private core." />
+  <img src="diagrams/dubsar-architecture.svg" alt="DUBSAR architecture: coding agent, host adapter, local runtime, protected Backend and Core, cockpit and human authority." />
 </p>
 
 ---
 
-## What is SCRIBE?
+## Why DUBSAR exists
 
-SCRIBE is an engineering exploration for long-running software projects built with AI coding agents.
+Coding agents can plan, edit and test quickly. Long-running projects face a different problem: continuity, proof and authority.
 
-It is not another AI coding agent. It does not replace Claude Code, Codex, Cursor or a developer. It is a decision-memory, audit and human-validation layer around AI-assisted development workflows.
+Across sessions and tools, a project can lose:
 
-AI agents can write code, refactor files, draft plans and audit pull requests quickly. The harder problem is continuity:
+- the Mission and active constraints;
+- decisions and their reasons;
+- the relationship between claims and verified evidence;
+- contradictions between tickets, documentation, code and tests;
+- pending Human Gates;
+- the path needed to resume or explain the project later.
 
-- what was decided;
-- which constraints were locked;
-- what evidence was available;
-- what changed;
-- what still requires Human GO;
-- what can be replayed later.
+DUBSAR adds a durable governed project layer around existing coding agents:
 
-SCRIBE explores that layer.
+- persistent Mission and decision memory;
+- bounded work and explicit contracts;
+- canonical session identity;
+- evidence tied to sources and versions;
+- visible contradictions and limitations;
+- replay across sessions;
+- explicit Human Gates for protected movement.
 
----
+**Agents propose. DUBSAR preserves and checks. Humans decide.**
 
-## Decision Trace / Checkpoint Grammar
-
-SCRIBE is built around a simple project grammar:
-
-```text
-Memory -> Locked constraints -> Agent proposal -> Audit -> Evidence -> Human GO -> Replay
-```
-
-The number of agents is not the central question. A project may use one agent or several. In both cases, the project still needs memory, boundaries, evidence and explicit human decision before critical movement.
-
-```text
-Agent proposes
-  -> SCRIBE checks memory, constraints and evidence
-  -> Human GO is required before protected project movement
-  -> The decision path remains replayable
-```
-
-SCRIBE does not let an AI system validate itself.
+DUBSAR is not another coding agent and does not replace the developer.
 
 ---
 
-## The problem SCRIBE addresses
+## Path 1 — DUBSAR for Claude Code
 
-In short conversations, AI can be extremely useful.
+Claude Code is the first product integration.
 
-In long-running projects, the failure mode changes.
+```text
+Claude Code
+    ↓
+DUBSAR plugin
+    ↓
+Local Bridge and DUBSAR Desktop
+    ↓
+Protected Backend
+    ↓
+Private DUBSAR Core
+    ↓
+Mission, decisions, evidence and Human Gates
+```
 
-The risk is no longer only that a model gives a bad answer. The risk is that a project slowly drifts while every individual answer still looks reasonable:
+The integration is a **functional private beta being finalized for selected external projects**. Windows is the first supported target. Public Marketplace installation is not active yet.
 
-- a locked rule disappears from the next prompt;
-- a previous decision is forgotten;
-- a refactor touches a forbidden area;
-- a pull request looks technically plausible but moves the project in the wrong direction;
-- a merge happens before the human decision is clear.
+Internal Windows validation has completed governed one-session and two-session execution with distinct identities, isolated worktrees, separated evidence, explicit conflict handling, Human Gates and restart reconciliation.
 
-SCRIBE exists for that gap between fast AI output and reliable project movement.
+That is a technical proof, not a claim that anyone can already install the product independently. External installation and usability validation remain in progress.
+
+[Product surfaces](PRODUCT_SURFACES.md) · [Current status](STATUS.md) · [Installation boundary](INSTALLATION.md)
 
 ---
 
-## Current product direction
+## Path 2 — DUBSAR Audit
 
-The current public product direction is not an autonomous multi-agent platform.
+DUBSAR Audit is a professional service operated by Sofiane with DUBSAR.
 
-SCRIBE is moving toward a hybrid model:
+It answers one of two bounded questions:
+
+1. **Launch readiness** — Is the product genuinely ready to open to users?
+2. **Agent governance** — Can the team explain and verify how the project was built and approved?
+
+The audit examines only authorized sources under an agreed mandate. Depending on the client environment, those sources may include GitHub, Jira, Confluence, Linear, Notion, Slack or Google Drive.
+
+The deliverable separates:
+
+- observed facts;
+- inferences;
+- evidence and provenance;
+- contradictions;
+- limitations and unavailable sources;
+- human decisions.
+
+For launch-readiness mandates, the conclusion is **GO, GO under conditions or NO-GO**, supported by prioritized findings and an evidence register.
+
+The service is remote, bounded and read-only by default. No final conclusion is delivered without human review.
+
+[How DUBSAR Audit works](AUDIT.md) · [Request an audit](https://dubsar.ai/audit)
+
+---
+
+## One method, different maturity
+
+The product and the service use the same governance discipline, but they do not have the same availability status.
 
 ```text
-Existing AI coding workflow
-        ↓
-SCRIBE Launcher / connector surface
-        ↓
-Private service boundary
-        ↓
-Private SCRIBE decision core
-        ↓
-Evidence, memory and Human GO surfaced for review
+DUBSAR product for Claude Code: controlled private beta being finalized
+DUBSAR Audit: professional service available on request
+Public Marketplace: not activated
+Codex / Cursor adapters: future product direction
+Private Core: proprietary and not distributed here
 ```
 
-### SCRIBE Launcher
+The audit service does not pretend that the private beta is a mature enterprise platform. It uses DUBSAR as a governed operator system, together with authorized project sources and human validation, to produce a professional result.
 
-SCRIBE Launcher is the first product surface being explored.
+---
 
-It is a thin guardrail / connector surface around existing AI coding workflows. Depending on the host environment, future delivery forms may include a connector, plugin or MCP-compatible integration.
+## Product direction
 
-It is not a public installable product today. There is no stable public connector API, no public package and no production-ready integration.
+DUBSAR is designed around host adapters rather than a Core tied permanently to Claude Code.
 
-### Eyes of SCRIBE
+Codex, Cursor and other coding-agent environments are part of the direction, but they are not currently supported public integrations.
 
-Eyes of SCRIBE is the cockpit / observation direction.
+The long-term product remains DUBSAR itself: a governance layer for agent-assisted software projects. The audit service is a professional application of that system and a way to validate it on real projects.
 
-Its purpose is to show what SCRIBE has seen, checked, excluded, evidenced and left for Human GO. It is a decision and audit surface, not an autonomous execution engine.
+---
 
-This direction is still under active development.
+## What DUBSAR does not claim
 
-See [Product Surfaces](PRODUCT_SURFACES.md) for the current public framing.
+DUBSAR does not:
+
+- replace coding agents, developers or client technical authority;
+- allow an agent to approve its own work;
+- treat persuasive wording as proof;
+- silently merge, release or deploy;
+- certify regulatory compliance;
+- guarantee defect-free or secure code;
+- expose the proprietary Core;
+- claim that Codex or Cursor adapters are already available.
 
 ---
 
 ## Public / private boundary
 
-This repository is a public boundary for SCRIBE.
+This repository is the public documentation and distribution boundary for DUBSAR. It may contain:
 
-It contains:
-
-- public positioning;
-- public principles;
-- conceptual architecture;
-- decision-memory documentation;
-- public diagrams;
-- public RFCs;
-- non-sensitive examples.
+- product doctrine and architecture;
+- bounded examples and diagrams;
+- public security, privacy and installation information;
+- the thin Claude Code host adapter and Marketplace metadata when publication is authorized.
 
 It does not publish:
 
-- the private SCRIBE core;
-- backend implementation details;
-- internal audit logs;
-- sealed project journals;
-- private prompts or policies;
-- confidential proof artifacts;
-- operational write mechanisms;
-- trust, signing or secret material.
+- the proprietary DUBSAR Core;
+- private Backend implementation details;
+- internal policies, prompts or sealed journals;
+- confidential client or tester data;
+- secrets, tokens or trust material.
 
-This repository is publicly viewable documentation. It is not an open-source release of the SCRIBE core and it does not contain an installable product package.
+Some technical identifiers still use `scribe` for compatibility. They are legacy implementation names, not a second public product.
 
 ---
 
-## What SCRIBE is not
-
-SCRIBE is not:
-
-- a replacement for developers;
-- an autonomous coding platform;
-- a marketplace of AI agents;
-- a claim that AI can self-govern;
-- a commercial-ready product;
-- a public release of the private engine.
-
-The private implementation remains under active development.
-
----
-
-## Visual overview
-
-The diagrams in this repository are public explanatory material. Some older diagrams still reflect the earlier “governed collaboration loop” framing and should be read as conceptual / legacy notes, not as the current product architecture.
-
-More public diagrams are available in the [diagrams folder](diagrams/):
-
-- [Conceptual Architecture](diagrams/architecture.svg) — legacy conceptual framing;
-- [Governed Collaboration Loop](diagrams/governed-loop.svg) — legacy role-separation framing;
-- [Decision Memory](diagrams/decision-memory.svg) — still aligned conceptually;
-- [Execution Contract](diagrams/execution-contract.svg) — still aligned conceptually;
-- [Project Evolution](diagrams/project-evolution.svg) — legacy trajectory note.
-
-Direct links to `.svg` files may open as source text in some mobile GitHub views. For visual previews, open this README or the [diagrams README](diagrams/README.md).
-
----
-
-## Public RFCs
-
-The [public RFCs](rfcs/README.md) are the public technical specification layer of SCRIBE.
-
-They define concepts, invariants, abstract record shapes, failure modes and review criteria.
-
-They are written for technical readers.
-
-They do not publish the private engine.
-
-They do not expose internal gates, prompts, sealed journals, signing material, provider details, proof artifacts or operational write mechanisms.
-
----
-
-## Public documentation
-
-Recommended reading order:
+## Documentation
 
 ### Start here
 
-1. [Why SCRIBE?](WHY_SCRIBE.md)
-2. [Product Surfaces](PRODUCT_SURFACES.md)
-3. [FAQ](FAQ.md)
-4. [Status](STATUS.md)
-5. [Roadmap](ROADMAP.md)
+1. [Why DUBSAR?](WHY_DUBSAR.md)
+2. [DUBSAR Audit](AUDIT.md)
+3. [Product and surfaces](PRODUCT_SURFACES.md)
+4. [Current status](STATUS.md)
+5. [Architecture](ARCHITECTURE.md)
+6. [FAQ](FAQ.md)
+7. [Roadmap](ROADMAP.md)
 
-### Core concepts
+### Distribution and trust
 
-6. [Principles](PRINCIPLES.md)
-7. [Architecture](ARCHITECTURE.md)
-8. [Decision Memory](DECISION_MEMORY.md)
-9. [Design Philosophy](DESIGN_PHILOSOPHY.md)
-10. [Why not just agents?](WHY_NOT_JUST_AGENTS.md)
+- [Installation](INSTALLATION.md)
+- [Marketplace](MARKETPLACE.md)
+- [Security](SECURITY.md)
+- [Privacy](PRIVACY.md)
+- [Integrity and provenance](INTEGRITY.md)
 
-### Public references
+### Doctrine
 
-11. [Manifesto](MANIFESTO.md)
-12. [Governed Multi-Change Demo](examples/governed-multi-change/README.md)
-13. [Diagrams](diagrams/README.md)
-14. [Public RFCs](rfcs/README.md)
-
----
-
-## Current status
-
-SCRIBE is experimental.
-
-It is not commercial-ready.
-
-There is currently no public installation package, no stable public API, no production deployment and no commercial availability.
-
-The public repository is intentionally limited to non-sensitive material. It explains the public doctrine and product direction without exposing the proprietary core.
-
----
-
-## Long-term direction
-
-SCRIBE begins with AI-assisted software development.
-
-The broader question is larger:
-
-How should humans and AI build together when projects last longer than a single chat, a single pull request or a single agent session?
-
-The hypothesis explored here is that reliable AI collaboration requires more than better models. It requires memory, constraints, evidence, replay and human decision.
-
-Intelligence produces proposals.
-
-SCRIBE keeps project movement bounded by memory, proof and Human GO.
+- [Principles](PRINCIPLES.md)
+- [Decision memory](DECISION_MEMORY.md)
+- [Design philosophy](DESIGN_PHILOSOPHY.md)
+- [Why not just agents?](WHY_NOT_JUST_AGENTS.md)
+- [Manifesto](MANIFESTO.md)
 
 ---
 
 ## Created by
 
-Created by Sofiane Kotni.
+Created by **Sofiane Kotni**.
+
+Website: [dubsar.ai](https://dubsar.ai) · Contact: [contact@dubsar.ai](mailto:contact@dubsar.ai)
