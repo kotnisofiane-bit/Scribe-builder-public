@@ -124,7 +124,7 @@ This repository is intended to become the single public home for:
 - Marketplace metadata when publication is authorized;
 - security, privacy and release information.
 
-The Marketplace is not published, and the project is not beta-ready or commercial-ready.
+The Marketplace is not published, and the installable product is not generally available. The separately scoped DUBSAR Audit professional service is available on request under a bounded mandate.
 
 ---
 

@@ -2,10 +2,12 @@
 
 This document describes the intended public privacy boundary for the DUBSAR controlled private beta. It is an engineering boundary, not a final legal privacy notice.
 
+It does not define the complete contractual data-processing terms of a professional DUBSAR Audit engagement. Audit scope, authorized sources, access, retention and deletion are agreed before an engagement begins. The public website does not request credentials, tokens or source code.
+
 ```text
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+public beta: no
+marketplace-ready: no
 ```
 
 ---
@@ -160,7 +162,8 @@ privacy notice: engineering boundary, not final legal notice
 Windows controlled private beta: in preparation
 Marketplace: not activated or announced
 supported public installation: none
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+public beta: no
+marketplace-ready: no
+audit engagement data terms: agreed per mandate before work begins
 ```

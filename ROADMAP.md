@@ -2,7 +2,7 @@
 
 This roadmap describes the current direction of DUBSAR. It is not a delivery guarantee.
 
-The immediate goal is a reproducible controlled private beta, beginning with Windows and Claude Code.
+The immediate product goal is a reproducible controlled private beta, beginning with Windows and Claude Code. In parallel, the professional audit service applies the DUBSAR method to bounded real-project mandates without waiting for a generally available product.
 
 DUBSAR is not defined by one host. Claude Code is the first integration of a broader host-adapter architecture.
 
@@ -87,6 +87,24 @@ After the Windows journey is reproducible, a small controlled tester group shoul
 - provide actionable feedback without exposing secrets.
 
 Success is not the absence of all bugs. It is a repeatable, understandable and governable product journey.
+
+---
+
+## Parallel professional path — DUBSAR Audit
+
+The audit service is a parallel validation and revenue path, not a replacement for the product roadmap.
+
+Current work includes:
+
+- a canonical mandate and permissions boundary;
+- launch-readiness and agent-governance control profiles;
+- authorized-source collection through existing client tools;
+- stable evidence, finding, contradiction and Human Gate records;
+- a human-reviewed premium report and evidence register;
+- a reproducible operator workflow;
+- internal full-chain testing before the first external engagement.
+
+The service begins as a human-operated, tool-assisted workflow. Repeated and proven steps may later become native DUBSAR capabilities. No separate enterprise audit platform is required before the first bounded engagement.
 
 ---
 
@@ -179,7 +197,7 @@ These are future directions, not current beta promises.
 - certified legal, security or compliance guarantees;
 - production-ready enterprise service;
 - operational Codex or Cursor support;
-- commercial availability.
+- general availability of the installable product.
 
 ---
 
@@ -192,7 +210,8 @@ macOS: not announced
 Claude Code: first integration
 other host adapters: future direction
 marketplace: not published
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+audit service: available on request
+public beta: no
+marketplace-ready: no
 ```

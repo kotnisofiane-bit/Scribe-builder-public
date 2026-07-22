@@ -3,9 +3,9 @@
 DUBSAR is preparing a controlled private beta.
 
 ```text
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+public beta: no
+marketplace-ready: no
 ```
 
 ## Supported versions
@@ -80,7 +80,9 @@ public security contact: security@dubsar.ai — monitoring to be confirmed
 Windows controlled private beta: in preparation
 Marketplace: not activated or announced
 supported public release: none
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+public beta: no
+marketplace-ready: no
 ```
+
+This document primarily covers the product and public repository. Security scope and access for a professional DUBSAR Audit engagement are agreed in its mandate; read-only access is the default.

@@ -1,6 +1,6 @@
 # Product and Surfaces
 
-DUBSAR is one product with several technical surfaces.
+DUBSAR is one product with several technical surfaces. It is also used by Sofiane as the governed operator system behind a bounded professional audit service.
 
 The user should not have to understand a collection of brands, launchers or private repositories. The public product is **DUBSAR**.
 
@@ -140,7 +140,25 @@ The former public label “Eyes of SCRIBE” is historical and should not remain
 
 ---
 
-## 8. Multi-session surface
+## 8. Professional audit surface
+
+DUBSAR Audit is a professional service, not a second autonomous software platform.
+
+For an audit engagement, the operating surface combines:
+
+- an agreed mandate and authorized sources;
+- bounded collection through approved client tools;
+- DUBSAR Mission, evidence, contradiction and decision records;
+- human classification and validation;
+- a professional report and evidence register.
+
+The service may examine a project that was not already using the Claude Code plugin. In that case, the audit is retrospective and its conclusions are limited by the sources that exist and were authorized.
+
+The audit does not expose the private Core, grant autonomous authority to an agent or imply that the client has deployed the private-beta product.
+
+---
+
+## 9. Multi-session surface
 
 DUBSAR relates several active sessions to one Mission while preserving isolation.
 
@@ -196,10 +214,12 @@ Not currently claimed as available:
 - autonomous approval or release authority;
 - a commercial-ready public service.
 
+This beta boundary applies to the installable product. The separately scoped DUBSAR Audit professional service is available on request under the boundaries documented in [AUDIT.md](AUDIT.md).
+
 ---
 
 ## Summary
 
-DUBSAR is one product.
+DUBSAR is one product and one governance method.
 
-The host adapter connects the coding agent. The Bridge transports locally. Desktop supplies the runtime. The Backend protects canonical writes. The Core owns governed state. The Runner produces mechanical evidence. The cockpit makes the state understandable. Humans remain the final authority.
+The host adapter connects the coding agent. The Bridge transports locally. Desktop supplies the runtime. The Backend protects canonical writes. The Core owns governed state. The Runner produces mechanical evidence. The cockpit makes the state understandable. The audit surface applies the same method to a bounded professional engagement. Humans remain the final authority.
