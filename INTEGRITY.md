@@ -124,4 +124,4 @@ df57b133a0ac1ff01dc0f233223881e11aa33c493fb076bb249036cb2cb97579  plugins/scribe
 2d30755db9728c2ec0be8af7241b43b6f05b5cd7014cdcb86eddf659f47d2226  plugins/scribe/src/session_context.mjs
 ```
 
-not commercial-ready. Marketplace not yet activated or announced.
+Product not generally available. Marketplace not yet activated or announced.

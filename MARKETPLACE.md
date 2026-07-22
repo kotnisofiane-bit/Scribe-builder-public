@@ -181,7 +181,9 @@ Windows controlled private beta: IN PREPARATION
 final public plugin pin: NOT SELECTED
 public repository rename: NOT PERFORMED
 supported public installation: NONE
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: NO
+public beta: NO
+marketplace-ready: NO
 ```
+
+This status block applies to product distribution. It does not describe the availability of the separately scoped [DUBSAR Audit professional service](AUDIT.md).

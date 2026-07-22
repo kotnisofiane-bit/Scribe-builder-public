@@ -187,13 +187,46 @@ The repository contains Marketplace staging material, but the DUBSAR Marketplace
 
 ---
 
-## Is DUBSAR beta-ready or production-ready?
+## What is DUBSAR Audit?
+
+DUBSAR Audit is a bounded professional service operated by Sofiane with DUBSAR.
+
+It currently supports two types of mandate:
+
+- launch readiness;
+- agent governance.
+
+The audit examines only authorized sources, preserves the provenance and limitations of findings, and produces a human-reviewed professional report. It is remote and read-only by default.
+
+See [DUBSAR Audit](AUDIT.md).
+
+---
+
+## Must a client already use the DUBSAR plugin to request an audit?
 
 No.
 
+An audit may use existing authorized sources such as GitHub, Jira, Confluence, Linear, Notion, Slack or Google Drive. When the project was not already governed by DUBSAR, the report must state that it is retrospective and limited by the evidence that exists and is accessible.
+
+---
+
+## Is the audit fully automated?
+
+No.
+
+Software and agents can collect, compare and structure evidence. DUBSAR preserves the mandate, provenance, contradictions, limitations and Human Gates. Sofiane reviews and validates the final classification and conclusion.
+
+No agent-generated statement becomes the final professional verdict by itself.
+
+---
+
+## Is DUBSAR beta-ready or production-ready?
+
+The installable product is not generally available or production-ready.
+
 DUBSAR is preparing a controlled private beta beginning with Windows and Claude Code. Internal technical proofs are complete for key one-session and multi-session governance paths, but the external installation and usability journey is still pending.
 
-DUBSAR is not commercial-ready, not beta-ready and not marketplace-ready.
+The separately scoped DUBSAR Audit professional service is available on request. That availability does not imply that the product or Marketplace is generally available.
 
 ---
 

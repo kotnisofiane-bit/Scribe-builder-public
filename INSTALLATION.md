@@ -1,6 +1,6 @@
 # Installation
 
-There is no supported public DUBSAR installation yet.
+There is no supported public installation of the DUBSAR product yet.
 
 The controlled private beta is being prepared for Windows first. The final public package, Marketplace pin and installation commands are not yet approved.
 
@@ -117,7 +117,9 @@ public Marketplace: not activated or announced
 final plugin pin: not selected
 Linux package: not announced
 macOS package: not announced
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+public beta: no
+marketplace-ready: no
 ```
+
+These labels describe the installable product and Marketplace path. They do not describe the separately scoped [DUBSAR Audit professional service](AUDIT.md), which is available on request without claiming public product installation.

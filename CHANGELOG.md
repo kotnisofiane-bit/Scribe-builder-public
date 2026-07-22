@@ -2,6 +2,15 @@
 
 All notable public repository and Marketplace changes will be recorded here.
 
+### Current positioning refresh
+
+- aligned the repository with the current `dubsar.ai` website;
+- presented two distinct entry paths: the DUBSAR private-beta product and DUBSAR Audit professional service;
+- separated product-readiness labels from professional-service availability;
+- documented launch-readiness and agent-governance audit mandates;
+- added English and French public entry-point documentation;
+- clarified that audits are remote, bounded, read-only by default and human-validated.
+
 ## Unreleased — DUBSAR public realignment R2
 
 ### Changed
@@ -47,9 +56,9 @@ All notable public repository and Marketplace changes will be recorded here.
 - no private Core or Backend implementation exposed.
 
 ```text
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+public beta: no
+marketplace-ready: no
 ```
 
 ## Legacy history
