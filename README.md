@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="brand/dubsar-readme-header.svg" alt="DUBSAR — Govern the path from intent to evidence. Keep human authority." width="100%" />
+</p>
+
 # DUBSAR
 
 **Govern the path from intent to evidence. Keep human authority.**

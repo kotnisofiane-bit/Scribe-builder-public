@@ -1,50 +1,26 @@
 # DUBSAR brand assets
 
-This folder contains the public visual sources for DUBSAR.
+This directory contains the canonical public identity assets used by this repository.
 
-The assets keep the GitHub repository aligned with the current product direction without turning the repository into a marketing landing page.
+| Asset | Purpose |
+|---|---|
+| `dubsar-mark.svg` | Transparent checkpoint mark for compact placements |
+| `dubsar-app-icon.svg` | Square application and plugin icon source |
+| `dubsar-app-icon-{32,64,128,256,512,1024}.png` | Ready-to-use transparent PNG icon sizes |
+| `dubsar-readme-header.svg` | English README header |
+| `dubsar-readme-header-fr.svg` | French README header |
+| `dubsar-readme-header.png` / `dubsar-readme-header-fr.png` | Raster header previews |
+| `dubsar-github-social-preview.svg` | Source artwork for repository sharing cards |
+| `dubsar-github-social-preview.png` | Upload-ready GitHub social preview, 1280 × 640 |
 
-## Files
+## Identity rule
 
-- [`dubsar-github-social-preview.svg`](dubsar-github-social-preview.svg) — canonical 1280×640 source for the repository social preview.
+The resting DUBSAR mark is turquoise. Amber is reserved for active Human Gates, decisions and audit states; it is not part of the permanent logo.
 
-## About the social preview
+The symbol means **trace → governed checkpoint → trace**: work enters a controlled decision point, remains attributable and continues with human authority preserved.
 
-`dubsar-github-social-preview.svg` is a source file only.
+## GitHub boundary
 
-- It is not applied automatically.
-- Applying a repository social preview is a manual GitHub Settings action.
-- GitHub expects a raster image for that setting, so the SVG should be exported to a 1280×640 PNG before upload.
-- The repository rename and social-preview application both require separate Human GO.
+The social-preview source and export are versioned here, but applying the image remains a separate GitHub repository-settings action.
 
-Nothing in this repository changes GitHub settings automatically.
-
-## Visual language
-
-DUBSAR uses:
-
-- graphite and night-blue backgrounds;
-- restrained turquoise for product flows and active state;
-- warm gold for evidence and Human Gates;
-- clear, restrained typography;
-- no purple, excessive neon or generic SaaS styling.
-
-## Public message
-
-The social preview states the current product direction without claiming availability:
-
-```text
-DUBSAR
-Govern long-running AI development.
-Keep human authority.
-Claude Code first.
-Windows controlled private beta in preparation.
-```
-
-It does not claim that the Marketplace, public installation, Linux, macOS, Codex or Cursor support is available.
-
-```text
-product generally available: no
-public beta: no
-marketplace-ready: no
-```
+Keep product-readiness claims synchronized with [`STATUS.md`](../STATUS.md).

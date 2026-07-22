@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72" role="img" aria-labelledby="title desc">
+  <title id="title">DUBSAR checkpoint mark</title>
+  <desc id="desc">An incoming trace crosses a governed checkpoint and continues.</desc>
+  <path d="M4 36H34" fill="none" stroke="#3fc7b4" stroke-width="8" stroke-linecap="round" opacity=".68"/>
+  <path d="M86 36H116" fill="none" stroke="#3fc7b4" stroke-width="8" stroke-linecap="round" opacity=".68"/>
+  <circle cx="60" cy="36" r="22" fill="none" stroke="#3fc7b4" stroke-width="8"/>
+  <circle cx="60" cy="36" r="7" fill="#3fc7b4"/>
+</svg>

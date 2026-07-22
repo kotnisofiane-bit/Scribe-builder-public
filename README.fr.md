@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="brand/dubsar-readme-header-fr.svg" alt="DUBSAR — Gouverner le passage de l’intention à la preuve. Conserver l’autorité humaine." width="100%" />
+</p>
+
 # DUBSAR
 
 **Gouverner le passage de l’intention à la preuve. Conserver l’autorité humaine.**
