@@ -20,7 +20,7 @@ Deux voies sont proposées aujourd’hui :
 ---
 
 <p align="center">
-  <img src="diagrams/dubsar-architecture.svg" alt="Architecture DUBSAR : agent de code, adaptateur hôte, environnement local, Backend et Core protégés, cockpit et autorité humaine." />
+  <img src="diagrams/dubsar-architecture-fr.svg" alt="Architecture DUBSAR : agent de code, adaptateur hôte, environnement local, Backend et Core protégés, cockpit et autorité humaine." />
 </p>
 
 ---
@@ -63,7 +63,7 @@ Les preuves techniques internes à une et deux sessions sont acquises. L’insta
 Le modèle multi-session conserve une Mission canonique tout en séparant les identités, les worktrees, les processus et les preuves de chaque session. Les conflits restent visibles et les déplacements protégés passent par une décision humaine explicite.
 
 <p align="center">
-  <img src="diagrams/dubsar-multi-session.svg" alt="Modèle multi-session gouverné par DUBSAR : Mission canonique, sessions isolées, preuves attribuables, conflits visibles et Human Gate partagé." />
+  <img src="diagrams/dubsar-multi-session-fr.svg" alt="Modèle multi-session gouverné par DUBSAR : Mission canonique, sessions isolées, preuves attribuables, conflits visibles et Human Gate partagé." />
 </p>
 
 Codex, Cursor et d’autres environnements font partie de la direction future. Ils ne sont pas présentés comme des intégrations disponibles aujourd’hui.

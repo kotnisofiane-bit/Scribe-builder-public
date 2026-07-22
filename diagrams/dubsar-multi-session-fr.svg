@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">Modèle multi-session gouverné par DUBSAR</title>
+  <desc id="desc">Une Mission canonique avec deux sessions gouvernées et isolées, des worktrees et preuves séparés, une gestion explicite des conflits, un Human Gate et une reprise gouvernée.</desc>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0,10 4,0 8" fill="#4fd1c5"/></marker>
+    <marker id="g" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0,10 4,0 8" fill="#d7a640"/></marker>
+    <style>
+      text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.bg{fill:#081016}.panel{fill:#0e1820;stroke:#2a3b47;stroke-width:1.5}.title{fill:#f4f7f9;font-size:34px;font-weight:700}.sub{fill:#9eacb8;font-size:17px}.label{fill:#f0f4f6;font-size:18px;font-weight:650}.small{fill:#bdc8d0;font-size:14px}.tiny{fill:#93a1ac;font-size:12px}.cyan{fill:#4fd1c5}.gold{fill:#d7a640}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    </style>
+  </defs>
+  <rect class="bg" width="1400" height="720"/>
+  <rect x="22" y="22" width="1356" height="676" rx="18" fill="none" stroke="#1d2a34"/>
+  <text x="60" y="78" class="title">Modèle multi-session gouverné</text>
+  <text x="60" y="110" class="sub">Une Mission. Des identités, worktrees, processus et preuves séparés. Aucun écrasement silencieux.</text>
+
+  <rect class="panel" x="60" y="205" width="230" height="260" rx="14"/>
+  <text x="175" y="248" text-anchor="middle" class="label">Mission canonique</text>
+  <text x="175" y="278" text-anchor="middle" class="small">source unique de vérité</text>
+  <line x1="95" y1="300" x2="255" y2="300" stroke="#2b3d48"/>
+  <text x="90" y="338" class="small">• décisions partagées</text>
+  <text x="90" y="368" class="small">• contraintes actives</text>
+  <text x="90" y="398" class="small">• lots et contrats</text>
+  <text x="90" y="428" class="small">• tête + révision de Mission</text>
+
+  <path d="M290 290 C350 290,350 225,410 225" fill="none" stroke="#4fd1c5" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M290 385 C350 385,350 475,410 475" fill="none" stroke="#4fd1c5" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="410" y="155" width="340" height="215" rx="14" fill="#0b1e22" stroke="#4fd1c5" stroke-width="2"/>
+  <text x="580" y="194" text-anchor="middle" class="label cyan">Session A</text>
+  <text x="445" y="230" class="small mono">dubsar_session_id: A</text>
+  <text x="445" y="258" class="small mono">native_session_id: A</text>
+  <text x="445" y="286" class="small mono">worktree: A</text>
+  <text x="445" y="314" class="small mono">identité du processus : A</text>
+  <text x="445" y="342" class="small mono">flux de preuves : A</text>
+
+  <rect x="410" y="405" width="340" height="215" rx="14" fill="#0e1925" stroke="#5da5e8" stroke-width="2"/>
+  <text x="580" y="444" text-anchor="middle" class="label" fill="#70b8ff">Session B</text>
+  <text x="445" y="480" class="small mono">dubsar_session_id: B</text>
+  <text x="445" y="508" class="small mono">native_session_id: B</text>
+  <text x="445" y="536" class="small mono">worktree: B</text>
+  <text x="445" y="564" class="small mono">identité du processus : B</text>
+  <text x="445" y="592" class="small mono">flux de preuves : B</text>
+
+  <path d="M750 260 C815 260,815 310,870 310" fill="none" stroke="#4fd1c5" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M750 510 C815 510,815 390,870 390" fill="none" stroke="#5da5e8" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="870" y="245" width="250" height="230" rx="14" fill="#18170e" stroke="#d7a640" stroke-width="2"/>
+  <text x="995" y="286" text-anchor="middle" class="label gold">Conflit / validation humaine</text>
+  <line x1="900" y1="307" x2="1090" y2="307" stroke="#5b4a25"/>
+  <text x="900" y="342" class="small">• périmètres chevauchants</text>
+  <text x="900" y="372" class="small">• révision obsolète</text>
+  <text x="900" y="402" class="small">• décisions incompatibles</text>
+  <text x="900" y="432" class="small">• déplacement protégé</text>
+  <text x="995" y="458" text-anchor="middle" class="tiny gold">décision humaine explicite requise</text>
+
+  <line x1="1120" y1="360" x2="1190" y2="360" stroke="#d7a640" stroke-width="2" marker-end="url(#g)"/>
+
+  <rect x="1190" y="245" width="150" height="230" rx="14" fill="#0c201d" stroke="#4fd1c5" stroke-width="2"/>
+  <text x="1265" y="287" text-anchor="middle" class="label cyan">Reprise</text>
+  <text x="1265" y="324" text-anchor="middle" class="small">travail gouverné</text>
+  <text x="1265" y="362" text-anchor="middle" class="tiny">décisions à jour</text>
+  <text x="1265" y="386" text-anchor="middle" class="tiny">autorité claire</text>
+  <text x="1265" y="410" text-anchor="middle" class="tiny">preuves séparées</text>
+  <circle cx="1265" cy="443" r="13" fill="none" stroke="#4fd1c5" stroke-width="2"/><path d="M1258 443l5 5 10-12" fill="none" stroke="#4fd1c5" stroke-width="2"/>
+
+  <path d="M580 370 C580 660,1190 660,1265 475" fill="none" stroke="#4fd1c5" stroke-dasharray="7 7" marker-end="url(#a)"/>
+  <path d="M580 620 C580 675,1150 675,1265 475" fill="none" stroke="#5da5e8" stroke-dasharray="7 7"/>
+  <text x="850" y="655" text-anchor="middle" class="tiny mono">piste d’audit complète · chaque preuve reste attribuable à sa session</text>
+
+  <rect x="60" y="525" width="290" height="112" rx="12" fill="#0a171d" stroke="#2c414b"/>
+  <text x="85" y="562" class="label cyan">Invariant</text>
+  <text x="85" y="590" class="small">Mission partagée ne signifie pas identité partagée.</text>
+  <text x="85" y="610" class="tiny">Chaque session reste attribuable</text>
+  <text x="85" y="628" class="tiny">et contrôlable indépendamment.</text>
+
+  <text x="700" y="690" text-anchor="middle" class="tiny">Preuve technique Windows interne acquise · validation externe du produit encore en attente</text>
+</svg>

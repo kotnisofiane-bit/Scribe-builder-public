@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">Architecture DUBSAR</title>
+  <desc id="desc">Architecture DUBSAR indépendante de l’hôte, depuis l’agent de code jusqu’à l’adaptateur hôte, au runtime local, au Backend privé, au Core privé, au cockpit et à l’autorité humaine.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0,10 4,0 8" fill="#4fd1c5"/></marker>
+    <marker id="arrowGold" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0 0,10 4,0 8" fill="#d7a640"/></marker>
+    <style>
+      text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+      .bg{fill:#081016}.panel{fill:#0d171f;stroke:#253441;stroke-width:1.5}.cyan{stroke:#4fd1c5}.gold{stroke:#d7a640}.title{fill:#f3f7fa;font-size:34px;font-weight:700}.sub{fill:#99a8b5;font-size:17px}.label{fill:#f2f5f7;font-size:18px;font-weight:650}.small{fill:#b7c3cc;font-size:14px}.tiny{fill:#91a0ac;font-size:12px}.cyanText{fill:#4fd1c5}.goldText{fill:#d7a640}.status{fill:#dfe7ec;font-size:11px}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    </style>
+  </defs>
+  <rect class="bg" width="1400" height="760"/>
+  <rect x="22" y="22" width="1356" height="716" rx="18" fill="none" stroke="#1d2a34"/>
+  <text x="60" y="75" class="title">Architecture DUBSAR</text>
+  <text x="60" y="108" class="sub">Gouverner les projets IA dans la durée. Conserver l’autorité humaine.</text>
+  <rect x="970" y="50" width="122" height="28" rx="6" fill="#111b22" stroke="#46535c"/><text x="1031" y="69" text-anchor="middle" class="status">non commercialisé</text>
+  <rect x="1103" y="50" width="106" height="28" rx="6" fill="#17150d" stroke="#d7a640"/><text x="1156" y="69" text-anchor="middle" class="status goldText">bêta non prête</text>
+  <rect x="1220" y="50" width="130" height="28" rx="6" fill="#111b22" stroke="#46535c"/><text x="1285" y="69" text-anchor="middle" class="status">Marketplace inactive</text>
+
+  <text x="60" y="155" class="tiny" letter-spacing="2">PARCOURS PRODUIT INDÉPENDANT DE L’HÔTE</text>
+
+  <rect class="panel" x="60" y="185" width="180" height="330" rx="14"/>
+  <text x="150" y="220" text-anchor="middle" class="label">Agents de code</text>
+  <rect x="84" y="250" width="132" height="56" rx="9" fill="#101c24" stroke="#4fd1c5"/>
+  <text x="150" y="274" text-anchor="middle" class="small cyanText">Claude Code</text>
+  <text x="150" y="294" text-anchor="middle" class="tiny">1re intégration</text>
+  <rect x="84" y="322" width="132" height="48" rx="9" fill="#101820" stroke="#354652"/>
+  <text x="150" y="350" text-anchor="middle" class="small">Codex</text>
+  <rect x="84" y="384" width="132" height="48" rx="9" fill="#101820" stroke="#354652"/>
+  <text x="150" y="412" text-anchor="middle" class="small">Cursor</text>
+  <rect x="84" y="446" width="132" height="48" rx="9" fill="#101820" stroke="#354652"/>
+  <text x="150" y="474" text-anchor="middle" class="small">Autres agents</text>
+  <text x="150" y="500" text-anchor="middle" class="tiny">adaptateurs futurs</text>
+
+  <line x1="240" y1="350" x2="300" y2="350" stroke="#4fd1c5" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="300" y="215" width="190" height="270" rx="14" fill="#0b1d22" stroke="#4fd1c5" stroke-width="2"/>
+  <text x="395" y="255" text-anchor="middle" class="label cyanText">Adaptateur hôte DUBSAR</text>
+  <text x="395" y="285" text-anchor="middle" class="small">Plugin Claude Code en premier</text>
+  <line x1="330" y1="310" x2="460" y2="310" stroke="#27434a"/>
+  <text x="325" y="340" class="small">• identité de session native</text>
+  <text x="325" y="368" class="small">• commandes bornées</text>
+  <text x="325" y="396" class="small">• projection d’état canonique</text>
+  <text x="325" y="424" class="small">• aucune autorité du Core</text>
+  <text x="325" y="452" class="small">• aucune création de GO humain</text>
+
+  <line x1="490" y1="350" x2="550" y2="350" stroke="#4fd1c5" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect class="panel" x="550" y="185" width="260" height="330" rx="14"/>
+  <text x="680" y="225" text-anchor="middle" class="label">Runtime DUBSAR local</text>
+  <rect x="580" y="250" width="200" height="92" rx="10" fill="#0d2225" stroke="#4fd1c5"/>
+  <text x="680" y="280" text-anchor="middle" class="small cyanText">Bridge</text>
+  <text x="680" y="306" text-anchor="middle" class="tiny">transport local borné</text>
+  <text x="680" y="326" text-anchor="middle" class="tiny">références de continuité</text>
+  <rect x="580" y="360" width="200" height="120" rx="10" fill="#101a22" stroke="#334652"/>
+  <text x="680" y="391" text-anchor="middle" class="small">DUBSAR Desktop</text>
+  <text x="680" y="417" text-anchor="middle" class="tiny">cycle de vie processus / worktrees</text>
+  <text x="680" y="439" text-anchor="middle" class="tiny">observations au redémarrage</text>
+  <text x="680" y="461" text-anchor="middle" class="tiny">contrôles destinés à l’humain</text>
+
+  <line x1="810" y1="350" x2="870" y2="350" stroke="#4fd1c5" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect class="panel" x="870" y="215" width="180" height="270" rx="14"/>
+  <text x="960" y="255" text-anchor="middle" class="label">Backend privé</text>
+  <line x1="900" y1="278" x2="1020" y2="278" stroke="#2c3a44"/>
+  <text x="895" y="315" class="small">• authentification</text>
+  <text x="895" y="343" class="small">• autorisation</text>
+  <text x="895" y="371" class="small">• rejet des écritures obsolètes</text>
+  <text x="895" y="399" class="small">• contrôle des liaisons runtime</text>
+  <text x="895" y="427" class="small">• seul composant d’écriture</text>
+
+  <line x1="1050" y1="350" x2="1110" y2="350" stroke="#d7a640" stroke-width="2" marker-end="url(#arrowGold)"/>
+
+  <rect x="1110" y="185" width="200" height="330" rx="14" fill="#17170f" stroke="#d7a640" stroke-width="2"/>
+  <text x="1210" y="225" text-anchor="middle" class="label goldText">Core DUBSAR privé</text>
+  <line x1="1140" y1="250" x2="1280" y2="250" stroke="#5b4a25"/>
+  <text x="1135" y="285" class="small">• Mission</text>
+  <text x="1135" y="313" class="small">• décisions et contraintes</text>
+  <text x="1135" y="341" class="small">• sessions canoniques</text>
+  <text x="1135" y="369" class="small">• contrats et preuves</text>
+  <text x="1135" y="397" class="small">• Human Gates</text>
+  <text x="1135" y="425" class="small">• rejeu et réconciliation</text>
+  <text x="1210" y="476" text-anchor="middle" class="tiny goldText">autorité canonique</text>
+
+  <line x1="1210" y1="515" x2="1210" y2="580" stroke="#d7a640" stroke-width="2" marker-end="url(#arrowGold)"/>
+  <rect x="1080" y="580" width="260" height="96" rx="12" fill="#101820" stroke="#d7a640"/>
+  <text x="1210" y="613" text-anchor="middle" class="label goldText">Cockpit + autorité humaine</text>
+  <text x="1210" y="640" text-anchor="middle" class="small">Voir. Comprendre. Décider.</text>
+  <text x="1210" y="662" text-anchor="middle" class="tiny">Aucune approbation autonome.</text>
+
+  <path d="M680 515 C680 650, 1030 650, 1110 470" fill="none" stroke="#4fd1c5" stroke-width="1.5" stroke-dasharray="7 7" marker-end="url(#arrow)"/>
+  <text x="850" y="625" text-anchor="middle" class="tiny mono">preuves bornées et piste d’audit</text>
+
+  <rect x="60" y="570" width="930" height="106" rx="12" fill="#0a171d" stroke="#23414a"/>
+  <text x="88" y="607" class="label cyanText">Règle produit</text>
+  <text x="88" y="636" class="small">DUBSAR ne remplace pas l’agent de code. Il gouverne le projet entre les sessions pendant que l’agent construit.</text>
+  <text x="88" y="660" class="tiny">Claude Code est la première intégration. Codex, Cursor et les autres hôtes exigent des adaptateurs et une validation propres.</text>
+
+  <text x="700" y="722" text-anchor="middle" class="tiny">Architecture publique DUBSAR · Core privé protégé · Marketplace non activée ni annoncée</text>
+</svg>

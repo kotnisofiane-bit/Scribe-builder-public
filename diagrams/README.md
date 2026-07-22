@@ -10,6 +10,8 @@ The diagrams are explanatory product documentation. They do not expose private C
 
 ![DUBSAR host-independent architecture](dubsar-architecture.svg)
 
+French version: [`dubsar-architecture-fr.svg`](dubsar-architecture-fr.svg)
+
 Explains the real responsibility chain:
 
 ```text
@@ -26,6 +28,8 @@ Claude Code is shown as the first integration. Codex, Cursor and other coding ag
 ### 2. Governed multi-session model
 
 ![DUBSAR governed multi-session model](dubsar-multi-session.svg)
+
+French version: [`dubsar-multi-session-fr.svg`](dubsar-multi-session-fr.svg)
 
 Shows one canonical Mission with:
 
@@ -71,7 +75,7 @@ The canonical DUBSAR visual language uses:
 
 Only current DUBSAR visuals are retained in this folder. Superseded diagrams have been removed so that the public repository cannot present two competing product stories.
 
-The root English README embeds the architecture visual. The French README embeds the architecture and multi-session visuals. This index remains the canonical place for the complete three-diagram set.
+The root English README embeds the English architecture visual. The French README embeds dedicated French variants of the architecture and multi-session visuals. This index remains the canonical place for the complete visual set.
 
 ## Current status
 
