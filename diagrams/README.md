@@ -1,6 +1,6 @@
 # DUBSAR diagrams
 
-This folder now contains the first canonical public DUBSAR visual set.
+This folder contains the canonical public DUBSAR visual set.
 
 The diagrams are explanatory product documentation. They do not expose private Core logic, Backend routes, internal policies, confidential proof artifacts, secrets or tester data.
 
@@ -67,22 +67,16 @@ The canonical DUBSAR visual language uses:
 - clear typography and bounded information density;
 - no purple, excessive neon or generic SaaS styling.
 
-## Legacy files
+## Repository rule
 
-The older SVG files in this folder were created during SCRIBE / Scribe Builder phases.
+Only current DUBSAR visuals are retained in this folder. Superseded diagrams have been removed so that the public repository cannot present two competing product stories.
 
-They are historical and must not be treated as current DUBSAR product architecture. They should later be:
-
-- moved to an explicit legacy archive;
-- redrawn under DUBSAR when the concept remains useful; or
-- removed when they no longer add value.
-
-The root README embeds only the canonical DUBSAR architecture visual.
+The root English README embeds the architecture visual. The French README embeds the architecture and multi-session visuals. This index remains the canonical place for the complete three-diagram set.
 
 ## Current status
 
 ```text
-Windows controlled private beta: in preparation
+Windows controlled private beta: being finalized
 Marketplace: not activated or announced
 product generally available: no
 public beta: no
