@@ -17,6 +17,8 @@ This checklist is for the human review of the public-realignment pull request be
 ## 2. Product definition
 
 - [ ] DUBSAR is described as governance for long-running, multi-session AI coding projects.
+- [ ] The product beta and the DUBSAR Audit professional service are presented as distinct paths with different availability states.
+- [ ] Audit claims remain bounded, read-only by default and subject to human validation.
 - [ ] Claude Code is clearly the first supported integration.
 - [ ] DUBSAR is not described as permanently Claude-only.
 - [ ] Codex, Cursor and other adapters are described as future direction, not current availability.
@@ -113,7 +115,7 @@ Windows product journey: still in preparation
 final plugin publication pin: pending
 Marketplace activation: blocked
 repository rename: not performed
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+public beta: no
+marketplace-ready: no
 ```

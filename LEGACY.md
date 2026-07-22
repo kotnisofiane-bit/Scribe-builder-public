@@ -82,7 +82,7 @@ When historical material conflicts with current root documentation:
 Historical content must not be used to claim current availability, platform support, architecture or readiness.
 
 ```text
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+public beta: no
+marketplace-ready: no
 ```

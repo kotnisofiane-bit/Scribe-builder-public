@@ -1,71 +1,58 @@
 # DUBSAR
 
-**Govern long-running AI development. Keep human authority.**
+**Govern the path from intent to evidence. Keep human authority.**
 
-DUBSAR is a governance layer for software projects that continue across many AI coding sessions.
+DUBSAR makes software projects built with coding agents easier to explain, review and control over time.
 
-Coding agents build.  
-DUBSAR preserves the Mission, decisions, boundaries and evidence.  
-Humans retain final authority.
+It is one governance system with two current ways to work with it:
 
-**Controlled private beta in preparation · Windows first · Private Core**
+| Product | Professional service |
+|---|---|
+| **DUBSAR for Claude Code** — a controlled private beta for governing real projects while they are being built. | **DUBSAR Audit** — a bounded, evidence-backed audit of launch readiness or agent governance. |
+| Invitation only · Windows first | Available on request · Remote · Read-only by default |
+
+[Request private beta access](https://dubsar.ai/early-access) · [Request an audit](https://dubsar.ai/audit) · [Version française](README.fr.md)
 
 ---
 
 <p align="center">
-  <img src="diagrams/dubsar-architecture.svg" alt="DUBSAR host-independent product architecture: coding agent, DUBSAR host adapter, local Bridge and Desktop runtime, private Backend, private Core, cockpit and human authority." />
+  <img src="diagrams/dubsar-architecture.svg" alt="DUBSAR architecture: coding agent, host adapter, local runtime, protected Backend and Core, cockpit and human authority." />
 </p>
 
 ---
 
-## What is DUBSAR?
+## Why DUBSAR exists
 
-AI coding agents can plan, edit, test and move quickly. Long-running projects face a different problem: continuity and authority.
+Coding agents can plan, edit and test quickly. Long-running projects face a different problem: continuity, proof and authority.
 
-Across sessions, a project can lose:
+Across sessions and tools, a project can lose:
 
-- prior decisions and their reasons;
-- active constraints;
-- the scope of current work;
-- the distinction between a declaration and verified evidence;
+- the Mission and active constraints;
+- decisions and their reasons;
+- the relationship between claims and verified evidence;
+- contradictions between tickets, documentation, code and tests;
 - pending Human Gates;
-- the path required to resume safely.
+- the path needed to resume or explain the project later.
 
 DUBSAR adds a durable governed project layer around existing coding agents:
 
-- a persistent Mission;
-- decision memory;
-- bounded lots and execution contracts;
+- persistent Mission and decision memory;
+- bounded work and explicit contracts;
 - canonical session identity;
-- evidence linked to work and decisions;
+- evidence tied to sources and versions;
+- visible contradictions and limitations;
 - replay across sessions;
 - explicit Human Gates for protected movement.
+
+**Agents propose. DUBSAR preserves and checks. Humans decide.**
 
 DUBSAR is not another coding agent and does not replace the developer.
 
 ---
 
-## First integration: Claude Code
+## Path 1 — DUBSAR for Claude Code
 
-DUBSAR is designed around host-specific adapters rather than a Core tied to one coding agent.
-
-```text
-Coding agent
-    ↓
-DUBSAR host adapter
-    ↓
-Local DUBSAR runtime
-    ↓
-Private Backend
-    ↓
-Private DUBSAR Core
-    ↓
-Mission, decisions, evidence and Human Gates
-    ↓
-Human-facing cockpit and decision
-```
-
-The first supported integration is Claude Code:
+Claude Code is the first product integration.
 
 ```text
 Claude Code
@@ -74,141 +61,134 @@ DUBSAR plugin
     ↓
 Local Bridge and DUBSAR Desktop
     ↓
-Private Backend
+Protected Backend
     ↓
 Private DUBSAR Core
+    ↓
+Mission, decisions, evidence and Human Gates
 ```
 
-Claude Code keeps its native intelligence, editing, tools, tests, sub-agents and worktrees. DUBSAR governs the project state around that work.
+The integration is a **functional private beta being finalized for selected external projects**. Windows is the first supported target. Public Marketplace installation is not active yet.
 
-Additional host adapters, including Codex, Cursor and other coding-agent environments, are part of the product direction. They are not currently available integrations.
+Internal Windows validation has completed governed one-session and two-session execution with distinct identities, isolated worktrees, separated evidence, explicit conflict handling, Human Gates and restart reconciliation.
+
+That is a technical proof, not a claim that anyone can already install the product independently. External installation and usability validation remain in progress.
+
+[Product surfaces](PRODUCT_SURFACES.md) · [Current status](STATUS.md) · [Installation boundary](INSTALLATION.md)
 
 ---
 
-## Multi-session governance
+## Path 2 — DUBSAR Audit
 
-DUBSAR is intended for projects that outlive one chat, one process or one agent session.
+DUBSAR Audit is a professional service operated by Sofiane with DUBSAR.
 
-<p align="center">
-  <img src="diagrams/dubsar-multi-session.svg" alt="DUBSAR governed multi-session model: one canonical Mission, separate sessions, worktrees, processes and evidence, explicit conflict handling and Human Gate." />
-</p>
+It answers one of two bounded questions:
 
-Its governed model relates:
+1. **Launch readiness** — Is the product genuinely ready to open to users?
+2. **Agent governance** — Can the team explain and verify how the project was built and approved?
+
+The audit examines only authorized sources under an agreed mandate. Depending on the client environment, those sources may include GitHub, Jira, Confluence, Linear, Notion, Slack or Google Drive.
+
+The deliverable separates:
+
+- observed facts;
+- inferences;
+- evidence and provenance;
+- contradictions;
+- limitations and unavailable sources;
+- human decisions.
+
+For launch-readiness mandates, the conclusion is **GO, GO under conditions or NO-GO**, supported by prioritized findings and an evidence register.
+
+The service is remote, bounded and read-only by default. No final conclusion is delivered without human review.
+
+[How DUBSAR Audit works](AUDIT.md) · [Request an audit](https://dubsar.ai/audit)
+
+---
+
+## One method, different maturity
+
+The product and the service use the same governance discipline, but they do not have the same availability status.
 
 ```text
-Mission
-  → decisions and constraints
-  → lots and contracts
-  → canonical sessions
-  → isolated worktrees and processes
-  → evidence and audit
-  → Human Gates
-  → result and replay
+DUBSAR product for Claude Code: controlled private beta being finalized
+DUBSAR Audit: professional service available on request
+Public Marketplace: not activated
+Codex / Cursor adapters: future product direction
+Private Core: proprietary and not distributed here
 ```
 
-Internal technical validation has completed governed one-session and two-session execution on a real Windows environment, including distinct identities, isolated worktrees, explicit conflict handling, Human Gates and restart reconciliation.
-
-This is an internal technical proof, not a claim that the public beta is available. External installation and usability validation are still in progress.
+The audit service does not pretend that the private beta is a mature enterprise platform. It uses DUBSAR as a governed operator system, together with authorized project sources and human validation, to produce a professional result.
 
 ---
 
-## What DUBSAR does not do
+## Product direction
+
+DUBSAR is designed around host adapters rather than a Core tied permanently to Claude Code.
+
+Codex, Cursor and other coding-agent environments are part of the direction, but they are not currently supported public integrations.
+
+The long-term product remains DUBSAR itself: a governance layer for agent-assisted software projects. The audit service is a professional application of that system and a way to validate it on real projects.
+
+---
+
+## What DUBSAR does not claim
 
 DUBSAR does not:
 
-- replace the coding agent or the developer;
-- make an AI system the final authority;
-- treat an agent report as proof by itself;
-- silently approve merges, releases or deployments;
-- rebuild native agent capabilities without a governance reason;
-- publish the private Core;
-- guarantee bug-free code, compliance or security.
-
-A Human Gate is a separate authenticated human decision. It cannot be inferred from agent wording or a green status.
-
----
-
-## Platform status
-
-<p align="center">
-  <img src="diagrams/dubsar-windows-journey.svg" alt="Target DUBSAR Windows controlled private beta journey from installation to Mission, governed work, evidence, Human Gate, restart and resume." />
-</p>
-
-### Windows
-
-Windows is the first target for the controlled private beta. Packaging, installation and the governed product journey are still being finalized and validated.
-
-### Linux
-
-Linux validation is planned after the Windows path is stable. No Linux beta is currently announced.
-
-### macOS
-
-macOS support is not currently announced. Feasibility, packaging, signing and runtime behavior must be evaluated before any claim is made.
-
----
-
-## One public repository
-
-This repository is being transformed into the single public home of DUBSAR. It is intended to contain:
-
-1. public product documentation and doctrine;
-2. the thin distributable host adapter for Claude Code;
-3. Claude Code Marketplace metadata when publication is authorized;
-4. public security, privacy, installation and release information.
-
-The current repository name still contains the legacy `Scribe-builder-public` identifier. The product described here is DUBSAR. Repository renaming is a separate human action and has not been performed.
+- replace coding agents, developers or client technical authority;
+- allow an agent to approve its own work;
+- treat persuasive wording as proof;
+- silently merge, release or deploy;
+- certify regulatory compliance;
+- guarantee defect-free or secure code;
+- expose the proprietary Core;
+- claim that Codex or Cursor adapters are already available.
 
 ---
 
 ## Public / private boundary
 
-This repository may publish:
+This repository is the public documentation and distribution boundary for DUBSAR. It may contain:
 
-- public positioning and architecture;
-- installation and user documentation;
-- the thin Claude Code plugin runtime;
-- Marketplace metadata;
-- public security and privacy policies;
-- changelogs and bounded examples.
+- product doctrine and architecture;
+- bounded examples and diagrams;
+- public security, privacy and installation information;
+- the thin Claude Code host adapter and Marketplace metadata when publication is authorized.
 
 It does not publish:
 
 - the proprietary DUBSAR Core;
 - private Backend implementation details;
-- internal prompts or policies;
-- internal audit histories or sealed journals;
-- confidential proof artifacts;
-- secrets, tokens or trust material;
-- private user or tester data.
+- internal policies, prompts or sealed journals;
+- confidential client or tester data;
+- secrets, tokens or trust material.
 
----
-
-## Compatibility identifiers
-
-The public product name is DUBSAR.
-
-Some internal technical identifiers may temporarily retain `scribe` names, including repository names, routes, command names, MCP identifiers, environment variables and local storage paths. They are compatibility identifiers, not a second product or public brand.
-
-They will be migrated only through deliberate compatibility work, never by an untested global rename.
+Some technical identifiers still use `scribe` for compatibility. They are legacy implementation names, not a second public product.
 
 ---
 
 ## Documentation
 
-Start here:
+### Start here
 
 1. [Why DUBSAR?](WHY_DUBSAR.md)
-2. [Product and surfaces](PRODUCT_SURFACES.md)
-3. [Architecture](ARCHITECTURE.md)
+2. [DUBSAR Audit](AUDIT.md)
+3. [Product and surfaces](PRODUCT_SURFACES.md)
 4. [Current status](STATUS.md)
-5. [Marketplace and distribution](MARKETPLACE.md)
-6. [Installation](INSTALLATION.md)
-7. [FAQ](FAQ.md)
-8. [Roadmap](ROADMAP.md)
-9. [Canonical diagrams](diagrams/README.md)
+5. [Architecture](ARCHITECTURE.md)
+6. [FAQ](FAQ.md)
+7. [Roadmap](ROADMAP.md)
 
-Core doctrine:
+### Distribution and trust
+
+- [Installation](INSTALLATION.md)
+- [Marketplace](MARKETPLACE.md)
+- [Security](SECURITY.md)
+- [Privacy](PRIVACY.md)
+- [Integrity and provenance](INTEGRITY.md)
+
+### Doctrine
 
 - [Principles](PRINCIPLES.md)
 - [Decision memory](DECISION_MEMORY.md)
@@ -216,29 +196,10 @@ Core doctrine:
 - [Why not just agents?](WHY_NOT_JUST_AGENTS.md)
 - [Manifesto](MANIFESTO.md)
 
-Older diagrams, RFCs and examples created under SCRIBE / Scribe Builder remain historical until individually migrated or archived.
-
----
-
-## Current status
-
-```text
-Windows controlled private beta: in preparation
-public Marketplace: not activated or announced
-supported public installation: none yet
-Claude Code: first integration
-Codex / Cursor / other adapters: future direction, not currently available
-not commercial-ready
-not beta-ready
-not marketplace-ready
-```
-
-The project accepts ordinary beta bugs. It does not accept false claims of proof, verification or human approval.
-
 ---
 
 ## Created by
 
-Created by Sofiane Kotni.
+Created by **Sofiane Kotni**.
 
-Product site: [dubsar.ai](https://dubsar.ai)
+Website: [dubsar.ai](https://dubsar.ai) · Contact: [contact@dubsar.ai](mailto:contact@dubsar.ai)

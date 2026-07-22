@@ -44,7 +44,7 @@ Windows controlled private beta in preparation.
 It does not claim that the Marketplace, public installation, Linux, macOS, Codex or Cursor support is available.
 
 ```text
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+public beta: no
+marketplace-ready: no
 ```

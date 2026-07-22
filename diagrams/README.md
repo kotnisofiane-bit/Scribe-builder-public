@@ -84,7 +84,7 @@ The root README embeds only the canonical DUBSAR architecture visual.
 ```text
 Windows controlled private beta: in preparation
 Marketplace: not activated or announced
-not commercial-ready
-not beta-ready
-not marketplace-ready
+product generally available: no
+public beta: no
+marketplace-ready: no
 ```
